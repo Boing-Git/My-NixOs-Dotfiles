@@ -16,6 +16,8 @@
     papirus-icon-theme
     nautilus
     spotify
+    jq
+    btop
 
     # Core Build & Framework Tools
     cmake
