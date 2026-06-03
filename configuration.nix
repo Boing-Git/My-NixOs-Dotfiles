@@ -95,6 +95,17 @@
   #System requirements for rebuilding
   environment.systemPackages = with pkgs; [
         git
+
+        (appimageTools.wrapType2 rec {
+          pname = "hyperhdr";
+          version = "20.0.0.0"; # Replace with the latest version from HyperHDR GitHub releases
+
+          src = fetchurl {
+            url = "https://github.com/awawa-dev/HyperHDR/releases/download/v${version}/HyperHDR-${version}-Linux-x86_64.AppImage";
+            # Tip: Set this to lib.fakeSha256 first, run the build, and swap it with the hash Nix outputs
+            sha256 = "sha256-0000000000000000000000000000000000000000000="; 
+      };
+    })
   ];
 
   
