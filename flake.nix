@@ -37,6 +37,8 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.boing = ./modules/home.nix;
+
+            home-manager.backupFileExtension = "hm-backup";
           }
         ];
       };
