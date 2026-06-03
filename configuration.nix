@@ -103,7 +103,13 @@
   xwayland.enable = true;
   };
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    shellInit = ''
+    set -gx LANG en_US.UTF-8
+    set -gx LC_ALL en_US.UTF-8
+    '';
+  }
   
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
