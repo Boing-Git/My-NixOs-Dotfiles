@@ -88,7 +88,7 @@
 
   home.activation = {
     setPapirusFolderColor = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      $DRY_RUN_CMD PATH="${pkgs.gawk}/bin:\$PATH" ${pkgs.papirus-folders}/bin/papirus-folders -C bluegrey --theme Papirus-Dark
+      PATH="${pkgs.gawk}/bin:''$PATH" $DRY_RUN_CMD ${pkgs.papirus-folders}/bin/papirus-folders -C bluegrey --theme Papirus-Dark
     '';
   };
 
