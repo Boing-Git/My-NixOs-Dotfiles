@@ -55,6 +55,6 @@
 
     # Upstream Shell Executables from Flake inputs
     inputs.caelestia-shell.packages.${pkgs.system}.with-cli
-    inputs.caelestia-cli.package.${pkgs.system}.default
+    inputs.caelestia-cli.packages.${pkgs.system}.default
   ];
 }
