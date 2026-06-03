@@ -20,6 +20,7 @@
     btop
     eza
     zoxide
+    nerd-fonts.jetbrains-mono
 
     # Core Build & Framework Tools
     cmake
