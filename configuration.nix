@@ -92,22 +92,24 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-  #System requirements for rebuilding
+
+  # System requirements and user applications
   environment.systemPackages = with pkgs; [
-        git
+    git
 
-        (appimageTools.wrapType2 rec {
-          pname = "hyperhdr";
-          version = "20.0.0.0"; # Replace with the latest version from HyperHDR GitHub releases
+    # Compile the official HyperHDR AppImage into a native Nix package
+    (appimageTools.wrapType2 rec {
+      pname = "hyperhdr";
+      version = "20.0.0.0"; 
 
-          src = fetchurl {
-            url = "https://github.com/awawa-dev/HyperHDR/releases/download/v${version}/HyperHDR-${version}-Linux-x86_64.AppImage";
-            # Tip: Set this to lib.fakeSha256 first, run the build, and swap it with the hash Nix outputs
-            sha256 = "sha256-0000000000000000000000000000000000000000000="; 
+      src = fetchurl {
+        url = "https://github.com/awawa-dev/HyperHDR/releases/download/v${version}/HyperHDR-${version}-linux-x86_64.AppImage";
+        
+        # Keep this dummy hash until Nix tells you the real one on the next build attempt
+        sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; 
       };
     })
   ];
-
   
   programs.hyprland = {
   enable = true;
