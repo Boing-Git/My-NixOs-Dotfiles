@@ -130,7 +130,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Boing";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "dialout"];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
