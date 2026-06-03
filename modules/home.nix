@@ -27,8 +27,15 @@
   };
   programs.spicetify = {
       enable = true;
+      # 1. Custom Apps go here!
+      enabledCustomApps = with spicePkgs.apps; [
+        lyricsPlus      # This will now successfully install the Spice-Lyrics panel
+      ];
       enabledExtensions = with spicePkgs.extensions; [
-        adblockify
+        adblockify         # Keeps your client clean
+        fullAppDisplay     # The classic ambient fullscreen mode
+        beautifulLyrics    # Adds ambient glowing lyrics 
+        popupLyrics        # Adds the floating lyrics aura window
       ];
       theme = spicePkgs.themes.catppuccin;
       colorScheme = "mocha";
