@@ -96,19 +96,7 @@
   # System requirements and user applications
   environment.systemPackages = with pkgs; [
     git
-
-    # Compile the official HyperHDR AppImage into a native Nix package
-    (appimageTools.wrapType2 rec {
-      pname = "hyperhdr";
-      version = "20.0.0.0"; 
-
-      src = fetchurl {
-        url = "https://github.com/awawa-dev/HyperHDR/releases/download/v${version}/HyperHDR-${version}-linux-x86_64.AppImage";
-        
-        # Keep this dummy hash until Nix tells you the real one on the next build attempt
-        sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; 
-      };
-    })
+    hyperhdr
   ];
   
   programs.hyprland = {
