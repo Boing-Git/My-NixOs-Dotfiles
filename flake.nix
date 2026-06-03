@@ -16,12 +16,16 @@
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
+
+    caelestia-cli = {
+      url = "github:caelestia-dots/cli";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     
   };
 
   # 2. OUTPUTS: Building the actual system
-  outputs = { self, nixpkgs, home-manager, caelestia-shell, spicetify-nix , ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, caelestia-shell,caelestia-cli, spicetify-nix , ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -33,15 +37,16 @@
           # Integrate Home Manager directly as distinct modules in the list
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.boing = ./modules/home.nix;
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.boing = ./modules/home.nix;
 
-            home-manager.backupFileExtension = "hm-backup";
-          }
-        ];
+              home-manager.backupFileExtension = "hm-backup";
+            }
+          ];
+        };
       };
     };
-  };
+  }
 }
