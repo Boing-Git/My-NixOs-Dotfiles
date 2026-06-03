@@ -18,6 +18,8 @@
     spotify
     jq
     btop
+    eza
+    zoxide
 
     # Core Build & Framework Tools
     cmake
