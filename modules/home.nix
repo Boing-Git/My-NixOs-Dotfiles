@@ -11,6 +11,7 @@
   imports = [
     inputs.zen-browser.homeModules.twilight
     inputs.caelestia-shell.homeManagerModules.default
+    inputs.spicetify-nix.homeManagerModules.default
   ];
 
   # 1. Automatically install Caelestia and its complete dependency layout
