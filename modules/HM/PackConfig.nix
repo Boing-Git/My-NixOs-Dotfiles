@@ -1,7 +1,9 @@
 # Providing things to do stuff with
 { config, pkgs, lib, inputs, ... }:
 
-
+  let
+    spkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+  in
 {
   imports = [
     ./LPackConfigs/starship.nix
@@ -24,9 +26,7 @@
   # Spicetify - Spotify client customization with Catppuccin Mocha
   programs.spicetify = {
     # Pulling spicetify packages from the flake input for this system
-    let
-      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-    in
+
     enable = true;
     enabledCustomApps = with spicePkgs.apps; [
       lyricsPlus        # Lyrics panel inside Spotify
@@ -37,7 +37,7 @@
       beautifulLyrics   # Glowing ambient lyrics
       popupLyrics       # Floating lyrics window
     ];
-    theme = spicePkgs.themes.text;
+    theme = spkgs.themes.text;
     colorScheme = "spotify";
   };
 
