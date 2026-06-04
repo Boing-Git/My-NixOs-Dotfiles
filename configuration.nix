@@ -112,7 +112,7 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users."boing" = {
+  users.users."boing" = {
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Boing";
