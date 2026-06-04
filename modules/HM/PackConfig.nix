@@ -25,10 +25,8 @@
     withPython3 = false;
   };
 
-  # Spicetify - Spotify client customization with Catppuccin Mocha
+  # Spicetify - Spotify client customization
   programs.spicetify = {
-    # Pulling spicetify packages from the flake input for this system
-
     enable = true;
     enabledCustomApps = with spkgs.apps; [
       lyricsPlus        # Lyrics panel inside Spotify
