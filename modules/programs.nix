@@ -25,7 +25,7 @@
       vkd3d-proton         # Correct package for DX12 to Vulkan translation
       proton-ge-bin        # (Optional but recommended) includes built-in NVAPI fixes
     ];
-  };
+  
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
