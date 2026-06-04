@@ -6,63 +6,17 @@
     settings = {
       display = {
         separator = "  ";
-        color = "white";
-        constants = [
-          "\u001b[37m"
-          "\u001b[38;5;16m"
-          "\u001b[38;5;17m"
-          "\u001b[38;5;18m"
-        ];
+        # Use simple color names instead of raw escape sequences if possible
+        color = "white"; 
       };
       modules = [
         "break"
         { type = "custom"; key = "╭───────────────────────────────────╮"; }
-        {
-          type = "kernel";
-          key = "│ {$2}{$1}  kernel";
-          format = "{$2}{release>22}{$1} │";
-        }
-        {
-          type = "command";
-          key = "│   uptime";
-          text = "uptime -p | cut -d ' ' -f 2-";
-          format = "{>22} │";
-        }
-        {
-          type = "shell";
-          key = "│ {$2}{$1}  shell ";
-          format = "{$2}{pretty-name>22}{$1} │";
-        }
-        {
-          type = "command";
-          key = "│ {$3}{$1}  mem   ";
-          text = "free -m | awk 'NR==2{printf \"%.2f GiB / %.2f GiB\",$3/1024,$2/1024}'";
-          format = "{$3}{>22}{$1} │";
-        }
-        {
-          type = "packages";
-          key = "│   pkgs  ";
-          format = "{all>22} │";
-        }
-        {
-          type = "command";
-          key = "│ {$2}{$1}  user  ";
-          text = "echo $USER";
-          format = "{$2}{>22}{$1} │";
-        }
-        {
-          type = "command";
-          key = "│   hname ";
-          text = "hostnamectl hostname";
-          format = "{>22} │";
-        }
-        {
-          type = "os";
-          key = "│ {$4}󰻀{$1}  distro";
-          format = "{$4}{pretty-name>22}{$1} │";
-        }
+        { type = "kernel";  key = "│   kernel"; }
+        { type = "shell";   key = "│   shell "; }
+        { type = "packages"; key = "│   pkgs  "; }
+        { type = "os";      key = "│ 󰻀  distro"; }
         { type = "custom"; key = "╰───────────────────────────────────╯"; }
-        "break"
       ];
     };
   };
