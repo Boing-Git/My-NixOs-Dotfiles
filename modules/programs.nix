@@ -11,8 +11,7 @@
     set -gx LANG en_US.UTF-8
     set -gx LC_ALL en_US.UTF-8
     fastfetch
-    set -g fish_greeting "                 
-    >_<
+    set -g fish_greeting ""
     "
     '';
   };
