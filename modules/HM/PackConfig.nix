@@ -8,8 +8,19 @@
   in
 {
   imports = [
-    ./LPackConfigs/starship.nix
-    ./LPackConfigs/foot.nix
+    let
+      # Define the directory
+      dir = ./LPackConfigs;
+      
+      # Read the folder, filter for .nix files, and convert to path list
+      getFiles = dir:
+        map (file: dir + "/${file}")
+          (lib.attrNames 
+            (lib.filterAttrs (name: type: 
+              type == "regular" && lib.hasSuffix ".nix" name
+            ) (builtins.readDir dir)));
+    in
+      getFiles dir;
   ];
 
   # Caelestia shell and CLI - the main desktop environment
