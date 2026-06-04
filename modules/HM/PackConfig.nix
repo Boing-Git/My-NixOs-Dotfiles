@@ -41,20 +41,6 @@
     colorScheme = "spotify";
   };
 
-  programs.steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer = {
-        openFirewall = true;
-      };
-    # Correct packages for Nvidia hardware acceleration inside Steam FHS
-    extraPackages = with pkgs; [
-      nvidia-vaapi-driver
-      vkd3d-proton         # Correct package for DX12 to Vulkan translation
-      proton-ge-bin        # (Optional but recommended) includes built-in NVAPI fixes
-    ];
-  };
-
   # Bulk enabling programs
   programs = {
     home-manager.enable = true;
