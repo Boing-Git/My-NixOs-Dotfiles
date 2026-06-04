@@ -16,12 +16,10 @@
   in
 
   let
-
+    imports = getFiles dir;
   in 
 {
-  imports = [
-      getFiles dir
-  ];
+
 
   # Caelestia shell and CLI - the main desktop environment
   programs.caelestia = {
