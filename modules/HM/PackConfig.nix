@@ -51,6 +51,5 @@
   programs = {
     home-manager.enable = true;
     zen-browser.enable = true;
-    git.enable = true;
   };
 }
