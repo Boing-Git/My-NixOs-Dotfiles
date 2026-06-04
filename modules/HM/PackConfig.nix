@@ -28,7 +28,7 @@
   programs.git = {
     enable = true;
     userName = "Boingly";
-    userEmail = "BoingDoing@gmail.com"
+    userEmail = "BoingDoing@gmail.com";
   };
 
   # Spicetify - Spotify client customization
