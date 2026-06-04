@@ -5,21 +5,12 @@
   # Pulling spicetify packages from the flake input for this system
   let
     spkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-      # Define the logic here, at the top level of the file
-    dir = ./LPackConfigs;
-    getFiles = dir:
-      map (file: dir + "/${file}")
-        (lib.attrNames 
-          (lib.filterAttrs (name: type: 
-            type == "regular" && lib.hasSuffix ".nix" name
-          ) (builtins.readDir dir)));
   in
-
-  let
-    imports = getFiles dir;
-  in 
 {
-
+  imports = [
+    ./LPackConfigs/starship.nix
+    ./LPackConfigs/foot.nix
+  ];
 
   # Caelestia shell and CLI - the main desktop environment
   programs.caelestia = {
@@ -47,7 +38,7 @@
       popupLyrics       # Floating lyrics window
     ];
     theme = spkgs.themes.text;
-    colorScheme = "Nord";
+    colorScheme = "";
   };
 
   # Bulk enabling programs
