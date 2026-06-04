@@ -20,7 +20,7 @@
   in 
 {
   imports = [
-      getFiles dir;
+      getFiles dir
   ];
 
   # Caelestia shell and CLI - the main desktop environment
