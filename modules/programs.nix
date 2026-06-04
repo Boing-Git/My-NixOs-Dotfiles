@@ -12,7 +12,6 @@
     set -gx LC_ALL en_US.UTF-8
     fastfetch
     set -g fish_greeting ">_<>_<>_<>_<"
-    "
     '';
   };
   
