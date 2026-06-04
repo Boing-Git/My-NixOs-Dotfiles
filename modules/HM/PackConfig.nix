@@ -43,11 +43,16 @@
     colorScheme = "spotify";
   };
 
+  programs.steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+  };
+
   # Bulk enabling programs
   programs = {
     home-manager.enable = true;
     zen-browser.enable = true;
     git.enable = true;
-    steam.enable = true;
   };
 }
