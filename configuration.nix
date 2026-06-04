@@ -15,11 +15,15 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelParams = [ "usbcore.autosuspend=-1" ];
+
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  hardware.steam-hardware.enable = true;
 
   #Nix experimental features 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -38,14 +42,13 @@
     # CRITICAL: Installs 32-bit drivers so Steam can draw its UI
     enable32Bit = true; 
   };
-  
+
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
-# Configure language settings
+  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Optional: If you want to explicitly ensure standard formatting metrics
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -96,20 +99,13 @@
   # System requirements and user applications
   environment.systemPackages = with pkgs; [
     git
-    hyperhdr
   ];
-  
-  programs.hyprland = {
-  enable = true;
-  xwayland.enable = true;
-  };
 
-  programs.fish = {
-    enable = true;
-    shellInit = ''
-    set -gx LANG en_US.UTF-8
-    set -gx LC_ALL en_US.UTF-8
+  system.activationScripts.papirusFolders = {
+    text = ''
+      ${pkgs.papirus-icon-theme}/bin/papirus-folders -C teal
     '';
+    deps = [];
   };
   
   # Enable touchpad support (enabled default in most desktopManager).
@@ -120,15 +116,18 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Boing";
-    extraGroups = [ "networkmanager" "wheel" "video" "dialout"];
+    extraGroups = [ "networkmanager" "wheel" "video" "dialout" "plugdev" "input"];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
+  # Add this to configuration.nix to ensure fonts are globally recognized
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -142,12 +141,16 @@
   # };
 
   hardware.nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = false; # Set to true if you use laptop power management
-      open = false; # Set to true if you use the open-source kernel modules
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable; # Ensures nvidia-smi is built
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    open = false; # Proprietary driver
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    nvidiaPersistenced = true;
   };
+  
+  # Ensure the proprietary driver is explicitly chosen
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   # Ensure hardware graphics are fully enabled
   hardware.graphics.enable = true;

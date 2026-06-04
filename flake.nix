@@ -1,13 +1,14 @@
 {
   description = "My unified NixOS and Home Manager configuration";
 
-  # 1. INPUTS: Where we get our packages from
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    # Add spicetify-nix
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs"; # Keeps dependencies aligned
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -17,7 +18,7 @@
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
-    }; # <--- This closing brace and semicolon were missing!
+    };
 
     caelestia-cli = {
       url = "github:caelestia-dots/cli";
@@ -25,28 +26,29 @@
     };
   };
 
-  # 2. OUTPUTS: Building the actual system
-  outputs = { self, nixpkgs, home-manager, caelestia-shell, caelestia-cli, spicetify-nix, ... }@inputs: {
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-
-        modules = [
-          ./configuration.nix # Your main system config
-
-          # Integrate Home Manager directly as distinct modules in the list
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.boing = ./modules/home.nix;
-
-            home-manager.backupFileExtension = "hm-backup";
-          }
-        ];
-      };
+  outputs = { self, nixpkgs, home-manager, caelestia-shell, caelestia-cli, spicetify-nix, ... }@inputs:
+  let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};  # ← defines pkgs at flake level
+  in
+  {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+            spicePkgs = spicetify-nix.legacyPackages.${system};  # ← uses system, not pkgs.system
+          };
+          home-manager.users.boing = ./modules/HM/home.nix;
+          home-manager.backupFileExtension = "hm-backup";
+        }
+      ];
     };
   };
 }
