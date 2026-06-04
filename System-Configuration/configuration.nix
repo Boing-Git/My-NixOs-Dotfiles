@@ -2,24 +2,28 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, input, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./modules/programs.nix
+      ../hardware-configuration.nix
+      ../modules/programs.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelParams = [ "usbcore.autosuspend=-1" ];
+
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  hardware.steam-hardware.enable = true;
 
   #Nix experimental features 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -33,22 +37,28 @@
   # Enable bluetooth
   hardware.bluetooth.enable = true;
 
+  # 1. Fix the Graphics crash (glXChooseVisual and Vulkan errors)
+  hardware.graphics = {
+    # CRITICAL: Installs 32-bit drivers so Steam can draw its UI
+    enable32Bit = true; 
+  };
+
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_IN";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_IN";
-    LC_IDENTIFICATION = "en_IN";
-    LC_MEASUREMENT = "en_IN";
-    LC_MONETARY = "en_IN";
-    LC_NAME = "en_IN";
-    LC_NUMERIC = "en_IN";
-    LC_PAPER = "en_IN";
-    LC_TELEPHONE = "en_IN";
-    LC_TIME = "en_IN";
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
   };
 
   # Enable the X11 windowing system.
@@ -56,8 +66,8 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -67,6 +77,8 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  services.gnome.core-apps.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -84,22 +96,38 @@
     #media-session.enable = true;
   };
 
+  # System requirements and user applications
+  environment.systemPackages = with pkgs; [
+    git
+  ];
+
+  system.activationScripts.papirusFolders = {
+    text = ''
+      ${pkgs.papirus-icon-theme}/bin/papirus-folders -C teal
+    '';
+    deps = [];
+  };
+  
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users."boing" = {
+    users.users."boing" = {
+    shell = pkgs.fish;
     isNormalUser = true;
     description = "Boing";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "dialout" "plugdev" "input"];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
+  # Add this to configuration.nix to ensure fonts are globally recognized
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -111,6 +139,21 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    open = false; # Proprietary driver
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    nvidiaPersistenced = true;
+  };
+  
+  # Ensure the proprietary driver is explicitly chosen
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  # Ensure hardware graphics are fully enabled
+  hardware.graphics.enable = true;
 
   # List services that you want to enable:
 
