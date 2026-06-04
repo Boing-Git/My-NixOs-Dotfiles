@@ -1,6 +1,8 @@
 # Providing things to do stuff with
 { config, pkgs, lib, inputs, ... }:
 
+
+  # Pulling spicetify packages from the flake input for this system
   let
     spkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
   in
@@ -28,10 +30,10 @@
     # Pulling spicetify packages from the flake input for this system
 
     enable = true;
-    enabledCustomApps = with spicePkgs.apps; [
+    enabledCustomApps = with spkgs.apps; [
       lyricsPlus        # Lyrics panel inside Spotify
     ];
-    enabledExtensions = with spicePkgs.extensions; [
+    enabledExtensions = with spkgs.extensions; [
       adblockify        # Removes ads from the client
       fullAppDisplay    # Ambient fullscreen mode
       beautifulLyrics   # Glowing ambient lyrics
