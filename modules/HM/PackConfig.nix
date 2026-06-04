@@ -10,7 +10,6 @@
   imports = [
     ./BigPackConfigs/starship.nix
     ./BigPackConfigs/foot.nix
-    ./BigPackConfigs/fastfetch.nix
   ];
 
   # Caelestia shell and CLI - the main desktop environment
