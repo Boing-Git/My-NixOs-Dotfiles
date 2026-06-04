@@ -8,8 +8,8 @@
   in
 {
   imports = [
-    ./LPackConfigs/starship.nix
-    ./LPackConfigs/foot.nix
+    ./BigPackConfigs/starship.nix
+    ./BigPackConfigs/foot.nix
   ];
 
   # Caelestia shell and CLI - the main desktop environment
