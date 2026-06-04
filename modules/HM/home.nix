@@ -58,11 +58,9 @@
     pavucontrol
     nemo
     vscodium
-    git
     google-cursor
     dejavu_fonts
     matugen
-    steam
     prismlauncher
   ];
 
