@@ -18,11 +18,6 @@
     enable = true;
     xwayland.enable = true;
   };
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
   
     # Correct packages for Nvidia hardware acceleration inside Steam FHS
     extraPackages = with pkgs; [
