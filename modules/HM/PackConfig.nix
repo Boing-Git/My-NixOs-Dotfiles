@@ -25,6 +25,12 @@
     withPython3 = false;
   };
 
+  programs.git = {
+    enable = true;
+    userName = "Boingly";
+    userEmail = "BoingDoing@gmail.com"
+  };
+
   # Spicetify - Spotify client customization
   programs.spicetify = {
     enable = true;
