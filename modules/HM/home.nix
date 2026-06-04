@@ -21,7 +21,7 @@
       force = true;
     };
      "fastfetch" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/share/caelestia/fastfetch/fastfetch.jsonc";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/share/caelestia/fastfetch";
       force = true;
     };
     "btop" = {
