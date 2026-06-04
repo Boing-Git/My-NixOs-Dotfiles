@@ -5,21 +5,21 @@
   # Pulling spicetify packages from the flake input for this system
   let
     spkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+      # Define the logic here, at the top level of the file
+    dir = ./LPackConfigs;
+    getFiles = dir:
+      map (file: dir + "/${file}")
+        (lib.attrNames 
+          (lib.filterAttrs (name: type: 
+            type == "regular" && lib.hasSuffix ".nix" name
+          ) (builtins.readDir dir)));
   in
+
+  let
+
+  in 
 {
   imports = [
-    let
-      # Define the directory
-      dir = ./LPackConfigs;
-      
-      # Read the folder, filter for .nix files, and convert to path list
-      getFiles = dir:
-        map (file: dir + "/${file}")
-          (lib.attrNames 
-            (lib.filterAttrs (name: type: 
-              type == "regular" && lib.hasSuffix ".nix" name
-            ) (builtins.readDir dir)));
-    in
       getFiles dir;
   ];
 
