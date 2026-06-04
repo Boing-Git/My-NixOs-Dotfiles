@@ -48,7 +48,7 @@
       remotePlay.openFirewall = true;
       dedicatedServer = {
         openFirewall = true;
-      }
+      };
   };
 
   # Bulk enabling programs
