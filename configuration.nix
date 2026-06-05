@@ -103,7 +103,7 @@
 
   system.activationScripts.papirusFolders = {
     text = ''
-      ${pkgs.papirus-icon-theme}/bin/papirus-folders -C teal
+      "${pkgs.papirus-folders}/bin/papirus-folders"
     '';
     deps = [];
   };
