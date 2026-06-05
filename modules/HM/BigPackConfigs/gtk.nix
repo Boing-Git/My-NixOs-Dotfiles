@@ -14,6 +14,11 @@ let
     error    = "#f38ba8";   # soft red — error foreground
     success  = "#a6e3a1";   # mint green — success foreground
   };
+
+  # 1. Define the custom Papirus package with your chosen folder color
+  customPapirusIcons = pkgs.papirus-icon-theme.override {
+    color = "teal"; # <-- Change this to any valid Papirus folder color name
+  };
 in
 {
   # ── GTK Theme Base ───────────────────────────────────────────────────────────
@@ -29,7 +34,7 @@ in
 
     iconTheme = {
       name    = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      package = customPapirusIcons;
     };
 
     # ── GTK3 Named Color Overrides ─────────────────────────────────────────────
