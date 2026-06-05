@@ -25,10 +25,6 @@
         beam-thickness = "1.5";
       };
 
-      mouse = {
-          scroll_multiplier = 1.0;
-      };
-
       # Terminal background transparency
       colors-dark = {
         alpha = "0.78";
