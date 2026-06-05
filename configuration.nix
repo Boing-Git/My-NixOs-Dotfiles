@@ -28,6 +28,8 @@ in
       ./modules/programs.nix
     ];
 
+  home-manager.backupFileExtension = "bak";
+  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

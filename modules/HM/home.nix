@@ -8,9 +8,6 @@
   # 1. Update this to match your system generation release!
   home.stateVersion = "26.11"; 
 
-  # 2. This is now perfectly valid because stateVersion is >= 24.11
-  home.backupFileExtension = "bak"; 
-
   # Force home-manager to scrub conflicting icons injected by external shell modules
   home.extraBuilderCommands = ''
     rm -rf $out/share/icons/Papirus-Light
