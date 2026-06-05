@@ -11,12 +11,12 @@ let
         owner = "ItsABigIgloo";
         repo = "caelestia-sddm";
         rev = "master"; 
-        sha256 = "sha256-/fUG5xt6Drz8o1cwDbYCMkac5X6hDmieQ02GFSzjNuU="; # Updated with the correct hash
+        sha256 = "sha256-/fUG5xt6Drz8o1cwDbYCMkac5X6hDmieQ02GFSzjNuU="; 
       };
       installPhase = ''
-        mkdir -p $out/share/sddm/themes
-        # Copy the specific variant folder from the repository
-        cp -aR Locklike $out/share/sddm/themes/Locklike
+        mkdir -p $out/share/sddm/themes/Locklike
+        # Copy the contents of the repo directly into the Locklike theme folder
+        cp -aR ./. $out/share/sddm/themes/Locklike
       '';
     };
 in
