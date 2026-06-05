@@ -6,19 +6,19 @@
 
 let
   caelestia-sddm-locklike = pkgs.stdenv.mkDerivation {
-    name = "caelestia-sddm-locklike";
-    src = pkgs.fetchFromGitHub {
-      owner = "ItsABigIgloo";
-      repo = "caelestia-sddm";
-      rev = "master"; 
-      sha256 = "sha256-RCHzH8WjD7r/z2jG6LqN8P9KqPux3P0mXbYJ002n4F8="; 
+      name = "caelestia-sddm-locklike";
+      src = pkgs.fetchFromGitHub {
+        owner = "ItsABigIgloo";
+        repo = "caelestia-sddm";
+        rev = "master"; 
+        sha256 = "sha256-/fUG5xt6Drz8o1cwDbYCMkac5X6hDmieQ02GFSzjNuU="; # Updated with the correct hash
+      };
+      installPhase = ''
+        mkdir -p $out/share/sddm/themes
+        # Copy the specific variant folder from the repository
+        cp -aR Locklike $out/share/sddm/themes/Locklike
+      '';
     };
-    installPhase = ''
-      mkdir -p $out/share/sddm/themes
-      # Copy the specific variant folder from the repository
-      cp -aR Locklike $out/share/sddm/themes/Locklike
-    '';
-  };
 in
 
 {
