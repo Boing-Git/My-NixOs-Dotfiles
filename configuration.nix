@@ -4,6 +4,24 @@
 
 { config, pkgs, inputs, ... }:
 
+let
+  caelestia-sddm-locklike = pkgs.stdenv.mkDerivation {
+    name = "caelestia-sddm-locklike";
+    src = pkgs.fetchFromGitHub {
+      owner = "ItsABigIgloo";
+      repo = "caelestia-sddm";
+      rev = "master"; # Or a specific commit hash for absolute reproducibility
+      sha256 = "sha256-0000000000000000000000000000000000000000000="; # Run nixos-rebuild to get the correct hash
+    };
+    installPhase = ''
+      mkdir -p $out/share/sddm/themes
+      # Copy the specific variant folder from the repository
+      cp -aR Locklike $out/share/sddm/themes/Locklike
+    '';
+  };
+in
+{
+
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -19,6 +37,16 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  fonts.packages = [ pkgs.rubik-hz ];
+
+  services.displayManager.sddm = {
+    enable = true;
+    # Force Wayland backend instead of X11 if you prefer
+    wayland.enable = true; 
+    # Point the theme path directly to the built derivation folder
+    theme = "${caelestia-sddm-locklike}/share/sddm/themes/Locklike";
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
