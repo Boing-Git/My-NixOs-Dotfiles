@@ -6,21 +6,29 @@
 
 let
   caelestia-sddm-locklike = pkgs.stdenv.mkDerivation {
-      name = "caelestia-sddm-locklike";
-      src = pkgs.fetchFromGitHub {
-        owner = "ItsABigIgloo";
-        repo = "caelestia-sddm";
-        rev = "master"; 
-        sha256 = "sha256-/fUG5xt6Drz8o1cwDbYCMkac5X6hDmieQ02GFSzjNuU="; 
-      };
-      installPhase = ''
-        mkdir -p $out/share/sddm/themes/Locklike
-        # Copy the contents of the repo directly into the Locklike theme folder
-        cp -aR ./. $out/share/sddm/themes/Locklike
-      '';
+    name = "caelestia-sddm-locklike";
+    src = pkgs.fetchFromGitHub {
+      owner = "ItsABigIgloo";
+      repo = "caelestia-sddm";
+      rev = "master";
+      sha256 = "sha256-/fUG5xt6Drz8o1cwDbYCMkac5X6hDmieQ02GFSzjNuU=";
     };
-in
+    installPhase = ''
+      mkdir -p $out/share/sddm/themes/Locklike
+      # Copy the contents of the repo directly into the Locklike theme folder
+      cp -aR ./. $out/share/sddm/themes/Locklike
 
+      # Generate the explicit Qt6 metadata declaration required by modern SDDM
+      cat <<EOF > $out/share/sddm/themes/Locklike/metadata.desktop
+      [Desktop Entry]
+      Name=Locklike
+      Type=sddm-theme
+      ConfigFile=theme.conf
+      QtVersion=6
+      EOF
+    '';
+  };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -40,11 +48,11 @@ in
   # Display Manager Configuration
   services.displayManager.sddm = {
     enable = true;
-    wayland.enable = true; 
-    
+    wayland.enable = true;
+
     # Point to the string name of the theme directory.
     theme = "Locklike";
-    
+
     # REMOVED: kdePackages.qtgraphicaleffects (Obsolete in Qt6/KDE6)
     extraPackages = with pkgs; [
       kdePackages.qt5compat
@@ -57,7 +65,7 @@ in
 
   hardware.steam-hardware.enable = true;
 
-  # Nix experimental features 
+  # Nix experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable networking
