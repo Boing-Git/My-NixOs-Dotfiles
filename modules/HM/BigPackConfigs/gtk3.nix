@@ -1,64 +1,60 @@
 { config, pkgs, ... }:
 
-let
-  # Define your color palette variables here. 
-  # (Example hex values provided below match a standard dark palette like Catppuccin Mocha)
-  colors = {
-    base     = "#0000e8"; 
-    text     = "#cdd6f4";
-    primary  = "#6305d5";
-    surface0 = "#313244";
-    surface1 = "#45475a";
-    yellow   = "#f9e2af";
-    error    = "#f38ba8";
-    success  = "#a6e3a1";
-  };
-in
 {
   gtk = {
     enable = true;
     
-    gtk3.extraCss = ''
-      @define-color window_bg_color ${colors.base};                /* The main background color used on GtkWindow */
-      @define-color window_fg_color ${colors.text};                /* The main foreground text color */
-      @define-color view_bg_color ${colors.base};                  /* A secondary background color used in icon views, text fields, etc */
-      @define-color view_fg_color ${colors.text};                  /* Secondary foreground text color */
-      @define-color accent_bg_color ${colors.primary};             /* Color to indicate that a widget is important, interactive, or currently active */
-      @define-color accent_fg_color ${colors.text};                /* Color for text over widgets using accent_bg_color */
-      @define-color accent_color ${colors.primary};                /* Mostly used for text labels. Can be the same as accent_bg_color */
-      @define-color headerbar_bg_color ${colors.base};             /* The headerbar background */
-      @define-color headerbar_fg_color ${colors.text};             /* The headerbar foreground text color */
-      @define-color headerbar_backdrop_color ${colors.base};       /* The headerbar backdrop state background */
-      @define-color headerbar_border_color ${colors.surface0};     /* Currently not used in adw-gtk3 */
-      @define-color headerbar_shade_color ${colors.surface0};      /* The bottom border of the headerbar */
-      @define-color card_bg_color ${colors.base};                  /* The background color of lists */
-      @define-color card_fg_color ${colors.text};                  /* The text color on libhandy lists */
-      @define-color card_shade_color ${colors.surface0};           /* List borders */
-      @define-color popover_bg_color ${colors.surface0};           /* The background color of popovers and menus */
-      @define-color popover_fg_color ${colors.text};               /* The text color on popovers */
-      @define-color dialog_bg_color ${colors.base};                /* The background color of message dialogs */
-      @define-color dialog_fg_color ${colors.text};                /* The foreground color of message dialogs */
-      @define-color sidebar_bg_color ${colors.base};               /* Sidebar background color */
-      @define-color sidebar_fg_color ${colors.text};               /* Sidebar foreground color */
-      @define-color sidebar_backdrop_color ${colors.base};         /* Sidebar backdrop background color */
-      @define-color sidebar_shade_color ${colors.surface0};        /* Sidebar shade color */
+    # Ensures a clean baseline theme for the overrides to hook into
+    theme = {
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
+    };
 
-      @define-color warning_bg_color ${colors.surface1};           /* Background for widgets and elements that show a warning */
-      @define-color warning_fg_color ${colors.yellow};             /* Foreground for widgets and elements that show a warning */
-      @define-color warning_color ${colors.surface1};              /* Warning text label */
-      @define-color error_bg_color ${colors.surface1};             /* Background for widgets and elements that show an error */
-      @define-color error_fg_color ${colors.error};                /* Foreground for widgets and elements that show an error */
-      @define-color error_color ${colors.surface1};                /* Error text label */
-      @define-color success_bg_color ${colors.surface1};           /* Background for widgets and elements that show a successful action */
-      @define-color success_fg_color ${colors.success};            /* Foreground for widgets and elements that show a successful action */
-      @define-color success_color ${colors.surface1};              /* Success text label */
-      @define-color destructive_bg_color ${colors.error};          /* The destructive color indicates a dangerous action, such as deleting a file */
-      @define-color destructive_fg_color ${colors.text};           /* Destructive foreground color */
-      @define-color destructive_color ${colors.error};             /* Destructive text label */
+    gtk3.extraCss = ''
+      /* 1. Dynamic Bridge: Import Caelestia's active wallpaper palette */
+      @import url("colors.css");
+
+      /* 2. Style Mappings: Native GTK '@' variables evaluated at runtime */
+      @define-color window_bg_color @base;                
+      @define-color window_fg_color @text;                
+      @define-color view_bg_color @base;                  
+      @define-color view_fg_color @text;                  
+      @define-color accent_bg_color @primary;             
+      @define-color accent_fg_color @text;                
+      @define-color accent_color @primary;                
+      @define-color headerbar_bg_color @base;             
+      @define-color headerbar_fg_color @text;             
+      @define-color headerbar_backdrop_color @base;       
+      @define-color headerbar_border_color @surface0;     
+      @define-color headerbar_shade_color @surface0;      
+      @define-color card_bg_color @base;                  
+      @define-color card_fg_color @text;                  
+      @define-color card_shade_color @surface0;           
+      @define-color popover_bg_color @surface0;           
+      @define-color popover_fg_color @text;               
+      @define-color dialog_bg_color @base;                
+      @define-color dialog_fg_color @text;                
+      @define-color sidebar_bg_color @base;               
+      @define-color sidebar_fg_color @text;               
+      @define-color sidebar_backdrop_color @base;         
+      @define-color sidebar_shade_color @surface0;        
+
+      @define-color warning_bg_color @surface1;           
+      @define-color warning_fg_color @yellow;             
+      @define-color warning_color @surface1;              
+      @define-color error_bg_color @surface1;             
+      @define-color error_fg_color @error;                
+      @define-color error_color @surface1;                
+      @define-color success_bg_color @surface1;           
+      @define-color success_fg_color @success;            
+      @define-color success_color @surface1;              
+      @define-color destructive_bg_color @error;          
+      @define-color destructive_fg_color @text;           
+      @define-color destructive_color @error;             
 
       /* Custom colors (GTK3 only) */
-      @define-color panel_bg_color ${colors.base};                 /* Background for XFCE4 panel */
-      @define-color panel_fg_color ${colors.text};                 /* Foreground for XFCE4 panel */
+      @define-color panel_bg_color @base;                 
+      @define-color panel_fg_color @text;                 
     '';
   };
 }
