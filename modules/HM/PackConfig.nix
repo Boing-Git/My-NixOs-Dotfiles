@@ -59,7 +59,7 @@
     package = pkgs.vscodium; # Or pkgs.vscode
     extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
-      rubymaniac.vscode-direnv
+      mkhl.direnv
       eamodio.gitlens
     ];
   };
