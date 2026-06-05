@@ -151,7 +151,7 @@ in
   # Add this to configuration.nix to ensure fonts are globally recognized
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-    rubik-hz
+    google-fonts
   ];
 
 
