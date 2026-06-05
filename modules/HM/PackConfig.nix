@@ -50,22 +50,6 @@
     colorScheme = "RosePine";
   };
 
-  xdg.configFile."hypr/hyprcorners.toml".source = (pkgs.formats.toml {}).generate "hyprcorners-config" {
-    options = {
-      sensitivity = 10;
-    };
-
-    hot_corners = [
-      {
-        corner = "top_left";
-        command = "hyprctl dispatch togglegroup";
-      }
-      {
-        corner = "top_right";
-        command = "kitty";
-      }
-    ];
-  };
   # Bulk enabling programs
   programs = {
     home-manager.enable = true;
