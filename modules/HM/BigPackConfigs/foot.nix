@@ -23,7 +23,9 @@
       cursor = {
         style = "underline";
       };
-
+      mouse = {
+        scroll-multiplier = 1.00;
+      };
       # Terminal background transparency
       colors-dark = {
         alpha = "0.78";
@@ -40,5 +42,6 @@
         find-next = "F3 Control+G";
       };
     };
+
   };
 } 

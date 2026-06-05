@@ -9,8 +9,8 @@
   home.extraBuilderCommands = ''
     rm -rf $out/share/icons/Papirus-Light
   '';
-
-
+  # ADD THIS LINE: It automatically renames conflicting files to filename.css.bak
+  backupFileExtension = "bak"; 
 
   # Importing external modules and my own config files
   imports = [
