@@ -62,6 +62,7 @@
     cairo
     pango
     gobject-introspection
+    hyprcorners
 
     (python3.withPackages (ps: with ps; [
       tkinter
