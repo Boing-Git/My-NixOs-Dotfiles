@@ -37,6 +37,11 @@
     };
   };
 
+  home.activation.clearStaleBackups = lib.hm.dag.entryBefore ["checkLinkTargets"] ''
+    $DRY_RUN_CMD rm -f $HOME/.config/gtk-3.0/gtk.css.hm-backup
+    $DRY_RUN_CMD rm -f $HOME/.config/gtk-4.0/gtk.css.hm-backup
+  '';
+
   # Setting the user cursor globally for GTK and X11
   home.pointerCursor = {
     name = "GoogleDot-Black";
