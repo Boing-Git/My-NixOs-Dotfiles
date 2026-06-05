@@ -62,7 +62,6 @@
     dejavu_fonts
     matugen
     prismlauncher
-    neowofetch
   ];
 
   # User level environment variables
