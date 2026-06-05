@@ -20,7 +20,6 @@ let
     '';
   };
 in
-{
 
 {
   imports =
@@ -37,8 +36,6 @@ in
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  fonts.packages = [ pkgs.rubik-hz ];
 
   services.displayManager.sddm = {
     enable = true;
@@ -154,6 +151,7 @@ in
   # Add this to configuration.nix to ensure fonts are globally recognized
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    rubik-hz
   ];
 
 
