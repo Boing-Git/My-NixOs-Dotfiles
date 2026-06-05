@@ -46,20 +46,23 @@ in
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Display Manager Configuration
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
+  services.displayManager = {
+    sddm = {
+     enable = true;
+     wayland.enable = false;
+     defaultSession = "hyprland";
 
-    # Point to the string name of the theme directory.
-    theme = "Locklike";
+     # Point to the string name of the theme directory.
+     theme = "Locklike";
 
-    # REMOVED: kdePackages.qtgraphicaleffects (Obsolete in Qt6/KDE6)
-    extraPackages = with pkgs; [
-      kdePackages.qt5compat
-      kdePackages.qtsvg
-      kdePackages.qtdeclarative
-    ];
-  };
+     # REMOVED: kdePackages.qtgraphicaleffects (Obsolete in Qt6/KDE6)
+     extraPackages = with pkgs; [
+       kdePackages.qt5compat
+       kdePackages.qtsvg
+       kdePackages.qtdeclarative
+     ];
+   };
+ };
 
   networking.hostName = "nixos"; # Define your hostname.
 
