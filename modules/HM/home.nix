@@ -5,9 +5,11 @@
   home.username = "boing";
   home.homeDirectory = "/home/boing";
   home.stateVersion = "24.05";
-  # Tell Home Manager to merge duplicate path contents instead of throwing exit 255
-  home.enableDebugInfo = false;
-  xdg.enable = true;
+  # Force home-manager to scrub conflicting icons injected by external shell modules
+  home.extraBuilderCommands = ''
+    rm -rf $out/share/icons/Papirus-Light
+  '';
+
 
 
   # Importing external modules and my own config files
