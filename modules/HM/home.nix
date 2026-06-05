@@ -48,6 +48,7 @@
     dejavu_fonts
     matugen
     prismlauncher
+    hyprpicker
   ];
 
   # User level environment variables

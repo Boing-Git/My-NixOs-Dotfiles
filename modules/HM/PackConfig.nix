@@ -29,11 +29,12 @@
   programs.git = {
     enable = true;
     settings = {
-      userName = "Boingly";
-      userEmail = "BoingDoing@gmail.com";
-      extraConfig = {
-        init.defaultBranch = "main";
+      user = {
+        name  = "Boingly";
+        email = "BoingDoing@gmail.com";
       };
+      # Flatten extraConfig: pull its contents directly into settings
+      init.defaultBranch = "main";
     };
   };
 
