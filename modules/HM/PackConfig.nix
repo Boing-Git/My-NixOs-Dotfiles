@@ -65,8 +65,8 @@
         eamodio.gitlens
         vscodevim.vim
         mvllow.rose-pine
-        # Use quotes around hyphenated attribute naming paths
-        "thang-nm".rose-pine-lab-vscode 
+        # Clean direct attribute name handled by nixpkgs:
+        rose-pine-lab-vscode 
       ];
     };
   };
