@@ -21,8 +21,7 @@
       };
       # Thin beam cursor instead of block
       cursor = {
-        style = "beam";
-        beam-thickness = "1.5";
+        style = "underline";
       };
 
       # Terminal background transparency
