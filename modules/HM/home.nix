@@ -1,16 +1,47 @@
 # Providing things to do stuff with
 { config, pkgs, lib, inputs, ... }:
+
 {
   # Who I am and what home manager needs to know about me
-  home.username = "boing";
-  home.homeDirectory = "/home/boing";
-  home.stateVersion = "24.05";
-  # Force home-manager to scrub conflicting icons injected by external shell modules
-  home.extraBuilderCommands = ''
-    rm -rf $out/share/icons/Papirus-Light
-  '';
-  # ADD THIS LINE: It automatically renames conflicting files to filename.css.bak
-  backupFileExtension = "bak"; 
+  home = {
+    username = "boing";
+    homeDirectory = "/home/boing";
+    stateVersion = "24.05";
+    
+    # This automatically renames conflicting files to filename.css.bak
+    backupFileExtension = "bak"; 
+
+    # Force home-manager to scrub conflicting icons injected by external shell modules
+    extraBuilderCommands = ''
+      rm -rf $out/share/icons/Papirus-Light
+    '';
+
+    # Setting the user cursor globally for GTK and X11
+    pointerCursor = {
+      name = "GoogleDot-Black";
+      package = pkgs.google-cursor;
+      size = 24;
+      gtk.enable = true;
+      x11.enable = true;
+    };
+
+    # User level packages installed into my profile
+    packages = with pkgs; [
+      fastfetch
+      pavucontrol
+      vscodium
+      google-cursor
+      dejavu_fonts
+      matugen
+      prismlauncher
+      hyprpicker
+    ];
+
+    # User level environment variables
+    sessionVariables = {
+      EDITOR = "codium";
+    };
+  };
 
   # Importing external modules and my own config files
   imports = [
@@ -34,31 +65,5 @@
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/share/caelestia/btop";
       force = true;
     };
-  };
-
-  # Setting the user cursor globally for GTK and X11
-  home.pointerCursor = {
-    name = "GoogleDot-Black";
-    package = pkgs.google-cursor;
-    size = 24;
-    gtk.enable = true;
-    x11.enable = true;
-  };
-
-  # User level packages installed into my profile
-  home.packages = with pkgs; [
-    fastfetch
-    pavucontrol
-    vscodium
-    google-cursor
-    dejavu_fonts
-    matugen
-    prismlauncher
-    hyprpicker
-  ];
-
-  # User level environment variables
-  home.sessionVariables = {
-    EDITOR = "codium";
   };
 }
