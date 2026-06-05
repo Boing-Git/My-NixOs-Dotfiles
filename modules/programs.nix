@@ -9,11 +9,10 @@ let
       owner = "ArnoDarkrose";
       repo = "hyprcorners";
       rev = "master";
-      # We use lib.fakeHash to force Nix to evaluate and give us the real hash
-      hash = pkgs.lib.fakeHash;
+      hash = "sha256-Wk5lAMmb+caXo8mZTApOpuQia0zEVuZOrhGdL8rUrpQ=";
     };
 
-    cargoHash = pkgs.lib.fakeHash;
+    cargoHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
   };
 in
 
