@@ -37,36 +37,35 @@ in
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Display Manager Configuration
   services.displayManager.sddm = {
     enable = true;
-    # Force Wayland backend instead of X11 if you prefer
     wayland.enable = true; 
-    # Point the theme path directly to the built derivation folder
-    theme = "${caelestia-sddm-locklike}/share/sddm/themes/Locklike";
+    
+    # FIX 1: Point to the string name of the theme directory.
+    theme = "Locklike";
+    
+    # FIX 2: Inject mandatory Qt packages so the custom Caelestia theme can render 
+    # instead of crashing into the purple/black fallback text interface.
+    extraPackages = with pkgs; [
+      kdePackages.qtgraphicaleffects
+      kdePackages.qt5compat
+      kdePackages.qtsvg
+      kdePackages.qtdeclarative
+    ];
   };
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   hardware.steam-hardware.enable = true;
 
-  #Nix experimental features 
+  # Nix experimental features 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
   # Enable bluetooth
   hardware.bluetooth.enable = true;
-
-  # 1. Fix the Graphics crash (glXChooseVisual and Vulkan errors)
-  hardware.graphics = {
-    # CRITICAL: Installs 32-bit drivers so Steam can draw its UI
-    enable32Bit = true; 
-  };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -87,12 +86,7 @@ in
   };
 
   # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  # services.displayManager.sddm.enable = true;
-  # services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -113,28 +107,29 @@ in
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
-  # System requirements and user applications
+  # System packages
   environment.systemPackages = with pkgs; [
     git
+    caelestia-sddm-locklike # FIX 3: Global registration so SDDM can locate the assets in the system path
   ];
+
+  # FIX 4: Nvidia + Wayland Environment Variables to prevent Hyprland black screen crashes
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_HWP = "1"; # Forces electron apps like VS Code/Discord to run natively on Wayland
+    GBM_BACKEND = "nvidia-drm";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    LIBVA_DRIVER_NAME = "nvidia";
+  };
 
   system.activationScripts.papirusFolders = {
     text = "true";
     deps = [];
   };
-  
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account.
   users.users."boing" = {
     shell = pkgs.fish;
     isNormalUser = true;
@@ -142,27 +137,23 @@ in
     extraGroups = [ "networkmanager" "wheel" "video" "dialout" "plugdev" "input"];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
     ];
   };
 
-  # Add this to configuration.nix to ensure fonts are globally recognized
+  # Fonts configuration
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     google-fonts
   ];
 
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  # Nvidia Configuration
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true; # Critical for 32-bit apps and gaming UI layers
+  };
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -173,28 +164,12 @@ in
     nvidiaPersistenced = true;
   };
   
-  # Ensure the proprietary driver is explicitly chosen
   services.xserver.videoDrivers = [ "nvidia" ];
-
-  # Ensure hardware graphics are fully enabled
-  hardware.graphics.enable = true;
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   networking.firewall = {
     enable = true;
     allowedUDPPorts = [ 5353 4048 ];
   };
 
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "26.05"; # Did you read the comment?
+  system.stateVersion = "26.05"; 
 }
