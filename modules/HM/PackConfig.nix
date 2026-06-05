@@ -10,7 +10,7 @@
   imports = [
     ./BigPackConfigs/starship.nix
     ./BigPackConfigs/foot.nix
-    ./BigPackConfigs/gtk3.nix
+    ./BigPackConfigs/gtk.nix
   ];
 
   # Caelestia shell and CLI - the main desktop environment
