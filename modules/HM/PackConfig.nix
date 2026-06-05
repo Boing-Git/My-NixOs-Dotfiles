@@ -28,11 +28,13 @@
 
   programs.git = {
     enable = true;
-    userName = "Boingly";
-    userEmail = "BoingDoing@gmail.com";
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
+    settings = {
+      userName = "Boingly";
+      userEmail = "BoingDoing@gmail.com";
+      extraConfig = {
+        init.defaultBranch = "main";
+      };
+    }
   };
 
   # Spicetify - Spotify client customization
