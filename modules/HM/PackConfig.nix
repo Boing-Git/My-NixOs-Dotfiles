@@ -65,7 +65,8 @@
         eamodio.gitlens
         vscodevim.vim
         mvllow.rose-pine
-        thang-nm.rose-pine-lab-vscode # <-- Correct developer prefix for Rose Pine Lab
+        # Use quotes around hyphenated attribute naming paths
+        "thang-nm".rose-pine-lab-vscode 
       ];
     };
   };
