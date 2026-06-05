@@ -5,7 +5,7 @@ let
   # Jivan Singh — Material 3 / Custom dark scheme
   # Single source of truth: change here, propagates everywhere.
   colors = {
-    base     = "#131355";   # deep blue — main window background
+    base     = "#0f0f35";   # deep blue — main window background
     text     = "#cdd6f4";   # soft lavender white — primary text
     primary  = "#6305d5";   # vivid violet — accent / interactive
     surface0 = "#313244";   # dark grey — borders, cards
