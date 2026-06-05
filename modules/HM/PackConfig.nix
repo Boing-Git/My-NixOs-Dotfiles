@@ -59,14 +59,19 @@
     enable = true;
 
     profiles.default = {
-      extensions = with pkgs.vscode-extensions; [
+      extensions = (with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
         mkhl.direnv
         eamodio.gitlens
         vscodevim.vim
         mvllow.rose-pine
-        # Clean direct attribute name handled by nixpkgs:
-        rose-pine-lab-vscode 
+      ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          name = "rose-pine-symbols";
+          publisher = "ravenothere";
+          version = "0.1.0"; # ⚠️ Verify the exact version number in VSCodium
+          sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+        }
       ];
     };
   };
