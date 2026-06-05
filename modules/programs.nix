@@ -1,5 +1,23 @@
 { config, pkgs, inputs, ... }:
 
+
+let
+  hyprcorners = pkgs.rustPlatform.buildRustPackage rec {
+    pname = "hyprcorners";
+    version = "master";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "ArnoDarkrose";
+      repo = "hyprcorners";
+      rev = "master";
+      # We use lib.fakeHash to force Nix to evaluate and give us the real hash
+      hash = pkgs.lib.fakeHash;
+    };
+
+    cargoHash = pkgs.lib.fakeHash;
+  };
+in
+
 {
   # Install firefox.
   programs.firefox.enable = true;
