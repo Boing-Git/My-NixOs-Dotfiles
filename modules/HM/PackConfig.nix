@@ -56,7 +56,6 @@
 
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium; # Or pkgs.vscode
     extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
       mkhl.direnv
