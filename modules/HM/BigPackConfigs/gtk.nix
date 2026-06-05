@@ -34,7 +34,7 @@ in
 
     iconTheme = {
       name    = "Papirus-Dark";
-      package = customPapirusIcons;
+      # package = customPapirusIcons;
     };
 
     # ── GTK3 Named Color Overrides ─────────────────────────────────────────────
@@ -139,5 +139,7 @@ in
     "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'"
     "gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'"
     "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+    "papirus-folders -c teal" # <-- This changes your folder colours instantly on startup!
   ];
+
 }
