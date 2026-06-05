@@ -79,6 +79,7 @@ in
     pango
     gobject-introspection
     hyprcorners
+    caelestia-sddm-locklike
 
     (python3.withPackages (ps: with ps; [
       tkinter
