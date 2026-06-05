@@ -53,14 +53,15 @@ in
      		wayland.enable = false;
 
      # Point to the string name of the theme directory.
-     		theme = "Locklike";
+     	theme = "Locklike";
 
      # REMOVED: kdePackages.qtgraphicaleffects (Obsolete in Qt6/KDE6)
-     		extraPackages = with pkgs; [
-       			kdePackages.qt5compat
-       			kdePackages.qtsvg
-       			kdePackages.qtdeclarative
-	];
+     	extraPackages = with pkgs; [
+       		kdePackages.qt5compat
+       		kdePackages.qtsvg
+       		kdePackages.qtdeclarative
+          caelestia-sddm-locklike
+	  ];
    };
  };
 
@@ -121,7 +122,6 @@ in
   # System packages
   environment.systemPackages = with pkgs; [
     git
-    caelestia-sddm-locklike # FIX 3: Global registration so SDDM can locate the assets in the system path
   ];
 
   # FIX 4: Nvidia + Wayland Environment Variables to prevent Hyprland black screen crashes
