@@ -6,7 +6,7 @@ let
   colors = {
     base     = "#0000e8"; 
     text     = "#cdd6f4";
-    primary  = "#cba6f7";
+    primary  = "#6305d5";
     surface0 = "#313244";
     surface1 = "#45475a";
     yellow   = "#f9e2af";
