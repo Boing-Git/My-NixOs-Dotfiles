@@ -65,6 +65,7 @@
         eamodio.gitlens
         vscodevim.vim
         mvllow.rose-pine
+        mvllow.rose-pine-icons
       ];
     };
   };
