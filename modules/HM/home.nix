@@ -26,7 +26,7 @@
     };
 
     # User level packages installed into my profile
-    packages = with pkgs; [
+    home.packages = with pkgs; [
       fastfetch
       pavucontrol
       vscodium
