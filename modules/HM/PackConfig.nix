@@ -54,25 +54,23 @@
     colorScheme = "RosePine";
   };
 
-  # /home/boing/Nixos/modules/HM/PackConfig.nix
   programs.vscodium = {
-    enable = true;
-
-    profiles.default = {
-      extensions = (with pkgs.vscode-extensions; [
-        jnoortheen.nix-ide
-        mkhl.direnv
-        eamodio.gitlens
-        vscodevim.vim
-        mvllow.rose-pine
-      ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "rose-pine-symbols";
-          publisher = "ravenothere";
-          version = "0.1.0"; # ⚠️ Verify the exact version number in VSCodium
-          sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-        }
-      ];
+      enable = true;
+      package = pkgs.vscodium;
+      
+      profiles.default = {
+        # Use the marketplace attribute set provided by the overlay
+        extensions = with pkgs.vscode-marketplace; [
+          jnoortheen.nix-ide
+          mkhl.direnv
+          eamodio.gitlens
+          vscodevim.vim
+          mvllow.rose-pine
+          
+          # This will now resolve correctly
+          ravenothere.rose-pine-symbols
+        ];
+      };
     };
   };
 

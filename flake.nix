@@ -5,6 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,10 +28,10 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, caelestia-shell, caelestia-cli, spicetify-nix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, caelestia-shell, caelestia-cli, spicetify-nix, nix-vscode-extensions, ... }@inputs:
   let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};  # ← defines pkgs at flake level
+    pkgs = nixpkgs.legacyPackages.${system};
   in
   {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -39,11 +41,14 @@
         ./configuration.nix
         home-manager.nixosModules.home-manager
         {
+          # Apply the VSCode Extensions Overlay
+          nixpkgs.overlays = [ nix-vscode-extensions.overlays.default ];
+
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
             inherit inputs;
-            spicePkgs = spicetify-nix.legacyPackages.${system};  # ← uses system, not pkgs.system
+            spicePkgs = spicetify-nix.legacyPackages.${system};
           };
           home-manager.users.boing = ./modules/HM/home.nix;
           home-manager.backupFileExtension = "hm-backup";
