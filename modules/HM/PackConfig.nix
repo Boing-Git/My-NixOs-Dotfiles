@@ -58,16 +58,16 @@
   programs.vscodium = {
     enable = true;
 
-    extensions = with pkgs.vscode-extensions; [
-      jnoortheen.nix-ide
-      mkhl.direnv
-      eamodio.gitlens
-      vscodevim.vim
-      mvllow.rose-pine
-    ];
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+        mkhl.direnv
+        eamodio.gitlens
+        vscodevim.vim
+        mvllow.rose-pine
+      ];
+    };
   };
-
-
 
   # Bulk enabling programs
   programs = {
