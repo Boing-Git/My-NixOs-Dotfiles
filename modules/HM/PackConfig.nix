@@ -72,7 +72,6 @@
         ];
       };
     };
-  };
 
   # Bulk enabling programs
   programs = {
