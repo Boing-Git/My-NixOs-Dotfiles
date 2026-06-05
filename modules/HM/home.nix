@@ -28,8 +28,8 @@
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/share/caelestia/btop";
       force = true;
     };
-    # --- ADD THE HYPRCORNERS GENERATION HERE ---
-    "hypr/hyprcorners.toml".source = (pkgs.formats.toml {}).generate "hyprcorners-config" {
+
+    "hypr/hyprcorners.toml".source = (pkgs.formats.toml {}).generate "hyprcorners-cfg" {
       options = {
         sensitivity = 10;
       };
