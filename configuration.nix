@@ -10,8 +10,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "ItsABigIgloo";
       repo = "caelestia-sddm";
-      rev = "master"; # Or a specific commit hash for absolute reproducibility
-      sha256 = "sha256-0000000000000000000000000000000000000000000="; # Run nixos-rebuild to get the correct hash
+      rev = "master"; 
+      sha256 = "sha256-RCHzH8WjD7r/z2jG6LqN8P9KqPux3P0mXbYJ002n4F8="; 
     };
     installPhase = ''
       mkdir -p $out/share/sddm/themes
