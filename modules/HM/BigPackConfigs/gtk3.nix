@@ -4,7 +4,7 @@ let
   # Define your color palette variables here. 
   # (Example hex values provided below match a standard dark palette like Catppuccin Mocha)
   colors = {
-    base     = "#1e1e2e"; 
+    base     = "#0000e8"; 
     text     = "#cdd6f4";
     primary  = "#cba6f7";
     surface0 = "#313244";
