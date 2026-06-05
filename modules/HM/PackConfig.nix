@@ -65,7 +65,7 @@
         eamodio.gitlens
         vscodevim.vim
         mvllow.rose-pine
-        ravenothere.rose-pine-icons
+        thang-nm.rose-pine-lab-vscode # <-- Correct developer prefix for Rose Pine Lab
       ];
     };
   };
