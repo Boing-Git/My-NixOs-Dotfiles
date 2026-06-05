@@ -47,20 +47,20 @@ in
 
   # Display Manager Configuration
   services.displayManager = {
-    sddm = {
-     enable = true;
-     wayland.enable = false;
-     defaultSession = "hyprland";
+	defaultSession = "hyprland";
+    	sddm = {
+     		enable = true;
+     		wayland.enable = false;
 
      # Point to the string name of the theme directory.
-     theme = "Locklike";
+     		theme = "Locklike";
 
      # REMOVED: kdePackages.qtgraphicaleffects (Obsolete in Qt6/KDE6)
-     extraPackages = with pkgs; [
-       kdePackages.qt5compat
-       kdePackages.qtsvg
-       kdePackages.qtdeclarative
-     ];
+     		extraPackages = with pkgs; [
+       			kdePackages.qt5compat
+       			kdePackages.qtsvg
+       			kdePackages.qtdeclarative
+	];
    };
  };
 
