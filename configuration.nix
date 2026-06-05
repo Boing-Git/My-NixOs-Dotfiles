@@ -127,15 +127,10 @@ in
   ];
 
   system.activationScripts.papirusFolders = {
-    text = ''
-      "${pkgs.papirus-folders}/bin/papirus-folders"
-    '';
+    text = "true";
     deps = [];
   };
   
-  # Force-disable the broken upstream papirus icon activation script
-  system.activationScripts.papirusFolders.text = lib.mkForce "true";
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 

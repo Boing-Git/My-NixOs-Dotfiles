@@ -18,13 +18,11 @@
       # How far back I can scroll in the terminal
       scrollback = {
         lines = 10000;
+        multiplier = 1.00;
       };
       # Thin beam cursor instead of block
       cursor = {
         style = "underline";
-      };
-      mouse = {
-        scroll-multiplier = 1.00;
       };
       # Terminal background transparency
       colors-dark = {
