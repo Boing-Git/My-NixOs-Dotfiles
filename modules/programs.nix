@@ -1,6 +1,5 @@
 { config, pkgs, inputs, ... }:
 
-
 let
   hyprcorners = pkgs.rustPlatform.buildRustPackage rec {
     pname = "hyprcorners";
