@@ -56,7 +56,6 @@
   home.packages = with pkgs; [
     fastfetch
     pavucontrol
-    nemo
     vscodium
     google-cursor
     dejavu_fonts
