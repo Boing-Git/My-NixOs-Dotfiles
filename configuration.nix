@@ -42,13 +42,11 @@ in
     enable = true;
     wayland.enable = true; 
     
-    # FIX 1: Point to the string name of the theme directory.
+    # Point to the string name of the theme directory.
     theme = "Locklike";
     
-    # FIX 2: Inject mandatory Qt packages so the custom Caelestia theme can render 
-    # instead of crashing into the purple/black fallback text interface.
+    # REMOVED: kdePackages.qtgraphicaleffects (Obsolete in Qt6/KDE6)
     extraPackages = with pkgs; [
-      kdePackages.qtgraphicaleffects
       kdePackages.qt5compat
       kdePackages.qtsvg
       kdePackages.qtdeclarative
