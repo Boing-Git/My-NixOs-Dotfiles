@@ -18,7 +18,7 @@
   xdg.configFile = {
     "hypr" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/share/caelestia/hypr";
-      force = true;
+      force = false;
     };
      "fastfetch" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/share/caelestia/fastfetch/My-Fastfetch";
