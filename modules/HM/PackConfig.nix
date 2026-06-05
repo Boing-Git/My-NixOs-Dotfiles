@@ -50,6 +50,25 @@
     colorScheme = "RosePine";
   };
 
+    home.file.".config/hypr/hyprcorners.toml".text = ''
+    # hyprcorners configuration
+
+    [options]
+    # Sensitivity of the corner detection
+    sensitivity = 10
+
+    # Hot corner definitions
+    [[hot_corners]]
+    corner = "top_left"
+    # This triggers the Hyprland overview (if you have it configured)
+    command = "hyprctl dispatch togglegroup"
+
+    [[hot_corners]]
+    corner = "top_right"
+    # Example: Launch a terminal
+    command = "kitty"
+    '';
+
   # Bulk enabling programs
   programs = {
     home-manager.enable = true;
