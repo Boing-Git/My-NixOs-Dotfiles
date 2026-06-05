@@ -39,19 +39,6 @@
     x11.enable = true;
   };
 
-  # GTK theme, icons and cursor
-  gtk = {
-    enable = true;
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
-    };
-    cursorTheme = {
-      name = "GoogleDot-Black";
-      package = pkgs.google-cursor;
-    };
-  };
-
   # User level packages installed into my profile
   home.packages = with pkgs; [
     fastfetch
