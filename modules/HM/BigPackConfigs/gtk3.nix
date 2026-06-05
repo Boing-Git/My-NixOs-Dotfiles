@@ -7,7 +7,7 @@
     enable = true;
 
     theme = {
-      name    = "adw-gtk3-dark";
+      name    = "breeze";
       package = pkgs.adw-gtk3;
     };
 
