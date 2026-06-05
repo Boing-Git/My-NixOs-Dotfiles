@@ -54,17 +54,19 @@
     colorScheme = "RosePine";
   };
 
-  programs.vscode = {
+  # /home/boing/Nixos/modules/HM/PackConfig.nix
+  programs.vscodium = {
     enable = true;
+
     extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
       mkhl.direnv
       eamodio.gitlens
-      # Newly added from your sidebar list:
       vscodevim.vim
       mvllow.rose-pine
     ];
   };
+
 
 
   # Bulk enabling programs
