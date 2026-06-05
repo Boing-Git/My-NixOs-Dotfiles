@@ -28,22 +28,6 @@
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/share/caelestia/btop";
       force = true;
     };
-
-    "hypr/hyprcorners.toml".source = (pkgs.formats.toml {}).generate "hyprcorners-cfg" {
-      options = {
-        sensitivity = 10;
-      };
-      hot_corners = [
-        {
-          corner = "top_left";
-          command = "hyprctl dispatch togglegroup";
-        }
-        {
-          corner = "top_right";
-          command = "kitty";
-        }
-      ];
-    };
   };
 
   # Setting the user cursor globally for GTK and X11
