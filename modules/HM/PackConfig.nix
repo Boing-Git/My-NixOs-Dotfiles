@@ -74,6 +74,7 @@
       userSettings = {
         "workbench.colorTheme" = "Rosé Pine";
         "workbench.iconTheme" = "rose-pine-symbols";
+        "workbench.statusBar.visible": false
       };
     };
   };
