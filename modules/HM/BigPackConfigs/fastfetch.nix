@@ -210,10 +210,6 @@ in
   # If you are using Pattern B (NixOS module) and your nixos config already
   # sets `users.users.jivan.home = "/home/jivan"`, you STILL need these here —
   # NixOS user options and Home Manager home options are separate option sets.
-
-  home.username    = "jivan";           # ← change to your username
-  home.homeDirectory = "/home/jivan";   # ← change to match
-
   # ============================================================================
   # DEPENDENCY: Nerd Fonts
   # ============================================================================
