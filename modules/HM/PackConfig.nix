@@ -71,6 +71,12 @@
           ravenothere.rose-pine-symbols
         ];
       };
+
+    # Add this block to force-enable the theme
+    userSettings = {
+        "workbench.colorTheme" = "Rosé Pine";
+        "workbench.iconTheme" = "rose-pine-symbols";
+      };
     };
 
   # Bulk enabling programs
