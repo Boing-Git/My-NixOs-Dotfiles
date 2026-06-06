@@ -14,9 +14,17 @@ let
       # Create the destination directory
       mkdir -p $out/share/sddm/themes/Locklike
       
-      # Copy contents of the 'Locklike' folder from the source to the output
-      # Use the source root (which is usually '.')
-      cp -aR Locklike/. $out/share/sddm/themes/Locklike/
+      # The theme files are at the root of the repo, so we copy everything in the current directory (.)
+      cp -aR . $out/share/sddm/themes/Locklike/
+
+      # Generate the explicit Qt6 metadata declaration required by modern SDDM
+      cat <<EOF > $out/share/sddm/themes/Locklike/metadata.desktop
+      [Desktop Entry]
+      Name=Locklike
+      Type=sddm-theme
+      ConfigFile=theme.conf
+      QtVersion=6
+      EOF
     '';
   };
 in
