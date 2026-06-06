@@ -11,13 +11,10 @@ let
     };
     dontBuild = true;
     installPhase = ''
-      # Create the destination directory
       mkdir -p $out/share/sddm/themes/Locklike
       
-      # The theme files are at the root of the repo, so we copy everything in the current directory (.)
       cp -aR . $out/share/sddm/themes/Locklike/
 
-      # Generate the explicit Qt6 metadata declaration required by modern SDDM
       cat <<EOF > $out/share/sddm/themes/Locklike/metadata.desktop
       [Desktop Entry]
       Name=Locklike
@@ -45,15 +42,18 @@ in
     defaultSession = "hyprland";
     sddm = {
       enable = true;
-      # Using Wayland is recommended for modern themes
       wayland.enable = true; 
       theme = "Locklike";
-      # You must add the theme to extraPackages so SDDM can find the files
+      
+      # Added missing Qt Quick Controls, Wayland modules, and base icons
       extraPackages = [
         caelestia-sddm-locklike
         pkgs.kdePackages.qt5compat
         pkgs.kdePackages.qtsvg
         pkgs.kdePackages.qtdeclarative
+        pkgs.kdePackages.qtwayland
+        pkgs.kdePackages.qqc2-desktop-style
+        pkgs.kdePackages.breeze-icons
       ];
     };
   };
@@ -83,7 +83,7 @@ in
   # System Environment
   environment.systemPackages = [ 
     pkgs.git
-    caelestia-sddm-locklike # Also available in system path
+    caelestia-sddm-locklike 
     pkgs.kdePackages.kate 
   ];
 
@@ -103,8 +103,16 @@ in
     extraGroups = [ "networkmanager" "wheel" "video" "dialout" "plugdev" "input" ];
   };
 
-  # Fonts & Misc
-  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono google-fonts ];
+  # Fonts & Misc (Added Caelestia's mandatory font dependencies)
+  fonts.packages = with pkgs; [ 
+    nerd-fonts.jetbrains-mono 
+    nerd-fonts.cascadia-code
+    material-symbols
+    roboto
+    rubik
+    google-fonts 
+  ];
+
   nixpkgs.config.allowUnfree = true;
   services.printing.enable = true;
   services.pipewire = {
