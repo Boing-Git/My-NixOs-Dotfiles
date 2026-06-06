@@ -103,10 +103,10 @@ in
     extraGroups = [ "networkmanager" "wheel" "video" "dialout" "plugdev" "input" ];
   };
 
-  # Fonts & Misc (Added Caelestia's mandatory font dependencies)
+  # Fonts & Misc (Fixed Caelestia's mandatory font dependencies)
   fonts.packages = with pkgs; [ 
     nerd-fonts.jetbrains-mono 
-    nerd-fonts.cascadia-code
+    nerd-fonts.caskaydia-cove # Changed to the correct Nixpkgs attribute
     material-symbols
     roboto
     rubik
