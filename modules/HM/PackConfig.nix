@@ -55,29 +55,30 @@
   };
 
   programs.vscodium = {
-      enable = true;
-      package = pkgs.vscodium;
-      
-      profiles.default = {
-        # Use the marketplace attribute set provided by the overlay
-        extensions = with pkgs.vscode-marketplace; [
-          jnoortheen.nix-ide
-          mkhl.direnv
-          eamodio.gitlens
-          vscodevim.vim
-          mvllow.rose-pine
-          
-          # This will now resolve correctly
-          ravenothere.rose-pine-symbols
-        ];
-      };
-
-    # Add this block to force-enable the theme
-    userSettings = {
+    enable = true;
+    package = pkgs.vscodium;
+    
+    profiles.default = {
+      # Use the marketplace attribute set provided by the overlay
+      extensions = with pkgs.vscode-marketplace; [
+        jnoortheen.nix-ide
+        mkhl.direnv
+        eamodio.gitlens
+        vscodevim.vim
+        mvllow.rose-pine
+        
+        # This will now resolve correctly
+        ravenothere.rose-pine-symbols
+      ];
+          # Add this block to force-enable the theme
+      userSettings = {
         "workbench.colorTheme" = "Rosé Pine";
         "workbench.iconTheme" = "rose-pine-symbols";
       };
     };
+  };
+
+
 
   # Bulk enabling programs
   programs = {
