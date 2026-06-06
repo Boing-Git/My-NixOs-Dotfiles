@@ -7,14 +7,64 @@
 # ║  Sections: Identity → Hardware → System → Nix → Environment             ║
 # ╚══════════════════════════════════════════════════════════════════════════╝
 #
-# USAGE
-# ─────
-# In your home.nix or flake outputs:
+# USAGE — READ THIS BEFORE IMPORTING
+# ────────────────────────────────────
 #
-#   imports = [ ./fastfetch.nix ];
+# This file is a Home Manager module.  There are TWO ways to use it, and
+# choosing the wrong one is the most common source of build errors.
 #
-# Or inline in a `home-manager` module attrset by copy-pasting the
-# `programs.fastfetch` block directly.
+# ── PATTERN A: Standalone Home Manager (home-manager switch) ─────────────
+#
+#   Your flake.nix homeConfigurations output:
+#
+#     homeConfigurations."jivan" = home-manager.lib.homeManagerConfiguration {
+#       pkgs = nixpkgs.legacyPackages.x86_64-linux;
+#       modules = [ ./fastfetch.nix ];
+#     };
+#
+#   In this pattern home.username and home.homeDirectory MUST be set either
+#   here or inside fastfetch.nix itself (they are set below).
+#
+# ── PATTERN B: Home Manager as a NixOS module (nixos-rebuild switch) ─────
+#
+#   Your flake.nix nixosConfigurations output:
+#
+#     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+#       modules = [
+#         home-manager.nixosModules.home-manager
+#         {
+#           home-manager.useGlobalPkgs = true;
+#           home-manager.useUserPackages = true;
+#           home-manager.users.jivan = import ./fastfetch.nix;
+#           #                  ^^^^^ must match your actual username
+#         }
+#       ];
+#     };
+#
+#   In Pattern B, home.username and home.homeDirectory are STILL required
+#   inside the HM module — NixOS does NOT inject them automatically.
+#   They are declared below.  Change "jivan" to your actual username if
+#   the username in your system differs from this file's default.
+#
+# WHY home.username / home.homeDirectory ARE MANDATORY
+# ─────────────────────────────────────────────────────
+# Home Manager resolves ALL managed file paths against home.homeDirectory.
+# Internally, `programs.fastfetch` writes its config via:
+#
+#   xdg.configFile."fastfetch/config.jsonc".source = <store-path>;
+#
+# which expands to:
+#
+#   "${config.xdg.configHome}/fastfetch/config.jsonc"
+#   → "${config.home.homeDirectory}/.config/fastfetch/config.jsonc"
+#
+# If home.homeDirectory is the empty string "" (its value when username
+# is also unset), xdg.configHome collapses to ".config" — a relative path.
+# Home Manager's file-installer then rejects it with:
+#
+#   Error installing file '.config/fastfetch/config.jsonc' outside $HOME
+#
+# This is the exact error you hit.  The fix is the two lines below.
 #
 # WHY THIS STRUCTURE?
 # ───────────────────
@@ -143,6 +193,27 @@ let
 
 in
 {
+  # ============================================================================
+  # REQUIRED: HOME IDENTITY  —  must be set or ALL xdg paths break
+  # ============================================================================
+  #
+  # These two lines are the fix for:
+  #   "Error installing file '.config/fastfetch/config.jsonc' outside $HOME"
+  #
+  # Without them, home.homeDirectory defaults to "" (empty string) because
+  # home.username is also empty.  Every managed file path then becomes a
+  # bare relative path like ".config/…" which HM's installer rejects.
+  #
+  # CHANGE "jivan" to match your actual login username.
+  # The homeDirectory must match the real path on disk — check with `echo ~`.
+  #
+  # If you are using Pattern B (NixOS module) and your nixos config already
+  # sets `users.users.jivan.home = "/home/jivan"`, you STILL need these here —
+  # NixOS user options and Home Manager home options are separate option sets.
+
+  home.username    = "jivan";           # ← change to your username
+  home.homeDirectory = "/home/jivan";   # ← change to match
+
   # ============================================================================
   # DEPENDENCY: Nerd Fonts
   # ============================================================================
