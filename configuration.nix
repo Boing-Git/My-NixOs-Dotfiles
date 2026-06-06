@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 let
-  # Corrected derivation: Ensures the theme is installed at the expected path
   caelestia-sddm-locklike = pkgs.stdenv.mkDerivation {
     name = "caelestia-sddm-locklike";
     src = pkgs.fetchFromGitHub {
@@ -12,9 +11,12 @@ let
     };
     dontBuild = true;
     installPhase = ''
-      mkdir -p $out/share/sddm/themes/
-      # The repo contains a folder named 'Locklike', we copy that specific folder
-      cp -aR Locklike $out/share/sddm/themes/Locklike
+      # Create the destination directory
+      mkdir -p $out/share/sddm/themes/Locklike
+      
+      # Copy contents of the 'Locklike' folder from the source to the output
+      # Use the source root (which is usually '.')
+      cp -aR Locklike/. $out/share/sddm/themes/Locklike/
     '';
   };
 in
