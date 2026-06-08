@@ -1,9 +1,8 @@
 { config, pkgs, lib, ... }:
 
 let
-  # The exact, verified local path to your Caelestia extension asset
-  caelestiaVsix = "/home/boing/.local/share/caelestia/vscode/caelestia-vscode-integration/caelestia-vscode-integration-1.2.0.vsix"; 
-  vsixFiles = if builtins.pathExists caelestiaVsix then [ caelestiaVsix ] else [ ];
+  # ◄ Changed from an absolute string to a relative Nix path asset
+  caelestiaVsix = ./caelestia-vscode-integration-1.2.0.vsix; 
 
   caelestia-vscode-integration = pkgs.vscode-utils.buildVscodeExtension {
     name             = "caelestia-vscode-integration";
