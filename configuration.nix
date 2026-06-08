@@ -140,5 +140,14 @@ in
     pulse.enable = true;
   };
 
+  services.udev.extraRules = ''
+  # Disable USB autosuspend for the TUF GAMING M3 Mouse
+  ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", ATTR{idProduct}=="1910", ATTR{power/control}="on"
+
+  # Optional: If it still disconnects, the Hub itself might be the issue.
+  # This targets the QinHeng USB Hub as well:
+  ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="1a86", ATTR{idProduct}=="8095", ATTR{power/control}="on"
+  '';
+
   system.stateVersion = "26.05";
 }
