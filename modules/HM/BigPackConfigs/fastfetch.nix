@@ -4,103 +4,85 @@
   programs.fastfetch = {
     enable = true;
     settings = {
-      display = {
-        separator = "";
-      };
-      modules = [
+        display = {
+          separator = "";
+        };
+        modules = [
         {
           type = "custom";
-          format = "╭───────────────────────────────────╮";
+          format = "┌──────────────────────────────────────┐";
         }
         {
           type = "kernel";
-          key = "│ {#38;5;141}{#37}kernel  {#38;5;141}                     ";
-          format = "{2}│";
+          key = "│ kernel  ";
+          format = "{2:27}│";
         }
         {
           type = "shell";
-          key = "│ {#38;5;141}{#37}shell   {#38;5;141}                       ";
-          format = "{3}│";
+          key = "│ shell   ";
+          format = "{5:27}│";
         }
         {
           type = "title";
-          key = "│ {#38;5;141}{#37}user    {#38;5;141}                      ";
-          format = "{1}│";
-        }
-        {
-          type = "host";
-          key = "│   hname                   ";
-          format = "{2} │";
+          key = "│ user    ";
+          format = "{1:27}│";
         }
         {
           type = "custom";
-          format = "├───────────────────────────────────┤";
+          format = "├──────────────────────────────────────┤";
         }
         {
           type = "cpu";
-          key = "│ {#38;5;245}{#37}cpu     {#38;5;245}        ";
-          format = "{1}│";
+          key = "│ cpu     ";
+          format = "{1:27}│";
         }
         {
           type = "gpu";
-          key = "│ {#38;5;245}{#37}󰍛 gpu     {#38;5;245}      ";
-          format = "{2}│";
+          key = "│ gpu     ";
+          format = "{2:27}│";
         }
         {
           type = "memory";
-          key = "│ {#38;5;183}{#37}mem     {#38;5;183}           ";
-          format = "{1}│";
+          key = "│ mem     ";
+          format = "{1:27}│";
         }
         {
           type = "disk";
-          key = "│ {#38;5;245}{#37}󰋊 disk    {#38;5;245}          ";
-          format = "{1}│";
+          key = "│ disk    ";
+          format = "{1:27}│";
         }
         {
           type = "custom";
-          format = "├───────────────────────────────────┤";
+          format = "├──────────────────────────────────────┤";
         }
         {
           type = "os";
-          key = "│ {#38;5;210}{#37}distro  {#38;5;210}      ";
-          format = "{2} ({12})│";
+          key = "│ distro  ";
+          format = "{2:27}│"; # Pads just 'NixOS' to 27 chars to remove (x86_64)
         }
         {
           type = "wm";
-          key = "│ {#38;5;210}{#37}wm      {#38;5;210}                  ";
-          format = "{2}│";
+          key = "│ wm      ";
+          format = "{1:27}│";
         }
         {
           type = "terminal";
-          key = "│ {#38;5;210}{#37}term    {#38;5;210}                     ";
-          format = "{1}│";
+          key = "│ term    ";
+          format = "{5:27}│";
         }
         {
           type = "packages";
-          key = "│   pkgs                     ";
-          format = "{1} │";
-        }
-        {
-          type = "custom";
-          format = "├───────────────────────────────────┤";
+          key = "│ pkgs    ";
+          format = "{1:27}│";
         }
         {
           type = "os";
-          key = "│ {#38;5;75}{#37}nixos   {#38;5;75}           ";
-          format = "{3}│";
+          key = "│ nixos   ";
+          format = "{2} {4:21}│"; # Combines Name + Version to drop (Zokor) cleanly
         }
         {
           type = "custom";
-          format = "├───────────────────────────────────┤";
-        }
-        {
-          type = "localip";
-          key = "│ {#38;5;245}{#37}󰤨 net     {#38;5;245}             ";
-          format = "{1}│";
-        }
-        {
-          type = "custom";
-          format = "╰───────────────────────────────────╯";
+          format = "└──────────────────────────────────────┘";
         }
       ];
     };
