@@ -27,10 +27,6 @@
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/share/caelestia/hypr";
       force = false;
     };
-    "fastfetch" = {
-     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/share/caelestia/fastfetch/My-Fastfetch";
-     force = true;
-    };
     "btop" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/share/caelestia/btop";
       force = true;
