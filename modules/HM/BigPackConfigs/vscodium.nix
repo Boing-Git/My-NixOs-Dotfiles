@@ -1,14 +1,14 @@
 { config, pkgs, lib, ... }:
 
 let
-  # Target local extension package derivation
-  caelestiaVsix = "/home/boing/.config/caelestia/vscode/caelestia-vscode-integration.vsix"; 
+  # The exact, verified local path to your Caelestia extension asset
+  caelestiaVsix = "/home/boing/.local/share/caelestia/vscode/caelestia-vscode-integration/caelestia-vscode-integration-1.2.0.vsix"; 
   vsixFiles = if builtins.pathExists caelestiaVsix then [ caelestiaVsix ] else [ ];
 
-  caelestia-vscode-integration = pkgs.vscode-utils.buildVsCodeExtension {
+  caelestia-vscode-integration = pkgs.vscode-utils.buildVscodeExtension {
     name             = "caelestia-vscode-integration";
     pname            = "caelestia-vscode-integration";
-    version          = "1.2.0";
+    version          = "1.2.0"; 
     src              = caelestiaVsix;
     vscodeExtPublisher = "caelestia";
     vscodeExtName    = "caelestia-vscode-integration";
@@ -22,7 +22,7 @@ in
 
     profiles.default = {
       extensions = (with pkgs.vscode-marketplace; [
-        jnoortheen.nix-ide  # ◄ Fixed spelling typo here (added missing 'o')
+        jnoortheen.nix-ide
         eamodio.gitlens
         vscodevim.vim
         mvllow.rose-pine
