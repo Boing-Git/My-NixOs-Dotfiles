@@ -1,81 +1,106 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, ... }:
 
-let
-  # The iconKey helper constructs custom modules keys utilizing fastfetch's dollar-N tokens.
-  # Because fastfetch uses '{$N}' syntax, it avoids triggering Nix string interpolation ('${').
-  # {$1} will evaluate to the Icon color constant, and {$2} handles the text label color.
-  iconKey = icon: text: "{$1}${icon}  {$2}${text}";
-in
 {
   programs.fastfetch = {
     enable = true;
-
     settings = {
       display = {
-        # Using bare SGR codes here as discovered in your research. 
-        # Fastfetch inherently wraps these array elements inside 'ESC[...m'.
-        constants = [
-          "38;5;141" # {$1} - Icon Color (e.g., Vivid Purple/Mauve)
-          "38;5;111" # {$2} - Key Text Color (e.g., Sky Blue)
-          "0"        # {$3} - Standard text reset code
-        ];
-        separator = "   ";
+        separator = "";
       };
-
       modules = [
         {
-          type = "title";
-          keyWidth = 10;
-        }
-        "break"
-        {
-          type = "os";
-          key = iconKey "" "OS";
+          type = "custom";
+          format = "╭───────────────────────────────────╮";
         }
         {
           type = "kernel";
-          key = iconKey "󰨚" "Kernel";
-        }
-        {
-          type = "uptime";
-          key = iconKey "󰅐" "Uptime";
-        }
-        {
-          type = "packages";
-          key = iconKey "󰏖" "Packages";
+          key = "│ {#38;5;141}{#37}kernel  {#38;5;141}                     ";
+          format = "{2}│";
         }
         {
           type = "shell";
-          key = iconKey "" "Shell";
+          key = "│ {#38;5;141}{#37}shell   {#38;5;141}                       ";
+          format = "{3}│";
         }
         {
-          type = "display";
-          key = iconKey "󰍹" "Display";
+          type = "title";
+          key = "│ {#38;5;141}{#37}user    {#38;5;141}                      ";
+          format = "{1}│";
         }
         {
-          type = "de";
-          key = iconKey "󰇄" "DE/WM";
+          type = "host";
+          key = "│   hname                   ";
+          format = "{2} │";
         }
         {
-          type = "terminal";
-          key = iconKey "" "Terminal";
+          type = "custom";
+          format = "├───────────────────────────────────┤";
         }
         {
           type = "cpu";
-          key = iconKey "󰍛" "CPU";
+          key = "│ {#38;5;245}{#37}cpu     {#38;5;245}        ";
+          format = "{1}│";
         }
         {
           type = "gpu";
-          key = iconKey "󰢮" "GPU";
+          key = "│ {#38;5;245}{#37}󰍛 gpu     {#38;5;245}      ";
+          format = "{2}│";
         }
         {
           type = "memory";
-          key = iconKey "" "Memory";
+          key = "│ {#38;5;183}{#37}mem     {#38;5;183}           ";
+          format = "{1}│";
         }
-        "break"
         {
-          type = "colors";
-          symbol = "circle";
+          type = "disk";
+          key = "│ {#38;5;245}{#37}󰋊 disk    {#38;5;245}          ";
+          format = "{1}│";
+        }
+        {
+          type = "custom";
+          format = "├───────────────────────────────────┤";
+        }
+        {
+          type = "os";
+          key = "│ {#38;5;210}{#37}distro  {#38;5;210}      ";
+          format = "{2} ({12})│";
+        }
+        {
+          type = "wm";
+          key = "│ {#38;5;210}{#37}wm      {#38;5;210}                  ";
+          format = "{2}│";
+        }
+        {
+          type = "terminal";
+          key = "│ {#38;5;210}{#37}term    {#38;5;210}                     ";
+          format = "{1}│";
+        }
+        {
+          type = "packages";
+          key = "│   pkgs                     ";
+          format = "{1} │";
+        }
+        {
+          type = "custom";
+          format = "├───────────────────────────────────┤";
+        }
+        {
+          type = "os";
+          key = "│ {#38;5;75}{#37}nixos   {#38;5;75}           ";
+          format = "{3}│";
+        }
+        {
+          type = "custom";
+          format = "├───────────────────────────────────┤";
+        }
+        {
+          type = "localip";
+          key = "│ {#38;5;245}{#37}󰤨 net     {#38;5;245}             ";
+          format = "{1}│";
+        }
+        {
+          type = "custom";
+          format = "╰───────────────────────────────────╯";
         }
       ];
     };
