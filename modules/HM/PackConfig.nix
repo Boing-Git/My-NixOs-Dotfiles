@@ -73,7 +73,7 @@
       ];
           # Add this block to force-enable the theme
       userSettings = {
-        "workbench.colorTheme" = "Rosé Pine";
+        "workbench.colorTheme" = "Caelestia";
         "workbench.iconTheme" = "rose-pine-symbols";
         "workbench.statusBar.visible" = false;
         "workbench.menuBar.visible" = false;
