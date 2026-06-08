@@ -12,6 +12,7 @@
     ./BigPackConfigs/foot.nix
     ./BigPackConfigs/gtk.nix
     ./BigPackConfigs/fastfetch.nix
+    ./BigPackConfigs/vscodium.nix
   ];
 
   # Caelestia shell and CLI - the main desktop environment
@@ -54,33 +55,6 @@
     theme = spkgs.themes.text;
     colorScheme = "RosePine";
   };
-
-  programs.vscodium = {
-    enable = true;
-    package = pkgs.vscodium;
-    
-    profiles.default = {
-      # Use the marketplace attribute set provided by the overlay
-      extensions = with pkgs.vscode-marketplace; [
-        jnoortheen.nix-ide
-        eamodio.gitlens
-        vscodevim.vim
-        mvllow.rose-pine
-        
-        # This will now resolve correctly
-        ravenothere.rose-pine-symbols
-      ];
-          # Add this block to force-enable the theme
-      userSettings = {
-        "workbench.colorTheme" = "Caelestia";
-        "workbench.iconTheme" = "rose-pine-symbols";
-        "workbench.statusBar.visible" = false;
-        "workbench.menuBar.visible" = false;
-      };
-    };
-  };
-
-
 
   # Bulk enabling programs
   programs = {
