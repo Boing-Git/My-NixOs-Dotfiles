@@ -63,7 +63,6 @@
       # Use the marketplace attribute set provided by the overlay
       extensions = with pkgs.vscode-marketplace; [
         jnoortheen.nix-ide
-        mkhl.direnv
         eamodio.gitlens
         vscodevim.vim
         mvllow.rose-pine
