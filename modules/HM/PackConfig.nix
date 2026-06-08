@@ -53,7 +53,7 @@
       popupLyrics       # Floating lyrics window
     ];
     theme = spkgs.themes.text;
-    colorScheme = "RosePine";
+    colorScheme = "Nord";
   };
 
   # Bulk enabling programs
