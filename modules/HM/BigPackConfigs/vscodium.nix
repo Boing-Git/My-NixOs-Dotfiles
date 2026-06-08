@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 
 let
-  # Verifies presence of the local extension package target before composition
-  caelestiaVsix = "/home/jivan/.config/caelestia/vscode/caelestia-vscode-integration.vsix"; # Adjust if path differs
+  # Target local extension package derivation
+  caelestiaVsix = "/home/boing/.config/caelestia/vscode/caelestia-vscode-integration.vsix"; 
   vsixFiles = if builtins.pathExists caelestiaVsix then [ caelestiaVsix ] else [ ];
 
   caelestia-vscode-integration = pkgs.vscode-utils.buildVsCodeExtension {
@@ -21,9 +21,8 @@ in
     package = pkgs.vscodium;
 
     profiles.default = {
-      # Declarative extension management works perfectly alongside live theming engines
       extensions = (with pkgs.vscode-marketplace; [
-        jnortheen.nix-ide
+        jnoortheen.nix-ide  # ◄ Fixed spelling typo here (added missing 'o')
         eamodio.gitlens
         vscodevim.vim
         mvllow.rose-pine
@@ -31,9 +30,6 @@ in
       ]) ++ [
         caelestia-vscode-integration
       ];
-
-      # REMOVED: userSettings block has been stripped to prevent Home Manager 
-      # from locking down your settings.json as a read-only Nix store symlink.
     };
   };
 }
