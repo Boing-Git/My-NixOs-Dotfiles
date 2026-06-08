@@ -12,7 +12,7 @@
     ./BigPackConfigs/foot.nix
     ./BigPackConfigs/gtk.nix
     ./BigPackConfigs/fastfetch.nix
-    ./BigPackConfigs/vscodium.nix2
+    ./BigPackConfigs/vscodium.nix
   ];
 
   # Caelestia shell and CLI - the main desktop environment
