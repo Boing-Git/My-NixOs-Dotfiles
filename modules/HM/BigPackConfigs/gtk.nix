@@ -17,6 +17,7 @@ in
 
     iconTheme = {
       name    = "Papirus-Dark";
+      package = customPapirusIcons;
     };
 
     # ── GTK3 Named Color Overrides ─────────────────────────────────────────────
