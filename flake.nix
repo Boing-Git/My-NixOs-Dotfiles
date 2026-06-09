@@ -9,14 +9,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # The new repository module
     caelestia-nix = {
       url = "github:Markus328/caelestia-nix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.caelestia-shell.follows = "caelestia-shell";
     };
 
-    # --- RESTORED INPUTS ---
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     caelestia-shell.url = "github:caelestia-dots/shell";
@@ -30,7 +28,6 @@
         home-manager.nixosModules.home-manager
         {
           home-manager.extraSpecialArgs = { inherit inputs; };
-          
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.boing = {
