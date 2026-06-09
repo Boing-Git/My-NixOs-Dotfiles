@@ -11,14 +11,15 @@
 
   imports = [
     inputs.zen-browser.homeModules.twilight
+    # Raw input removed - now cleanly managed via caelestia-nix in flake.nix
     # inputs.caelestia-shell.homeManagerModules.default
     inputs.spicetify-nix.homeManagerModules.default
     ./PackConfig.nix
   ];
 
   # --- CAELESTIA FLAKE MODULE INTEGRATION ---
-  # Toggling only the tools you wanted from the repository
-  programs.caelestia-dots = {
+  # Switched namespace to programs.caelestia to stop the infinite recursion loop
+  programs.caelestia = {
     enable = true;
     hypr.enable = true;        # Enables their Hyprland setup
     editor.vscode.enable = true; # Enables their VS Code / Vscodium adjustments
@@ -55,7 +56,7 @@
     matugen
     prismlauncher
     hyprpicker
-    # Note: vscodium package management is now safely handed off to the programs.caelestia-dots module
+    # Note: vscodium package management is now safely handed off to the programs.caelestia module
   ];
 
   home.sessionVariables = {
