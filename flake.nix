@@ -9,24 +9,33 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Add the caelestia-nix flake repository
+    # The new repository module
     caelestia-nix.url = "github:Markus328/caelestia-nix";
+
+    # --- RESTORED INPUTS ---
+    # Putting back the inputs your home.nix depends on
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    caelestia-shell.url = "github:caelestia-dots/shell";
   };
 
   outputs = inputs @ { nixpkgs, home-manager, caelestia-nix, ... }: {
-    # Replace "your-hostname" with your actual system hostname
-    nixosConfigurations."your-hostname" = nixpkgs.lib.nixosSystem {
+    # FIX 1: Changed placeholder to "nixos" to match your actual system hostname
+    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
         {
+          # FIX 2: Explicitly pass inputs so home.nix can evaluate inputs.zen-browser, etc.
+          home-manager.extraSpecialArgs = { inherit inputs; };
+          
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.boing = { # Updated to your username
+          home-manager.users.boing = {
             imports = [
-              ./modules/HM/home.nix # Fixed path to match your folder structure
-              caelestia-nix.homeManagerModules.default # Inject the caelestia module
+              ./modules/HM/home.nix
+              caelestia-nix.homeManagerModules.default
             ];
           };
         }
