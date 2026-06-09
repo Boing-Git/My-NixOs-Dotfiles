@@ -23,10 +23,11 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           
-          # 1. Change this to your actual username
+          # ADD THIS LINE RIGHT HERE:
+          home-manager.extraSpecialArgs = { inherit inputs; };
+          
           home-manager.users.boing = {
             imports = [
-              # 2. Point to the correct path in your modules folder
               ./modules/HM/home.nix
               caelestia-nix.homeManagerModules.default
             ];
