@@ -1,57 +1,34 @@
 {
-  description = "My unified NixOS and Home Manager configuration";
+  description = "My NixOS Configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    caelestia-cli = {
-      url = "github:caelestia-dots/cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Add the caelestia-nix flake repository
+    caelestia-nix.url = "github:Markus328/caelestia-nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, caelestia-shell, caelestia-cli, spicetify-nix, nix-vscode-extensions, ... }@inputs:
-  let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in
-  {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = { inherit inputs; };
+  outputs = inputs @ { nixpkgs, home-manager, caelestia-nix, ... }: {
+    # Replace "your-hostname" with your actual system hostname
+    nixosConfigurations."your-hostname" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
         {
-          # Apply the VSCode Extensions Overlay
-          nixpkgs.overlays = [ nix-vscode-extensions.overlays.default ];
-
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {
-            inherit inputs;
-            spicePkgs = spicetify-nix.legacyPackages.${system};
+          home-manager.users.boing = { # Updated to your username
+            imports = [
+              ./modules/HM/home.nix # Fixed path to match your folder structure
+              caelestia-nix.homeManagerModules.default # Inject the caelestia module
+            ];
           };
-          home-manager.users.boing = ./modules/HM/home.nix;
-          home-manager.backupFileExtension = "hm-backup";
         }
       ];
     };
