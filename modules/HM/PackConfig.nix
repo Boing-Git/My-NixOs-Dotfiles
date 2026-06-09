@@ -8,11 +8,11 @@
   in
 {
   imports = [
-    #./BigPackConfigs/starship.nix
-    #./BigPackConfigs/foot.nix
-    #./BigPackConfigs/gtk.nix
-    #./BigPackConfigs/fastfetch.nix
-    #./BigPackConfigs/vscodium.nix
+    ./BigPackConfigs/starship.nix
+    ./BigPackConfigs/foot.nix
+    ./BigPackConfigs/gtk.nix
+    ./BigPackConfigs/fastfetch.nix
+    ./BigPackConfigs/vscodium.nix
   ];
 
   # Caelestia shell and CLI - the main desktop environment

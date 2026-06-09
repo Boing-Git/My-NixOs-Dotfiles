@@ -9,30 +9,23 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    caelestia-nix = {
-      url = "github:Markus328/caelestia-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.caelestia-shell.follows = "caelestia-shell";
-    };
-
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    caelestia-shell.url = "github:caelestia-dots/shell";
+    # 1. Add the caelestia-nix flake repository
+    caelestia-nix.url = "github:Markus328/caelestia-nix";
   };
 
   outputs = inputs @ { nixpkgs, home-manager, caelestia-nix, ... }: {
-    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+    nixosConfigurations."your-hostname" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
         {
-          home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.boing = {
+          home-manager.users.your-username = {
             imports = [
-              ./modules/HM/home.nix
+              ./home.nix
+              # 2. Inject the caelestia-nix module directly into your user profile
               caelestia-nix.homeManagerModules.default
             ];
           };
