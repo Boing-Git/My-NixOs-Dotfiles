@@ -14,7 +14,7 @@
   };
 
   outputs = inputs @ { nixpkgs, home-manager, caelestia-nix, ... }: {
-    nixosConfigurations."your-hostname" = nixpkgs.lib.nixosSystem {
+    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
@@ -22,10 +22,12 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.your-username = {
+          
+          # 1. Change this to your actual username
+          home-manager.users.boing = {
             imports = [
-              ./home.nix
-              # 2. Inject the caelestia-nix module directly into your user profile
+              # 2. Point to the correct path in your modules folder
+              ./modules/HM/home.nix
               caelestia-nix.homeManagerModules.default
             ];
           };
