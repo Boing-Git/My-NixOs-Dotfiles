@@ -1,34 +1,29 @@
 { config, pkgs, lib, ... }:
 
-let
-  # ◄ Changed from an absolute string to a relative Nix path asset
-  caelestiaVsix = ./caelestia-vscode-integration-1.2.0.vsix; 
-
-  caelestia-vscode-integration = pkgs.vscode-utils.buildVscodeExtension {
-    name             = "caelestia-vscode-integration";
-    pname            = "caelestia-vscode-integration";
-    version          = "1.2.0"; 
-    src              = caelestiaVsix;
-    vscodeExtPublisher = "caelestia";
-    vscodeExtName    = "caelestia-vscode-integration";
-    vscodeExtUniqueId = "caelestia.caelestia-vscode-integration";
-  };
-in
 {
+  # 1. Your standard VSCodium configuration (without the custom extension in the list)
   programs.vscodium = {
     enable = true;
     package = pkgs.vscodium;
 
     profiles.default = {
-      extensions = (with pkgs.vscode-marketplace; [
+      extensions = with pkgs.vscode-marketplace; [
         jnoortheen.nix-ide
         eamodio.gitlens
         vscodevim.vim
         mvllow.rose-pine
         ravenothere.rose-pine-symbols
-      ]) ++ [
-        caelestia-vscode-integration
       ];
     };
+  };
+
+  # 2. Place the activation script here, right next to programs.vscodium
+  home.activation = {
+    installCaelestiaExtension = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      # Check if the extension is missing, and install it mutably if so
+      if ! ${pkgs.vscodium}/bin/codium --list-extensions | grep -iq "soramanew.caelestia-vscode-integration"; then
+        ${pkgs.vscodium}/bin/codium --install-extension ${./caelestia-vscode-integration-1.2.0.vsix} --force
+      fi
+    '';
   };
 }

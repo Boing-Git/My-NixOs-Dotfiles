@@ -2,7 +2,7 @@
 
 let
   customPapirusIcons = pkgs.papirus-icon-theme.override {
-    color = "teal"; 
+    color = "Brown"; 
   };
 in
 {
