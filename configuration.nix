@@ -93,18 +93,13 @@ in
     powerManagement.enable = false;
     open                   = false;
     nvidiaSettings         = true;
-    package                = config.boot.kernelPackages.nvidiaPackages.stable;
+    # Using 'production' branch to match current system-wide drivers
+    package                = config.boot.kernelPackages.nvidiaPackages.production;
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  # ── System Packages ───────────────────────────────────────────────────
-  environment.systemPackages = [
-    pkgs.git
-    caelestia-sddm-locklike
-    pkgs.kdePackages.kate
-  ];
-
+  # ── Session Variables ─────────────────────────────────────────────────
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS   = "1";
     NIXOS_OZONE_HWP           = "1";
@@ -112,6 +107,13 @@ in
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     LIBVA_DRIVER_NAME         = "nvidia";
   };
+
+  # ── System Packages ───────────────────────────────────────────────────
+  environment.systemPackages = [
+    pkgs.git
+    caelestia-sddm-locklike
+    pkgs.kdePackages.kate
+  ];
 
   # ── Users ─────────────────────────────────────────────────────────────
   users.users."boing" = {
