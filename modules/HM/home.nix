@@ -11,7 +11,7 @@
 
   imports = [
     inputs.zen-browser.homeModules.twilight
-    inputs.caelestia-shell.homeManagerModules.default
+    # inputs.caelestia-shell.homeManagerModules.default
     inputs.spicetify-nix.homeManagerModules.default
     ./PackConfig.nix
   ];
