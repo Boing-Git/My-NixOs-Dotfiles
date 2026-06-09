@@ -4,35 +4,27 @@
   home.homeDirectory = "/home/boing";
   home.stateVersion = "26.11"; 
 
-  # Force home-manager to scrub conflicting icons injected by external shell modules
   home.extraBuilderCommands = ''
     rm -rf $out/share/icons/Papirus-Light
   '';
 
   imports = [
     inputs.zen-browser.homeModules.twilight
-    # Raw input removed - now cleanly managed via caelestia-nix in flake.nix
-    # inputs.caelestia-shell.homeManagerModules.default
     inputs.spicetify-nix.homeManagerModules.default
     ./PackConfig.nix
   ];
 
   # --- CAELESTIA FLAKE MODULE INTEGRATION ---
-  # Switched namespace to programs.caelestia to stop the infinite recursion loop
   programs.caelestia = {
     enable = true;
-    hypr.enable = true;        # Enables their Hyprland setup
+    hypr.enable = true;          # Enables their Hyprland setup
     editor.vscode.enable = true; # Enables their VS Code / Vscodium adjustments
-    btop.enable = true;        # Enables their btop theme
-    
-    # Explicitly disable anything else if you want to keep your setup minimal
-    foot.enable = false;
+    btop.enable = true;          # Enables their btop theme
+    foot.enable = false;         # Keep your terminal setup minimal
   };
 
-  # NOTE: Manual out-of-store symlinks for hypr and btop have been removed 
-  # from xdg.configFile to prevent target collision errors with the flake module.
   xdg.configFile = {
-    # Your other custom configurations can go here safely
+    # Custom configurations go here safely
   };
 
   home.activation.clearStaleBackups = lib.hm.dag.entryBefore ["checkLinkTargets"] ''
@@ -56,7 +48,6 @@
     matugen
     prismlauncher
     hyprpicker
-    # Note: vscodium package management is now safely handed off to the programs.caelestia module
   ];
 
   home.sessionVariables = {
