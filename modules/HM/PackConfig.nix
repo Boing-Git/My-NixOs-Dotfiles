@@ -14,6 +14,7 @@
     ./BigPackConfigs/fastfetch.nix
     ./BigPackConfigs/vscodium.nix
     ./BigPackConfigs/zed.nix
+    ./BigPackConfigs/zen.nix
   ];
 
   # Caelestia shell and CLI - the main desktop environment
@@ -56,38 +57,5 @@
     theme = spkgs.themes.text;
     colorScheme = "Nord";
   };
-
-  programs.zen-browser = {
-    enable = true;
-    profiles.default = {
-      settings = {
-        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-      };
-
-      # Reads the file from your local flake directory safely
-      userChrome = builtins.readFile ./BigPackConfigs/userChrome.css; 
-    };
-  };
-
-  # ====================================================
-  # Native Messaging Bridge for Caelestia Theme Sync
-  # ====================================================
-  
-  home.file.".mozilla/native-messaging-hosts/caelestiasites.json".text = builtins.toJSON {
-    name = "caelestiasites";
-    description = "Caelestia native messaging host for browser theme syncing";
-    path = "${config.home.homeDirectory}/.local/share/caelestia/zen/native_app/app.fish";
-    type = "stdio";
-    allowed_extensions = [ "caelestiafox@caelestia" ];
-  };
-
-  home.file.".config/zen/native-messaging-hosts/caelestiasites.json".text = builtins.toJSON {
-    name = "caelestiasites";
-    description = "Caelestia native messaging host for browser theme syncing";
-    path = "${config.home.homeDirectory}/.local/share/caelestia/zen/native_app/app.fish";
-    type = "stdio";
-    allowed_extensions = [ "caelestiafox@caelestia" ];
-  };
-
   programs.home-manager.enable = true;
 }
