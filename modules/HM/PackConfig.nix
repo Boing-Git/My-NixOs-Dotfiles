@@ -69,14 +69,25 @@
     };
   };
 
-  home.file.".mozilla/native-messaging-hosts/caelestiafox.json".text = builtins.toJSON {
-    name = "caelestiafox";
+  # ====================================================
+  # Native Messaging Bridge for Caelestia Theme Sync
+  # ====================================================
+  
+  home.file.".mozilla/native-messaging-hosts/caelestiasites.json".text = builtins.toJSON {
+    name = "caelestiasites";
     description = "Caelestia native messaging host for browser theme syncing";
-    # Points to the real-world script outside the Nix store so it stays mutable
     path = "${config.home.homeDirectory}/.local/share/caelestia/zen/native_app/app.fish";
     type = "stdio";
     allowed_extensions = [ "caelestiafox@caelestia" ];
   };
+
+  home.file.".config/zen/native-messaging-hosts/caelestiasites.json".text = builtins.toJSON {
+    name = "caelestiasites";
+    description = "Caelestia native messaging host for browser theme syncing";
+    path = "${config.home.homeDirectory}/.local/share/caelestia/zen/native_app/app.fish";
+    type = "stdio";
+    allowed_extensions = [ "caelestiafox@caelestia" ];
+  };;
 
   programs.home-manager.enable = true;
 }
