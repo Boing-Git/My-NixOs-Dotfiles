@@ -70,7 +70,7 @@ tooltip {
 }
 
 toolbarbutton {
-    fill: var(--c-accent) !important;
+    fill: var(--background) !important;
 }
 
 toolbar .toolbarbutton-1 {
