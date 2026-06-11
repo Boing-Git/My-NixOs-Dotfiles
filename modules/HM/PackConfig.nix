@@ -87,7 +87,7 @@
     path = "${config.home.homeDirectory}/.local/share/caelestia/zen/native_app/app.fish";
     type = "stdio";
     allowed_extensions = [ "caelestiafox@caelestia" ];
-  };;
+  };
 
   programs.home-manager.enable = true;
 }
