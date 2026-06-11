@@ -6,7 +6,7 @@
     --c-surface0: var(--tab-selected-bgcolor);
     --c-surface1: var(--arrowpanel-border-color);
 
-    --zen-primary-color: var(--c-surface0) !important;
+    --background: var(--c-surface0) !important;
     --zen-colors-primary: var(--c-accent) !important;
     --zen-colors-secondary: var(--c-surface0) !important;
     --zen-colors-tertiary: var(--c-base) !important;
