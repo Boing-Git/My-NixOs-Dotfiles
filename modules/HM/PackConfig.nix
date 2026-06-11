@@ -14,7 +14,7 @@
     ./BigPackConfigs/fastfetch.nix
     ./BigPackConfigs/vscodium.nix
     ./BigPackConfigs/zed.nix
-    ./BigPackConfigs/zen.nix
+    #./BigPackConfigs/zen.nix
   ];
 
   # Caelestia shell and CLI - the main desktop environment
