@@ -26,8 +26,4 @@
     type = "stdio";
     allowed_extensions = [ "caelestiafox@caelestia.org" ];
   };
-
-    type = "stdio";
-    allowed_extensions = [ "caelestiafox@caelestia.org" ];
-  };
 }
