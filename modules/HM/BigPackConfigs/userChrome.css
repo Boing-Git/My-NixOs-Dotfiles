@@ -203,5 +203,12 @@ toolbar .toolbarbutton-1 {
 
     &:is(:active, :not(tab)[open]) {
         scale: 0.95 !important;
-    }
+    }   
+}
+/* ==========================================
+   DEBUG TEST: IF LOADED, NAVBAR WILL TURN PINK 
+   ========================================== */
+#nav-bar, #TabsToolbar, .tabbrowser-tab {
+  background-color: #ff007f !important;
+  background-image: none !important;
 }
