@@ -58,7 +58,6 @@
     prismlauncher
     hyprpicker
     pipes
-    zed
   ];
 
   # User level environment variables

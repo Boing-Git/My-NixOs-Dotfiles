@@ -13,6 +13,7 @@
     ./BigPackConfigs/gtk.nix
     ./BigPackConfigs/fastfetch.nix
     ./BigPackConfigs/vscodium.nix
+    ./BigPackConfigs/zed.nix
   ];
 
   # Caelestia shell and CLI - the main desktop environment
