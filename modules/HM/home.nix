@@ -58,6 +58,7 @@
     prismlauncher
     hyprpicker
     pipes
+    inotify-tools
   ];
 
   # User level environment variables
