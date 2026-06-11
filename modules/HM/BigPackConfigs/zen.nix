@@ -13,7 +13,7 @@
 
       # Reads the file from your local flake directory safely
       # Note: Adjust this relative path if BigPackConfigs is in a different directory
-      userChrome = builtins.readFile ./BigPackConfigs/userChrome.css; 
+      userChrome = builtins.readFile ../userChrome.css; 
     };
   };
 
