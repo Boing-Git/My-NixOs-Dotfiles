@@ -57,6 +57,7 @@
     matugen
     prismlauncher
     hyprpicker
+    pipes
   ];
 
   # User level environment variables
