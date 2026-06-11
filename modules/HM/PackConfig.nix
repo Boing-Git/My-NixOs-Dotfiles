@@ -57,9 +57,18 @@
     colorScheme = "Nord";
   };
 
-  # Bulk enabling programs
-  programs = {
-    home-manager.enable = true;
-    zen-browser.enable = true;
+  programs.zen-browser = {
+    enable = true;
+    profiles.default = {
+      # 1. Force Zen to read userChrome.css
+      settings = {
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+      };
+
+      # 2. Source the userChrome.css directly from your local directory
+      userChrome = builtins.readFile "${config.home.homeDirectory}/.local/share/caelestia/zen/userChrome.css";
+    };
   };
+
+  programs.home-manager.enable = true;
 }
