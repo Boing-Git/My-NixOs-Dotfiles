@@ -60,14 +60,22 @@
   programs.zen-browser = {
     enable = true;
     profiles.default = {
-      # 1. Force Zen to read userChrome.css
       settings = {
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       };
 
-      # 2. Source the userChrome.css directly from your local directory
-      userChrome = builtins.readFile "${config.home.homeDirectory}/.local/share/caelestia/zen/userChrome.css";
+      # Reads the file from your local flake directory safely
+      userChrome = builtins.readFile ./userChrome.css; 
     };
+  };
+
+  home.file.".mozilla/native-messaging-hosts/caelestiafox.json".text = builtins.toJSON {
+    name = "caelestiafox";
+    description = "Caelestia native messaging host for browser theme syncing";
+    # Points to the real-world script outside the Nix store so it stays mutable
+    path = "${config.home.homeDirectory}/.local/share/caelestia/zen/native_app/app.fish";
+    type = "stdio";
+    allowed_extensions = [ "caelestiafox@caelestia" ];
   };
 
   programs.home-manager.enable = true;
