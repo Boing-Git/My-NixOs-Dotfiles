@@ -81,15 +81,24 @@
     --lwt-sidebar-text-color: var(--c-text) !important;
     --lwt-sidebar-background-color: color-mix(in srgb, var(--c-mantle), transparent 35%) !important;
     --toolbar-bgcolor: color-mix(in srgb, var(--c-surface0), transparent 40%) !important;
-    --newtab-background-color: color-mix(in srgb, var(--c-base), transparent 50%) !important;
+    --newtab-background-color: color-mix(in srgb, var(--c-base), transparent 45%) !important;
     
     --zen-themed-toolbar-bg: color-mix(in srgb, var(--c-mantle), transparent 35%) !important;
-    --zen-main-browser-background: color-mix(in srgb, var(--c-crust), transparent 55%) !important;
+    --zen-main-browser-background: color-mix(in srgb, var(--c-base), transparent 45%) !important;
     --urlbarView-highlight-color: color-mix(in srgb, var(--c-accent-container), transparent 20%) !important;
     
     --in-content-primary-button-text-color: var(--c-on-accent) !important;
     --in-content-primary-button-background: color-mix(in srgb, var(--c-accent-container), transparent 15%) !important;
     --in-content-primary-button-background-hover: var(--c-accent) !important;
+}
+
+/* Main Window Workspace & Blank Content Canvas Styling */
+#browser,
+#appcontent,
+#tabbrowser-tabpanels,
+.tabbrowser-tabpanel,
+.browserSidebarContainer {
+    background-color: color-mix(in srgb, var(--c-base), transparent 45%) !important;
 }
 
 tooltip {
