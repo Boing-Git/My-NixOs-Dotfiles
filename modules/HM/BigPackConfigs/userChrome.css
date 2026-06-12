@@ -17,7 +17,7 @@
     --c-surface-container-high: var(--surfaceContainerHigh);
 
     /* Typography & Hierarchy States */
-    --c-text: var(--text);
+    --c-text: var(--primary);
     --c-subtext1: var(--subtext1);
     --c-subtext0: var(--subtext0);
     
