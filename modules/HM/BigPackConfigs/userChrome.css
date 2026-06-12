@@ -2,49 +2,106 @@
 @import url("file:///home/jivan/.local/state/caelestia/scheme.json");
 
 :root {
-    --c-accent: var(--primary);
-    --c-text: var(--text);
-    --c-mantle: var(--mantle);
+    /* Main Structural Surfaces */
     --c-base: var(--base);
+    --c-mantle: var(--mantle);
+    --c-crust: var(--crust);
+
+    /* Material-You Surface Containers & Brightness Scales */
     --c-surface0: var(--surface0);
     --c-surface1: var(--surface1);
+    --c-surface2: var(--surface2);
+    --c-surface-dim: var(--surfaceDim);
+    --c-surface-bright: var(--surfaceBright);
+    --c-surface-container: var(--surfaceContainer);
+    --c-surface-container-high: var(--surfaceContainerHigh);
 
-    --primary:#FFFFFF !important;
+    /* Typography & Hierarchy States */
+    --c-text: var(--text);
+    --c-subtext1: var(--subtext1);
+    --c-subtext0: var(--subtext0);
+    
+    /* Overlays & Intermediary Layering */
+    --c-overlay2: var(--overlay2);
+    --c-overlay1: var(--overlay1);
+    --c-overlay0: var(--overlay0);
+
+    /* Core Core Accents & Tonal Tethers */
+    --c-accent: var(--primary);
+    --c-accent-dim: var(--primaryDim);
+    --c-on-accent: var(--onPrimary);
+    --c-accent-container: var(--primaryContainer);
+    --c-on-accent-container: var(--onPrimaryContainer);
+
+    /* Secondary & Tertiary Accent Alternates */
+    --c-secondary: var(--secondary);
+    --c-secondary-container: var(--secondaryContainer);
+    --c-tertiary: var(--tertiary);
+    --c-tertiary-container: var(--tertiaryContainer);
+
+    /* Clean Borders & Functional Outlines */
+    --c-border: var(--outlineVariant);
+    --c-outline: var(--outline);
+
+    /* Alert, Guardrails & Context States */
+    --c-success: var(--success);
+    --c-success-container: var(--successContainer);
+    --c-error: var(--error);
+    --c-error-container: var(--errorContainer);
+    --c-on-error: var(--onError);
+
+    /* Fine-Tone Accent Overrides (Dynamic Material-Catppuccin Hybrids) */
+    --c-mauve: var(--mauve);
+    --c-lavender: var(--lavender);
+    --c-sapphire: var(--sapphire);
+    --c-blue: var(--blue);
+    --c-teal: var(--teal);
+    --c-peach: var(--peach);
+
+    /* Zen Engine Mapping Configurations */
+    --primary: #FFFFFF !important;
     --zen-colors-primary: var(--c-accent) !important;
-    --zen-colors-secondary: var(--c-surface0) !important;
-    --zen-colors-tertiary: var(--c-base) !important;
-    --zen-colors-border: var(--c-surface1) !important;
+    --zen-colors-secondary: var(--c-surface1) !important;
+    --zen-colors-tertiary: var(--c-surface0) !important;
+    --zen-colors-border: var(--c-border) !important;
+    
     --toolbarbutton-icon-fill: var(--c-accent) !important;
     --toolbarbutton-icon-fill-attention: var(--c-accent) !important;
     --toolbarbutton-icon-fill-attention-text-light: var(--c-text) !important;
     --toolbarbutton-icon-fill-attention-text-dark: var(--c-base) !important;
+    
     --lwt-text-color: var(--c-text) !important;
     --toolbar-field-color: color-mix(in srgb, var(--c-text), transparent 15%) !important;
     --toolbar-field-focus-color: color-mix(in srgb, var(--c-text), transparent 10%) !important;
+    
     --arrowpanel-color: var(--c-text) !important;
-    --arrowpanel-background: var(--c-base) !important;
+    --arrowpanel-background: var(--c-surface-container) !important;
+    --arrowpanel-border-color: var(--c-border) !important;
+    
     --lwt-sidebar-text-color: var(--c-text) !important;
     --lwt-sidebar-background-color: var(--c-mantle) !important;
     --toolbar-bgcolor: var(--c-surface0) !important;
     --newtab-background-color: var(--c-base) !important;
+    
     --zen-themed-toolbar-bg: var(--c-mantle) !important;
-    --zen-main-browser-background: var(--c-mantle) !important;
-    --urlbarView-highlight-color: var(--c-text) !important;
-    --in-content-primary-button-text-color: var(--c-text) !important;
-    --in-content-primary-button-background: var(--toolbarbutton-hover-background) !important;
-    --in-content-primary-button-background-hover: var(--toolbarbutton-active-background) !important;
+    --zen-main-browser-background: var(--c-crust) !important;
+    --urlbarView-highlight-color: var(--c-accent-container) !important;
+    
+    --in-content-primary-button-text-color: var(--c-on-accent) !important;
+    --in-content-primary-button-background: var(--c-accent-container) !important;
+    --in-content-primary-button-background-hover: var(--c-accent) !important;
 }
 
 tooltip {
     appearance: none !important;
-    background-color: var(--c-mantle) !important;
+    background-color: var(--c-crust) !important;
     color: var(--c-text) !important;
     border: 1px solid color-mix(in srgb, var(--c-accent), transparent 70%) !important;
     border-radius: 8px !important;
 }
 
 #permissions-granted-icon {
-    color: var(--c-mantle) !important;
+    color: var(--c-teal) !important;
 }
 
 .sidebar-placesTree {
@@ -52,7 +109,7 @@ tooltip {
 }
 
 #urlbar-background {
-    background-color: var(--c-surface0) !important;
+    background-color: var(--c-surface-container-high) !important;
 }
 
 #TabsToolbar {
@@ -60,12 +117,12 @@ tooltip {
 }
 
 .content-shortcuts {
-    background-color: var(--c-base) !important;
+    background-color: var(--c-surface0) !important;
     border-color: var(--c-accent) !important;
 }
 
 .urlbarView-url {
-    color: var(--c-accent) !important;
+    color: var(--c-lavender) !important;
 }
 
 #zenEditBookmarkPanelFaviconContainer {
@@ -79,7 +136,9 @@ toolbarbutton {
 toolbar .toolbarbutton-1 {
     &:not([disabled]) {
         &:is([open], [checked]) > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack) {
-            fill: var(--c-mantle) !important;
+            fill: var(--c-on-accent-container) !important;
+            background-color: var(--c-accent-container) !important;
+            border-radius: 6px;
         }
     }
 }
