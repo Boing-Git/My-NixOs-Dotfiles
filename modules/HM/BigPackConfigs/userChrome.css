@@ -105,12 +105,26 @@ tooltip {
     color: var(--c-teal) !important;
 }
 
+/* Sidebar Wrapper Rounding & Separation */
+#sidebar-box,
+#sidebar-container,
+#zen-sidebar,
 .sidebar-placesTree {
     background-color: color-mix(in srgb, var(--c-base), transparent 40%) !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    margin: 4px 2px 4px 4px !important;
 }
 
+/* Uniform URL Bar Rounding */
 #urlbar-background {
     background-color: color-mix(in srgb, var(--c-surface-container-high), transparent 30%) !important;
+    border-radius: 12px !important;
+}
+
+#urlbar-container {
+    background: color-mix(in srgb, var(--c-mantle), transparent 45%) !important;
+    border-radius: 12px !important;
 }
 
 #TabsToolbar {
@@ -147,10 +161,6 @@ toolbar .toolbarbutton-1 {
 #autoscroller {
     width: 50px !important;
     height: 50px !important;
-}
-
-#urlbar-container {
-    background: color-mix(in srgb, var(--c-mantle), transparent 45%) !important;
 }
 
 /* Center url bar text when not focused */
@@ -192,10 +202,10 @@ toolbar .toolbarbutton-1 {
     background: color-mix(in srgb, var(--c-surface-container), transparent 25%) !important;
 }
 
-/* Blur floating url bar */
+/* Blur floating url bar with clean corner arcs */
 #urlbar[zen-floating-urlbar][breakout][breakout-extend] > #urlbar-background {
     border: 1px solid color-mix(in srgb, var(--zen-colors-border), transparent 70%) !important;
-    border-radius: 10px !important;
+    border-radius: 12px !important;
     background: color-mix(in srgb, var(--zen-colors-tertiary), transparent 25%) !important;
     backdrop-filter: blur(25px) !important;
 }
