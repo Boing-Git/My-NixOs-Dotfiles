@@ -59,6 +59,7 @@
     hyprpicker
     pipes
     inotify-tools
+    ncdu
   ];
 
   # User level environment variables
