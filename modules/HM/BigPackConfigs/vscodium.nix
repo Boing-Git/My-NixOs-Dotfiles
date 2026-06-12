@@ -13,6 +13,7 @@
         vscodevim.vim
         mvllow.rose-pine
         ravenothere.rose-pine-symbols
+        theqtcompany.qt-qml
       ];
     };
   };
