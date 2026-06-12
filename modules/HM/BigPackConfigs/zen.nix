@@ -39,7 +39,7 @@
       --surfaceContainerHigh: #{{ surfaceContainerHigh.hex }};
 
       /* Typography & Hierarchy States */
-      --text: #{{ onBackground.hex }};
+      --text: #{{ primary.hex }};
       --subtext1: #{{ onSurfaceVariant.hex }};
       --subtext0: #{{ outline.hex }};
       
