@@ -59,7 +59,7 @@
     --c-peach: var(--peach);
 
     /* Zen Engine Mapping Configurations */
-    --primary: #FFFFFF !important;
+    --primary: #781616 !important;
     --zen-colors-primary: var(--c-accent) !important;
     --zen-colors-secondary: var(--c-surface1) !important;
     --zen-colors-tertiary: var(--c-surface0) !important;
