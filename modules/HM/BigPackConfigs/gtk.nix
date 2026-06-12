@@ -63,7 +63,7 @@ in
     # ── GTK4 (libadwaita apps) ─────────────────────────────────────────────────
     gtk4.extraCss = ''
       /* Mirror the structural mapping perfectly for libadwaita applications */
-      @import url("file:///home/jivan/.config/caelestia/colors.css");
+      @import url("file:///home/jivan/.local/state/caelestia/scheme.json");
 
       @define-color window_bg_color        var(--background, var(--md-sys-color-background, #110c1b));
       @define-color window_fg_color        var(--on-background, var(--md-sys-color-on-background, #d7b1f0));
