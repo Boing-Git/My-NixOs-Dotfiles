@@ -60,7 +60,7 @@
 
     /* Zen Engine Mapping Configurations */
     --primary: #781616 !important;
-    --zen-colors-primary: var(--c-accent) !important;
+    --zen-colors-primary: #FFFFFF !important;
     --zen-colors-secondary: var(--c-surface1) !important;
     --zen-colors-tertiary: var(--c-surface0) !important;
     --zen-colors-border: var(--c-border) !important;
