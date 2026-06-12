@@ -24,11 +24,61 @@
   # ====================================================
   xdg.configFile."caelestia/templates/zen-colors.css".text = ''
     :root {
-      --c-accent: #{{ primary.hex }};
-      --c-background: #{{ background.hex }};
-      --c-surface: #{{ surface.hex }};
-      --c-on-surface: #{{ onSurface.hex }};
-      --c-secondary: #{{ secondary.hex }};
+      /* Main Structural Surfaces */
+      --base: #{{ background.hex }};
+      --mantle: #{{ surface.hex }};
+      --crust: #{{ surfaceContainerLowest.hex }};
+
+      /* Material-You Surface Containers & Brightness Scales */
+      --surface0: #{{ surfaceContainerLow.hex }};
+      --surface1: #{{ surfaceContainer.hex }};
+      --surface2: #{{ surfaceContainerHigh.hex }};
+      --surfaceDim: #{{ surfaceDim.hex }};
+      --surfaceBright: #{{ surfaceBright.hex }};
+      --surfaceContainer: #{{ surfaceContainer.hex }};
+      --surfaceContainerHigh: #{{ surfaceContainerHigh.hex }};
+
+      /* Typography & Hierarchy States */
+      --text: #{{ onBackground.hex }};
+      --subtext1: #{{ onSurfaceVariant.hex }};
+      --subtext0: #{{ outline.hex }};
+      
+      /* Overlays & Intermediary Layering */
+      --overlay2: #{{ surfaceVariant.hex }};
+      --overlay1: #{{ surfaceContainerHighest.hex }};
+      --overlay0: #{{ surfaceContainerHigh.hex }};
+
+      /* Core Accents & Tonal Tethers */
+      --primary: #{{ primary.hex }};
+      --primaryDim: #{{ primaryContainer.hex }};
+      --onPrimary: #{{ onPrimary.hex }};
+      --primaryContainer: #{{ primaryContainer.hex }};
+      --onPrimaryContainer: #{{ onPrimaryContainer.hex }};
+
+      /* Secondary & Tertiary Accent Alternates */
+      --secondary: #{{ secondary.hex }};
+      --secondaryContainer: #{{ secondaryContainer.hex }};
+      --tertiary: #{{ tertiary.hex }};
+      --tertiaryContainer: #{{ tertiaryContainer.hex }};
+
+      /* Clean Borders & Functional Outlines */
+      --outlineVariant: #{{ outlineVariant.hex }};
+      --outline: #{{ outline.hex }};
+
+      /* Alert, Guardrails & Context States */
+      --success: #{{ primary.hex }};
+      --successContainer: #{{ primaryContainer.hex }};
+      --error: #{{ error.hex }};
+      --errorContainer: #{{ errorContainer.hex }};
+      --onError: #{{ onError.hex }};
+
+      /* Fine-Tone Accent Overrides (Dynamic Material-Catppuccin Hybrids) */
+      --mauve: #{{ tertiary.hex }};
+      --lavender: #{{ primaryContainer.hex }};
+      --sapphire: #{{ primary.hex }};
+      --blue: #{{ primary.hex }};
+      --teal: #{{ secondary.hex }};
+      --peach: #{{ secondaryContainer.hex }};
     }
   '';
 
