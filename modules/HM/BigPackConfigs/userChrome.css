@@ -2,12 +2,12 @@
 @import url("file:///home/jivan/.local/state/caelestia/scheme.json");
 
 :root {
-    --c-accent: var(--tab-loading-fill);
-    --c-text: var(--toolbar-color);
-    --c-mantle: var(--lwt-accent-color);
-    --c-base: var(--tabpanel-background-color);
-    --c-surface0: var(--tab-selected-bgcolor);
-    --c-surface1: var(--arrowpanel-border-color);
+    --c-accent: var(--primary);
+    --c-text: var(--text);
+    --c-mantle: var(--mantle);
+    --c-base: var(--base);
+    --c-surface0: var(--surface0);
+    --c-surface1: var(--surface1);
 
     --primary:#FFFFFF !important;
     --zen-colors-primary: var(--c-accent) !important;
