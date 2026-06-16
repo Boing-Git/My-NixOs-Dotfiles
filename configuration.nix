@@ -142,6 +142,12 @@ in
     pulse.enable = true;
   };
 
+  # Inside your system-wide configuration.nix
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   services.udev.extraRules = ''
   # Disable USB autosuspend for the TUF GAMING M3 Mouse
   ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", ATTR{idProduct}=="1910", ATTR{power/control}="on"

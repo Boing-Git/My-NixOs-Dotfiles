@@ -14,6 +14,8 @@
         mvllow.rose-pine
         ravenothere.rose-pine-symbols
         theqtcompany.qt-qml
+        # The official Lua extension from sumneko
+        sumneko.lua
       ];
     };
   };

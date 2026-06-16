@@ -21,12 +21,19 @@
     ./PackConfig.nix
   ];
 
+  wayland.windowManager.hyprland = {
+    enable = true;
+    extraConfig = ''
+      # Launches the core Caelestia compositor shell daemon natively
+      exec-once = caelestia shell -d
+    '';
+  };
+
   # Symlinking caelestia dotfiles to make it feel like Arch
   xdg.configFile = {
-    "hypr" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/share/caelestia/hypr";
-      force = false;
-    };
+    # Force Home Manager to drop its built-in files so they don't break your symlink boundary
+    "hypr/.luarc.json".enable = false;
+    "hypr/hyprland.lua".enable = false;
     "btop" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/share/caelestia/btop";
       force = true;
