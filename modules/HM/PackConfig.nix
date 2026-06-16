@@ -59,6 +59,5 @@
   };
   programs = {
     home-manager.enable = true;
-    tree.enable = true;
   };
 }

@@ -77,8 +77,8 @@ in
     desktop-file-utils
     cairo
     pango
+    tree
     gobject-introspection
-    hyprcorners
 
     (python3.withPackages (ps: with ps; [
       tkinter
