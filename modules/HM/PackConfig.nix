@@ -57,5 +57,8 @@
     theme = spkgs.themes.text;
     colorScheme = "Nord";
   };
-  programs.home-manager.enable = true;
+  programs = {
+    home-manager
+    tree
+  }
 }
