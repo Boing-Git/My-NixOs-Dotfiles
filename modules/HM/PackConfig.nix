@@ -58,7 +58,7 @@
     colorScheme = "Nord";
   };
   programs = {
-    home-manager
-    tree
-  }
+    home-manager.enable = true;
+    tree.enable = true;
+  };
 }
