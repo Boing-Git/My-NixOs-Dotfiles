@@ -2,6 +2,9 @@
   description = "My Original NixOS Configuration";
 
   inputs = {
+    # Add Hexecute here
+    hexecute.url = "github:ThatOtherAndrew/Hexecute";
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     
     home-manager = {
@@ -33,15 +36,11 @@
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
-
-      # Add Hexecute here
-      hexecute = {
-        url = "github:ThatOtherAndrew/Hexecute";
-        };
     };
+
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, nix-vscode-extensions, hexecute, ... }: {
+  outputs = inputs @ { nixpkgs, home-manager, nix-vscode-extensions,hexecute, ... }: {
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
