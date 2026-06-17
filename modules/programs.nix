@@ -29,6 +29,10 @@ in
     fastfetch
     set -g fish_greeting " "
     '';
+    shellAliases = {
+      nrs = "sudo nixos rebuild switch --flake .";
+      nrt = "sudo nixos rebuild test --flake .";
+    };
   };
   
   # Config hyprland

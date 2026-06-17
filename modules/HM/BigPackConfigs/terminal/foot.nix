@@ -39,11 +39,6 @@
         find-prev = "Shift+F3";
         find-next = "F3 Control+G";
       };
-      shell-alias = {
-        nrt = "sudo nixos rebuild test --flake ."
-        nrs = "sudo nixos rebuild switch --flake ."
-      }
     };
-
   };
 } 
