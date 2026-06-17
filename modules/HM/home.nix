@@ -67,6 +67,7 @@
     pipes
     inotify-tools
     ncdu
+    hexecute
   ];
 
   # User level environment variables
