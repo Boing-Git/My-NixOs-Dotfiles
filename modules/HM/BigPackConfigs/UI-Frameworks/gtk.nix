@@ -28,36 +28,36 @@ in
       /* Note: Replace var(--your-variable) with the exact names found inside your colors.css */
 
       /* Core Window */
-      @define-color window_bg_color        var(--background, var(--md-sys-color-background, #110c1b));
-      @define-color window_fg_color        var(--on-background, var(--md-sys-color-on-background, #d7b1f0));
-      @define-color view_bg_color          var(--surface, var(--md-sys-color-surface, #110c1b));
-      @define-color view_fg_color          var(--on-surface, var(--md-sys-color-on-surface, #d7b1f0));
+      @define-color window_bg_color        var(--background, var(--md-sys-color-background));
+      @define-color window_fg_color        var(--on-background, var(--md-sys-color-on-background));
+      @define-color view_bg_color          var(--surface, var(--md-sys-color-surface));
+      @define-color view_fg_color          var(--on-surface, var(--md-sys-color-on-surface));
 
       /* Accents */
-      @define-color accent_bg_color        var(--primary, var(--md-sys-color-primary, #443259));
-      @define-color accent_fg_color        var(--on-primary, var(--md-sys-color-on-primary, #d7b1f0));
-      @define-color accent_color           var(--primary, var(--md-sys-color-primary, #443259));
+      @define-color accent_bg_color        var(--primary, var(--md-sys-color-primary));
+      @define-color accent_fg_color        var(--on-primary, var(--md-sys-color-on-primary));
+      @define-color accent_color           var(--primary, var(--md-sys-color-primary));
 
       /* Headerbars & Sidebars */
-      @define-color headerbar_bg_color     var(--surface-container, var(--md-sys-color-surface-container, #110c1b));
-      @define-color headerbar_fg_color     var(--on-surface, var(--md-sys-color-on-surface, #d7b1f0));
-      @define-color headerbar_backdrop_color var(--surface-container, var(--md-sys-color-surface-container, #110c1b));
-      @define-color headerbar_border_color var(--outline-variant, var(--md-sys-color-outline-variant, #313244));
+      @define-color headerbar_bg_color     var(--surface-container, var(--md-sys-color-surface-container));
+      @define-color headerbar_fg_color     var(--on-surface, var(--md-sys-color-on-surface));
+      @define-color headerbar_backdrop_color var(--surface-container, var(--md-sys-color-surface-container));
+      @define-color headerbar_border_color var(--outline-variant, var(--md-sys-color-outline-variant));
 
       /* Cards & Lists */
-      @define-color card_bg_color          var(--surface-container-low, var(--md-sys-color-surface-container-low, #110c1b));
-      @define-color card_fg_color          var(--on-surface, var(--md-sys-color-on-surface, #d7b1f0));
+      @define-color card_bg_color          var(--surface-container-low, var(--md-sys-color-surface-container-low));
+      @define-color card_fg_color          var(--on-surface, var(--md-sys-color-on-surface));
 
       /* Popovers & Dialogs */
-      @define-color popover_bg_color       var(--surface-container-high, var(--md-sys-color-surface-container-high, #313244));
-      @define-color popover_fg_color       var(--on-surface, var(--md-sys-color-on-surface, #d7b1f0));
-      @define-color dialog_bg_color        var(--surface-container-high, var(--md-sys-color-surface-container-high, #110c1b));
-      @define-color dialog_fg_color        var(--on-surface, var(--md-sys-color-on-surface, #d7b1f0));
+      @define-color popover_bg_color       var(--surface-container-high, var(--md-sys-color-surface-container-high));
+      @define-color popover_fg_color       var(--on-surface, var(--md-sys-color-on-surface));
+      @define-color dialog_bg_color        var(--surface-container-high, var(--md-sys-color-surface-container-high));
+      @define-color dialog_fg_color        var(--on-surface, var(--md-sys-color-on-surface));
 
       /* Semantic Feedback states */
-      @define-color error_bg_color         var(--error-container, var(--md-sys-color-error-container, #45475a));
-      @define-color error_fg_color         var(--error, var(--md-sys-color-error, #f38ba8));
-      @define-color error_color            var(--error, var(--md-sys-color-error, #f38ba8));
+      @define-color error_bg_color         var(--error-container, var(--md-sys-color-error-container));
+      @define-color error_fg_color         var(--error, var(--md-sys-color-error));
+      @define-color error_color            var(--error, var(--md-sys-color-error));
     '';
 
     # ── GTK4 (libadwaita apps) ─────────────────────────────────────────────────
@@ -65,19 +65,32 @@ in
       /* Mirror the structural mapping perfectly for libadwaita applications */
       @import url("file:///home/jivan/.local/state/caelestia/scheme.json");
 
-      @define-color window_bg_color        var(--background, var(--md-sys-color-background, #110c1b));
-      @define-color window_fg_color        var(--on-background, var(--md-sys-color-on-background, #d7b1f0));
-      @define-color view_bg_color          var(--surface, var(--md-sys-color-surface, #110c1b));
-      @define-color view_fg_color          var(--on-surface, var(--md-sys-color-on-surface, #d7b1f0));
-      @define-color accent_bg_color        var(--primary, var(--md-sys-color-primary, #443259));
-      @define-color accent_fg_color        var(--on-primary, var(--md-sys-color-on-primary, #d7b1f0));
-      @define-color accent_color           var(--primary, var(--md-sys-color-primary, #443259));
-      @define-color headerbar_bg_color     var(--surface-container, var(--md-sys-color-surface-container, #110c1b));
-      @define-color headerbar_fg_color     var(--on-surface, var(--md-sys-color-on-surface, #d7b1f0));
-      @define-color card_bg_color          var(--surface-container-low, var(--md-sys-color-surface-container-low, #110c1b));
-      @define-color card_fg_color          var(--on-surface, var(--md-sys-color-on-surface, #d7b1f0));
-      @define-color popover_bg_color       var(--surface-container-high, var(--md-sys-color-surface-container-high, #313244));
-      @define-color popover_fg_color       var(--on-surface, var(--md-sys-color-on-surface, #d7b1f0));
+      /* Core Window */
+      @define-color window_bg_color        var(--background, var(--md-sys-color-background));
+      @define-color window_fg_color        var(--on-background, var(--md-sys-color-on-background));
+      @define-color view_bg_color          var(--surface, var(--md-sys-color-surface));
+      @define-color view_fg_color          var(--on-surface, var(--md-sys-color-on-surface));
+
+      /* Accents */
+      @define-color accent_bg_color        var(--primary, var(--md-sys-color-primary));
+      @define-color accent_fg_color        var(--on-primary, var(--md-sys-color-on-primary));
+      @define-color accent_color           var(--primary, var(--md-sys-color-primary));
+
+      /* Headerbars & Sidebars */
+      @define-color headerbar_bg_color     var(--surface-container, var(--md-sys-color-surface-container));
+      @define-color headerbar_fg_color     var(--on-surface, var(--md-sys-color-on-surface));
+      @define-color headerbar_backdrop_color var(--surface-container, var(--md-sys-color-surface-container));
+      @define-color headerbar_border_color var(--outline-variant, var(--md-sys-color-outline-variant));
+
+      /* Cards & Lists */
+      @define-color card_bg_color          var(--surface-container-low, var(--md-sys-color-surface-container-low));
+      @define-color card_fg_color          var(--on-surface, var(--md-sys-color-on-surface));
+
+      /* Popovers & Dialogs */
+      @define-color popover_bg_color       var(--surface-container-high, var(--md-sys-color-surface-container-high));
+      @define-color popover_fg_color       var(--on-surface, var(--md-sys-color-on-surface));
+      @define-color dialog_bg_color        var(--surface-container-high, var(--md-sys-color-surface-container-high));
+      @define-color dialog_fg_color        var(--on-surface, var(--md-sys-color-on-surface));
     '';
   };
 
