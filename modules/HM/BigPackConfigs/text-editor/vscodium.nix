@@ -49,7 +49,7 @@
         "editor.minimap.enabled" = false;
         "window.customTitleBarVisibility" = "windowed";
         "window.titleBarStyle" = "native";
-        "keyboard.dispatch": "keyCode"
+        "keyboard.dispatch" = "keyCode"
         "files.exclude" = {
           "**/.git" = true;
           "**/.svn" = true;
