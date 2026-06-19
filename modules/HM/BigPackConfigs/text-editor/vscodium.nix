@@ -14,9 +14,9 @@
         ravenothere.rose-pine-symbols
         theqtcompany.qt-qml
         sumneko.lua
+        naumovs.color-highlight
       ];
 
-      # Merging your keybindings here
       keybindings = [
         { key = "ctrl+shift+alt+r"; command = "workbench.action.reloadWindow"; }
         { key = "ctrl+pageup"; command = "workbench.action.previousEditor"; }
@@ -38,8 +38,18 @@
         { key = "ctrl+shift+q"; command = "workbench.action.closeActiveEditor"; when = "editorTextFocus"; }
       ];
 
-      # Adding your files.exclude configuration seen in image_47d02d.jpg
       userSettings = {
+        "workbench.colorTheme" = "Caelestia";
+        "workbench.statusBar.visible" = false;
+        "window.menuBarVisibility" = "hidden";
+        "window.commandCenter" = false;
+        "workbench.layoutControl.enabled" = false;
+        "workbench.browser.showInTitleBar" = false;
+        "workbench.editor.enablePreview" = false;
+        "editor.minimap.enabled" = false;
+        "window.customTitleBarVisibility" = "windowed";
+        "window.titleBarStyle" = "native";
+        "keyboard.dispatch": "keyCode"
         "files.exclude" = {
           "**/.git" = true;
           "**/.svn" = true;
@@ -56,7 +66,6 @@
     };
   };
 
-  # Activation script for the VSIX extension
   home.activation = {
     installCaelestiaExtension = lib.hm.dag.entryAfter ["writeBoundary"] ''
       if ! ${pkgs.vscodium}/bin/codium --list-extensions | grep -iq "soramanew.caelestia-vscode-integration"; then
