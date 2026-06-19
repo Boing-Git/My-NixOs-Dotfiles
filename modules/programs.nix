@@ -26,7 +26,7 @@ in
     shellInit = ''
     set -gx LANG en_US.UTF-8
     set -gx LC_ALL en_US.UTF-8
-    cbonsai
+    (sleep 0.1 && cbonsai -p)
     set -g fish_greeting " "
     '';
     shellAliases = {
