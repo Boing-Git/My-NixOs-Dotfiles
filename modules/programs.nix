@@ -84,6 +84,7 @@ in
     tree
     gobject-introspection
     cbonsai
+    nitch
 
     (python3.withPackages (ps: with ps; [
       tkinter
