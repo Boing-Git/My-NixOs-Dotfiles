@@ -11,7 +11,7 @@
     ./BigPackConfigs/terminal/starship.nix
     ./BigPackConfigs/terminal/foot.nix
     ./BigPackConfigs/UI-Frameworks/gtk.nix
-    ./BigPackConfigs/terminal/fastfetch.nix
+    # ./BigPackConfigs/terminal/fastfetch.nix
     ./BigPackConfigs/text-editor/vscodium.nix
     ./BigPackConfigs/text-editor/zed.nix
     ./BigPackConfigs/zen/zen.nix
