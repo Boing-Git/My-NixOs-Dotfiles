@@ -86,6 +86,7 @@ in
     gobject-introspection
     cbonsai
     nitch
+    mpvpaper
 
     (python3.withPackages (ps: with ps; [
       tkinter

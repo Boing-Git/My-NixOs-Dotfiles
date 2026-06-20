@@ -1,6 +1,14 @@
 { config, pkgs, lib, ... }:
 
 {
+  # 1. Add qtdeclarative to your user packages to provide the 'qmlls' binary
+  home.packages = with pkgs; [
+    qt6.qtdeclarative
+  ];
+
+  # 2. Declaratively create the empty marker file the LSP needs to scan the directory
+  home.file.".config/quickshell/Pill/.qmlls.ini".text = "";
+
   programs.vscodium = {
     enable = true;
     package = pkgs.vscodium;
@@ -12,9 +20,11 @@
         vscodevim.vim
         mvllow.rose-pine
         ravenothere.rose-pine-symbols
-        theqtcompany.qt-qml
+        theqtcompany.qt-qml # This handles QML language features
         sumneko.lua
         naumovs.color-highlight
+        # Add the embedded browser
+        antfu.browse-lite
       ];
 
       keybindings = [
@@ -62,6 +72,13 @@
           "**/flake.lock" = true;
           "**/LICENSE" = true;
         };
+
+        # 3. Add QML Language Server specific settings
+        "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
+        "qt-qml.qmlls.extraQmllsArguments" = [
+          "--import-path"
+          "/run/current-system/sw/lib/qt-6/qml"
+        ];
       };
     };
   };
