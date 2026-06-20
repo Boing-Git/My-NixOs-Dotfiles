@@ -91,7 +91,7 @@ in
     ffmpeg
     fuzzel
     awww
-    switcheroo
+    loupe
 
     (python3.withPackages (ps: with ps; [
       tkinter
