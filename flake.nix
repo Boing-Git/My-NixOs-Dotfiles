@@ -50,17 +50,11 @@
         ./configuration.nix
         home-manager.nixosModules.home-manager
         {
-        nixpkgs.overlays = [
-          # 1. Custom overlay for Hexecute (with valid repository URL)
-          (final: prev: {
-            hexecute = prev.callPackage (
-              builtins.fetchTarball "https://github.com"
-            ) {};
-          })
+          # 2. Apply the overlay so pkgs.vscode-marketplace becomes available
+          nixpkgs.overlays = [
+            nix-vscode-extensions.overlays.default
+          ];
 
-          # 2. VS Code extensions overlay
-          nix-vscode-extensions.overlays.default
-        ];
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs; };
