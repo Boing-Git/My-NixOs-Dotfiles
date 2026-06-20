@@ -61,11 +61,6 @@
           # 2. VS Code extensions overlay
           nix-vscode-extensions.overlays.default
         ];
-
-
-            nix-vscode-extensions.overlays.default
-          ];
-
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs; };
