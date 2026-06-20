@@ -92,6 +92,7 @@ in
     fuzzel
     awww
     loupe
+    upscayl
 
     (python3.withPackages (ps: with ps; [
       tkinter
