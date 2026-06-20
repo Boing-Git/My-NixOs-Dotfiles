@@ -89,6 +89,8 @@ in
     mpvpaper
     lua
     ffmpeg
+    fuzzel
+    awww
 
     (python3.withPackages (ps: with ps; [
       tkinter
