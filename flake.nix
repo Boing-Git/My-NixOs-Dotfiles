@@ -50,8 +50,18 @@
         ./configuration.nix
         home-manager.nixosModules.home-manager
         {
-          # 2. Apply the overlay so pkgs.vscode-marketplace becomes available
-          nixpkgs.overlays = [
+        nixpkgs.overlays = [
+          # 1. Custom overlay for Hexecute (with a valid repository source)
+          (self: super: {
+            hexecute = super.callPackage (
+              builtins.fetchTarball "https://github.com"
+            ) {};
+          }) # Notice that there is no separator needed between list items, but they must be valid, separate expressions.
+
+          # 2. VS Code extensions overlay
+          nix-vscode-extensions.overlays.default
+        ];
+
             nix-vscode-extensions.overlays.default
           ];
 

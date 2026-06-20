@@ -93,6 +93,7 @@ in
     awww
     loupe
     upscayl
+    hexecute
 
     (python3.withPackages (ps: with ps; [
       tkinter
