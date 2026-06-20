@@ -87,6 +87,7 @@ in
     cbonsai
     nitch
     mpvpaper
+    lua
 
     (python3.withPackages (ps: with ps; [
       tkinter
