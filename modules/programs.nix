@@ -88,6 +88,7 @@ in
     nitch
     mpvpaper
     lua
+    ffmpeg
 
     (python3.withPackages (ps: with ps; [
       tkinter
