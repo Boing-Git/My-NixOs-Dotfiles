@@ -59,7 +59,7 @@
           })
 
           # 2. VS Code extensions overlay
-          nix-vscode-extensions.overlays.default;
+          nix-vscode-extensions.overlays.default
         ];
 
 
