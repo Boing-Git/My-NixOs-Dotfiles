@@ -51,16 +51,17 @@
         home-manager.nixosModules.home-manager
         {
         nixpkgs.overlays = [
-          # 1. Custom overlay for Hexecute (with a valid repository source)
-          (self: super: {
-            hexecute = super.callPackage (
+          # 1. Custom overlay for Hexecute (with valid repository URL)
+          (final: prev: {
+            hexecute = prev.callPackage (
               builtins.fetchTarball "https://github.com"
             ) {};
-          }) # Notice that there is no separator needed between list items, but they must be valid, separate expressions.
+          })
 
           # 2. VS Code extensions overlay
           nix-vscode-extensions.overlays.default
         ];
+
 
             nix-vscode-extensions.overlays.default
           ];
