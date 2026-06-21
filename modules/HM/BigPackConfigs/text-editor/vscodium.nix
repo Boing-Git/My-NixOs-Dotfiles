@@ -79,6 +79,17 @@
           "--import-path"
           "/run/current-system/sw/lib/qt-6/qml"
         ];
+
+        # Use Rubik as the primary font
+        "editor.fontFamily" = "'Rubik', 'monospace', monospace";
+        
+        "editor.fontSize" = 14;
+        
+        # Disabled since standard Rubik does not feature programming ligatures
+        "editor.fontLigatures" = false;
+
+        # Set line numbers to relative
+        "editor.lineNumbers" = "relative";
       };
     };
   };
