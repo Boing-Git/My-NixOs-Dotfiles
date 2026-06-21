@@ -83,7 +83,7 @@
         # Use Rubik as the primary font
         "editor.fontFamily" = "'Rubik', 'monospace', monospace";
         
-        "editor.fontSize" = 14;
+        "editor.fontSize" = 16;
         
         # Disabled since standard Rubik does not feature programming ligatures
         "editor.fontLigatures" = false;
