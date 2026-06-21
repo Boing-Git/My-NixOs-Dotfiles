@@ -93,7 +93,6 @@ in
     awww
     loupe
     upscayl
-    hexecute
 
     (python3.withPackages (ps: with ps; [
       tkinter
@@ -121,7 +120,7 @@ in
     fish
     bash
     app2unit
-    swappy
+    swapp
     wl-clipboard
     libqalculate
 
