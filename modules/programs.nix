@@ -120,7 +120,7 @@ in
     fish
     bash
     app2unit
-    swapp
+    swappy
     wl-clipboard
     libqalculate
 
