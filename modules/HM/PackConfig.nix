@@ -14,7 +14,6 @@
     # ./BigPackConfigs/terminal/fastfetch.nix
     ./BigPackConfigs/text-editor/vscodium.nix
     ./BigPackConfigs/text-editor/zed.nix
-    ./BigPackConfigs/zen/zen.nix
   ];
 
   # Caelestia shell and CLI - the main desktop environment
@@ -59,5 +58,6 @@
   };
   programs = {
     home-manager.enable = true;
+    zen-browser.enable = true;
   };
 }
