@@ -90,6 +90,11 @@
 
         # Set line numbers to relative
         "editor.lineNumbers" = "relative";
+
+        # 2. Force VSCodium to associate .qml files with the QML language
+      "files.associations" = {
+        "*.qml" = "qml";
+      };
       };
     };
   };
