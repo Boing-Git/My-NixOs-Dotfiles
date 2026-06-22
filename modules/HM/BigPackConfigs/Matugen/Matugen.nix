@@ -7,24 +7,22 @@
   programs.matugen = {
     enable = true;
     
-    settings = {
-      config = {
-        variant = "dark"; 
-        json_format = "hex"; 
-        reload_apps = true; # Handles built-in supported apps automatically
-      };
+    # 1. Provide the path to your wallpaper file right here
+    wallpaper = /home/boing/Pictures/Wallpapers/abstract/a_black_and_white_drawing_of_a_person_with_a_blindfold.png;
 
-      templates = {
-        foot = {
-          input_path = ./Templates/footTheme.ini;
-          output_path = "${config.xdg.configHome}/foot/theme.ini";
-          # Optional: If foot doesn't auto-reload, you can force it here:
-          # post_cmd = "footclient -c ${config.xdg.configHome}/foot/foot.ini";
-        };
-        quickshell = {
-          input_path = ./Templates/quickshellColors.js;
-          output_path = "${config.xdg.configHome}/quickshell/Colors/colors.js";
-        };
+    # 2. Top-level options use camelCase instead of snake_case
+    variant = "dark"; 
+    jsonFormat = "hex"; 
+
+    # 3. Define templates directly here (Notice inputPath and outputPath)
+    templates = {
+      foot = {
+        inputPath = ./Templates/footTheme.ini;
+        outputPath = "${config.xdg.configHome}/foot/theme.ini";
+      };
+      quickshell = {
+        inputPath = ./Templates/quickshellColors.js;
+        outputPath = "${config.xdg.configHome}/quickshell/Colors/colors.js";
       };
     };
   };
