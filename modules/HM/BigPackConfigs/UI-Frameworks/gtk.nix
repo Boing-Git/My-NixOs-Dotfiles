@@ -28,13 +28,5 @@ in
       gtk4.extraCss = ''
         @import url("file://${config.xdg.configHome}/gtk-colors/gtk-colors.css");
       '';
-
-    # ── Apply theme via gsettings at session start ────────────────────────────────
-    wayland.windowManager.hyprland.settings.exec-once = [
-      "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'"
-      "gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'"
-      "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
-      "papirus-folders -c teal" 
-    ];
   };
 }
