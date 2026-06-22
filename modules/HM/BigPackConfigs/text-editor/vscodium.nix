@@ -52,7 +52,7 @@
       userSettings = {
         "workbench.colorCustomizations" = {
           "import" = "${config.xdg.configHome}/vscodium/colors.json"
-        }
+        };
         "workbench.statusBar.visible" = false;
         "window.menuBarVisibility" = "hidden";
         "window.commandCenter" = false;
