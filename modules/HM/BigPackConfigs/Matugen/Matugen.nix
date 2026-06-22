@@ -27,8 +27,8 @@ in
         output_path = "${config.xdg.configHome}/quickshell/Variables/colors.js";
       };
       gtk = {
-        input_path = "./Templates/gtkColors.css"
-        output_path = "${config.xdg.configHome}/gtk-colors/gtkColors.css"
+        input_path = "./Templates/gtkColors.css";
+        output_path = "${config.xdg.configHome}/gtk-colors/gtkColors.css";
       };
       # Qt5 Configuration Output
       qt5ct-colors = {
@@ -44,12 +44,12 @@ in
 
       starship = {
         input_path = ./Templates/starship.toml;
-        output_path = "${config.xdg.configHome}/starship/starship.toml"
+        output_path = "${config.xdg.configHome}/starship/starship.toml";
       };
       vscodium = {
         input_path = ./Templates/vscodium.json;
-        output_path = "${config.xdg.configHome}/vscodium/vscodium.json"
-      }
+        output_path = "${config.xdg.configHome}/vscodium/vscodium.json";
+      };
     };
   };
 }
