@@ -2,7 +2,7 @@
 
 var primary = {
         base: "{{colors.primary.default.hex}}",
-        on: "{{colors.on_primary.default.hex}}",
+        on_base: "{{colors.on_primary.default.hex}}",
         container: "{{colors.primary_container.default.hex}}",
         on_container: "{{colors.on_primary_container.default.hex}}",
         fixed: "{{colors.primary_fixed.default.hex}}",
@@ -13,7 +13,7 @@ var primary = {
     }
  var   secondary = {
             base: "{{colors.secondary.default.hex}}",
-            on: "{{colors.on_secondary.default.hex}}",
+            on_base: "{{colors.on_secondary.default.hex}}",
             container: "{{colors.secondary_container.default.hex}}",
             on_container: "{{colors.on_secondary_container.default.hex}}",
             fixed: "{{colors.secondary_fixed.default.hex}}",
@@ -23,7 +23,7 @@ var primary = {
         }
 var   tertiary = {
             base: "{{colors.tertiary.default.hex}}",
-            on: "{{colors.on_tertiary.default.hex}}",
+            on_base: "{{colors.on_tertiary.default.hex}}",
             container: "{{colors.tertiary_container.default.hex}}",
             on_container: "{{colors.on_tertiary_container.default.hex}}",
             fixed: "{{colors.tertiary_fixed.default.hex}}",
@@ -33,13 +33,13 @@ var   tertiary = {
         }
 var   error = {
             base: "{{colors.error.default.hex}}",
-            on: "{{colors.on_error.default.hex}}",
+            on_base: "{{colors.on_error.default.hex}}",
             container: "{{colors.error_container.default.hex}}",
             on_container: "{{colors.on_error_container.default.hex}}"
         }
 var  surface = {
             base: "{{colors.surface.default.hex}}",
-            on: "{{colors.on_surface.default.hex}}",
+            on_base: "{{colors.on_surface.default.hex}}",
             variant: "{{colors.surface_variant.default.hex}}",
             on_variant: "{{colors.on_surface_variant.default.hex}}",
             dim: "{{colors.surface_dim.default.hex}}",
@@ -59,7 +59,7 @@ var   outline = {
         }
 var   background = {
             base: "{{colors.background.default.hex}}",
-            on: "{{colors.on_background.default.hex}}"
+            on_base: "{{colors.on_background.default.hex}}"
         }
 var  shadow = "{{colors.shadow.default.hex}}"
 var  scrim = "{{colors.scrim.default.hex}}"
