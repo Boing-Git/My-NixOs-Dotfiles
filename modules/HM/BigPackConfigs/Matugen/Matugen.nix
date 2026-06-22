@@ -1,23 +1,22 @@
 { config, pkgs, inputs, ... }:
 
 let
-  # A helper that cleanly formats standard Nix attribute sets into valid TOML syntax
   tomlFormat = pkgs.formats.toml { };
 in
 {
-  # 1. Install the matugen binary package directly from the flake inputs
   home.packages = [
     inputs.matugen.packages.${pkgs.system}.default
   ];
 
-  # 2. Force Home Manager to construct and symlink your config.toml
+  # 1. THIS IS THE MISSING PIECE: Copy your Templates folder into ~/.config/matugen/Templates
+  xdg.configFile."matugen/Templates".source = ./Templates;
+
   xdg.configFile."matugen/config.toml".source = tomlFormat.generate "matugen-config" {
     config = {
       variant = "dark";
       json_format = "hex";
     };
 
-    # These strings will be written straight into your config.toml file
     templates = {
       foot = {
         input_path = "${config.xdg.configHome}/matugen/Templates/footTheme.ini";
