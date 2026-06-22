@@ -24,7 +24,7 @@ in
       };
       quickshell = {
         input_path = "${config.xdg.configHome}/matugen/Templates/quickshellColors.js";
-        output_path = "${config.xdg.configHome}/quickshell/Colors/colors.js";
+        output_path = "${config.xdg.configHome}/quickshell/Variables/colors.js";
       };
     };
   };
