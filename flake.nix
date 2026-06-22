@@ -40,6 +40,8 @@
 
     # Add this exactly right here:
     matugen.url = "github:InioX/matugen";
+    # 1. Add the HyprWave repository as an input
+    hyprwave.url = "github:shantanubaddar/hyprwave";
 
   };
 

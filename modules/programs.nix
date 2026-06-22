@@ -142,5 +142,7 @@ in
     inputs.caelestia-shell.packages.${pkgs.system}.with-cli
     inputs.caelestia-cli.packages.${pkgs.system}.default
     inputs.hexecute.packages.${pkgs.system}.default
+    # Extract the package directly out of the flake inputs
+    inputs.hyprwave.packages.${pkgs.system}.default
   ];
 }
