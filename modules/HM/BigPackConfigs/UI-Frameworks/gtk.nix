@@ -29,13 +29,6 @@ in
         @import url("file://${config.xdg.configHome}/gtk-colors/gtk-colors.css");
       '';
 
-    # ── Required packages ────────────────────────────────────────────────────────
-    home.packages = with pkgs; [
-      adw-gtk3
-      papirus-icon-theme
-      gsettings-desktop-schemas   
-    ];
-
     # ── Apply theme via gsettings at session start ────────────────────────────────
     wayland.windowManager.hyprland.settings.exec-once = [
       "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'"
