@@ -19,13 +19,33 @@ in
 
     templates = {
       foot = {
-        input_path = "${config.xdg.configHome}/matugen/Templates/footTheme.ini";
+        input_path = "./Templates/footTheme.ini";
         output_path = "${config.xdg.configHome}/foot/theme.ini";
       };
       quickshell = {
-        input_path = "${config.xdg.configHome}/matugen/Templates/quickshellColors.js";
+        input_path = "./Templates/quickshellColors.js";
         output_path = "${config.xdg.configHome}/quickshell/Variables/colors.js";
       };
+      gtk = {
+        input_path = "./Templates/gtkColors.css"
+        output_path = "${config.xdg.configHome}/gtk-colors/gtkColors.css"
+      };
+      # Qt5 Configuration Output
+      qt5ct-colors = {
+        input_path = ./templates/qtct.conf;
+        output_path = "${config.xdg.configHome}/qt5ct/colors/matugen.conf";
+      };
+      
+      # Qt6 Configuration Output
+      qt6ct-colors = {
+        input_path = ./templates/qtct.conf;
+        output_path = "${config.xdg.configHome}/qt6ct/colors/matugen.conf";
+      };
+
+      starship = {
+        input_path = ./Templates/starship.toml;
+        output_path = "${config.xdg.configHome}/starship/starship.toml"
+      }
     };
   };
 }

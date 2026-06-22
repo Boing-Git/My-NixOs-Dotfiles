@@ -1,0 +1,148 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[]({{colors.primary.default}})\
+$os\
+$username\
+[](bg:{{colors.primary_container.default}} fg:{{colors.primary.default}})\
+$directory\
+[](fg:{{colors.primary_container.default}} bg:{{colors.secondary.default}})\
+$git_branch\
+$git_status\
+[](fg:{{colors.secondary.default}} bg:{{colors.secondary_container.default}})\
+$c\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$maven\
+$nodejs\
+$bun\
+$nim\
+$rust\
+$scala\
+[](fg:{{colors.secondary_container.default}} bg:{{colors.tertiary.default}})\
+$docker_context\
+[](fg:{{colors.tertiary.default}} bg:{{colors.tertiary_container.default}})\
+$time\
+[ ](fg:{{colors.tertiary_container.default}})\
+"""
+
+[username]
+show_always = true
+style_user = "bg:{{colors.primary.default}} fg:{{colors.on_primary.default}}"
+style_root = "bg:{{colors.primary.default}} fg:{{colors.on_primary.default}}"
+format = '[$user ]($style)'
+disabled = false
+
+[os]
+style = "bg:{{colors.primary.default}} fg:{{colors.on_primary.default}}"
+disabled = true 
+
+[directory]
+style = "bg:{{colors.primary_container.default}} fg:{{colors.on_primary_container.default}}"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[c]
+symbol = " "
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[cpp]
+symbol = " "
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:{{colors.tertiary.default}} fg:{{colors.on_tertiary.default}}"
+format = '[ $symbol $context ]($style)'
+
+[elixir]
+symbol = " "
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[elm]
+symbol = " "
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:{{colors.secondary.default}} fg:{{colors.on_secondary.default}}"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:{{colors.secondary.default}} fg:{{colors.on_secondary.default}}"
+format = '[$all_status$ahead_behind ]($style)'
+
+[golang]
+symbol = " "
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[gradle]
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[haskell]
+symbol = " "
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = " "
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[julia]
+symbol = " "
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[maven]
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[bun]
+symbol = ""
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[nim]
+symbol = "󰆥 "
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[scala]
+symbol = " "
+style = "bg:{{colors.secondary_container.default}} fg:{{colors.on_secondary_container.default}}"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R" 
+style = "bg:{{colors.tertiary_container.default}} fg:{{colors.on_tertiary_container.default}}"
+format = '[ ♥ $time ]($style)'

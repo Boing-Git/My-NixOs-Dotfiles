@@ -25,6 +25,7 @@
         naumovs.color-highlight
         # Add the embedded browser
         antfu.browse-lite
+        haikalllp.matugen-theme
       ];
 
       keybindings = [
@@ -49,7 +50,9 @@
       ];
 
       userSettings = {
-        "workbench.colorTheme" = "Caelestia";
+        "workbench.colorCustomizations": {
+          "import": "${config.xdg.configHome}/vscodium/colors.json"
+        }
         "workbench.statusBar.visible" = false;
         "window.menuBarVisibility" = "hidden";
         "window.commandCenter" = false;
@@ -97,13 +100,5 @@
       };
       };
     };
-  };
-
-  home.activation = {
-    installCaelestiaExtension = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      if ! ${pkgs.vscodium}/bin/codium --list-extensions | grep -iq "soramanew.caelestia-vscode-integration"; then
-        ${pkgs.vscodium}/bin/codium --install-extension ${./caelestia-vscode-integration-1.2.0.vsix} --force
-      fi
-    '';
   };
 }

@@ -8,9 +8,9 @@
   in
 {
   imports = [
-    ./BigPackConfigs/terminal/starship.nix
     ./BigPackConfigs/terminal/foot.nix
-    # ./BigPackConfigs/UI-Frameworks/gtk.nix
+     ./BigPackConfigs/UI-Frameworks/gtk.nix
+     ./BigPackConfigs/UI-Frameworks/qt.nix
     # ./BigPackConfigs/terminal/fastfetch.nix
     ./BigPackConfigs/text-editor/vscodium.nix
     ./BigPackConfigs/text-editor/zed.nix
