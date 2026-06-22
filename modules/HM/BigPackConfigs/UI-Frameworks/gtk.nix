@@ -31,7 +31,7 @@ in
       @define-color window_bg_color        var(--background, var(--md-sys-color-background));
       @define-color window_fg_color        var(--on-background, var(--md-sys-color-on-background));
       @define-color view_bg_color          var(--surface, var(--md-sys-color-surface));
-      @define-color view_fg_color          var(--on-surface, var(--md-sys-color-on-surface));
+      @define-color view_fg_color      :   var(--on-surface, var(--md-sys-color-on-surface));
 
       /* Accents */
       @define-color accent_bg_color        var(--primary, var(--md-sys-color-primary));

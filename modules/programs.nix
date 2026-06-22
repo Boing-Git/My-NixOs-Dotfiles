@@ -93,6 +93,7 @@ in
     awww
     loupe
     upscayl
+    grim
 
     (python3.withPackages (ps: with ps; [
       tkinter
@@ -134,6 +135,7 @@ in
     material-symbols
     rubik
     nerd-fonts.caskaydia-cove
+    (google-fonts.override { fonts = [ "SpaceMono" ]; }) 
 
     # Upstream Shell Executables from Flake inputs
     inputs.caelestia-shell.packages.${pkgs.system}.with-cli

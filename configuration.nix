@@ -112,7 +112,6 @@ in
   environment.systemPackages = [
     pkgs.git
     caelestia-sddm-locklike
-    pkgs.kdePackages.kate
   ];
 
   # ── Users ─────────────────────────────────────────────────────────────

@@ -1,4 +1,4 @@
-{config, lib, ...} :
+{ config, lib, ... }:
 
 {
   # Foot terminal - main terminal emulator with JetBrains Nerd Font
@@ -8,7 +8,7 @@
       main = {
         shell = "fish";
         title = "foot";
-        font = "JetBrains Mono Nerd Font:size=12";
+        font = "JetBrainsMono Nerd Font:size=11";
         letter-spacing = 0;
         dpi-aware = "no";
         pad = "25x25";
@@ -18,7 +18,7 @@
       # How far back I can scroll in the terminal
       scrollback = {
         lines = 10000;
-        multiplier = 1.00;
+        multiplier = "1.000000";
       };
       # Thin beam cursor instead of block
       cursor = {
@@ -41,4 +41,4 @@
       };
     };
   };
-} 
+}
