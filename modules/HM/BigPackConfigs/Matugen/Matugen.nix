@@ -7,7 +7,6 @@
     enable = true;
     variant = "dark";
     jsonFormat = "hex";
-    palette = "default";
 
     # The module generates these templates into a read-only store directory
     templates = {
