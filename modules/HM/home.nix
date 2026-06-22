@@ -66,6 +66,7 @@
     pipes
     inotify-tools
     ncdu
+    gsettings-desktop-schemas   
   ];
 
   # User level environment variables
