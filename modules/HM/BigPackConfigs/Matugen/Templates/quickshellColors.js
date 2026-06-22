@@ -61,5 +61,5 @@ var   background = {
             base: "{{colors.background.default.hex}}",
             on: "{{colors.on_background.default.hex}}"
         }
-var  shadow: "{{colors.shadow.default.hex}}"
-var  scrim: "{{colors.scrim.default.hex}}"
+var  shadow = "{{colors.shadow.default.hex}}"
+var  scrim = "{{colors.scrim.default.hex}}"
