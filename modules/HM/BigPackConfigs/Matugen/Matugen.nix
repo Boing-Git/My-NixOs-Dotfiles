@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }: {
   imports = [
-    inputs.matugen.homeManagerModules.default 
+    inputs.matugen.nixosModules.default 
   ];
 
   programs.matugen = {
