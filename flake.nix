@@ -66,7 +66,6 @@
           home-manager.users.boing = {
             imports = [
               ./modules/HM/home.nix
-              ./modules/HM/matugen.nix # Make sure to import your new file here!
             ];
           };
         }
