@@ -1,83 +1,67 @@
-.pragma library
+.pragma library 
 
-// --- Primary Colors ---
-var primary = {
-    base: "{{primary}}",
-    on: "{{on_primary}}",
-    container: "{{primary_container}}",
-    on_container: "{{on_primary_container}}",
-    fixed: "{{primary_fixed}}",
-    fixed_dim: "{{primary_fixed_dim}}",
-    on_fixed: "{{on_primary_fixed}}",
-    on_fixed_variant: "{{on_primary_fixed_variant}}",
-    inverse: "{{inverse_primary}}"
-};
-
-// --- Secondary Colors ---
-var secondary = {
-    base: "{{secondary}}",
-    on: "{{on_secondary}}",
-    container: "{{secondary_container}}",
-    on_container: "{{on_secondary_container}}",
-    fixed: "{{secondary_fixed}}",
-    fixed_dim: "{{secondary_fixed_dim}}",
-    on_fixed: "{{on_secondary_fixed}}",
-    on_fixed_variant: "{{on_secondary_fixed_variant}}"
-};
-
-// --- Tertiary Colors ---
-var tertiary = {
-    base: "{{tertiary}}",
-    on: "{{on_tertiary}}",
-    container: "{{tertiary_container}}",
-    on_container: "{{on_tertiary_container}}",
-    fixed: "{{tertiary_fixed}}",
-    fixed_dim: "{{tertiary_fixed_dim}}",
-    on_fixed: "{{on_tertiary_fixed}}",
-    on_fixed_variant: "{{on_tertiary_fixed_variant}}"
-};
-
-// --- Error Colors ---
-var error = {
-    base: "{{error}}",
-    on: "{{on_error}}",
-    container: "{{error_container}}",
-    on_container: "{{on_error_container}}"
-};
-
-// --- Surface Colors ---
-var surface = {
-    base: "{{surface}}",
-    on: "{{on_surface}}",
-    variant: "{{surface_variant}}",
-    on_variant: "{{on_surface_variant}}",
-    dim: "{{surface_dim}}",
-    bright: "{{surface_bright}}",
-    container_lowest: "{{surface_container_lowest}}",
-    container_low: "{{surface_container_low}}",
-    container: "{{surface_container}}",
-    container_high: "{{surface_container_high}}",
-    container_highest: "{{surface_container_highest}}",
-    inverse: "{{inverse_surface}}",
-    inverse_on: "{{inverse_on_surface}}",
-    tint: "{{surface_tint}}" 
-};
-
-// --- Outlines ---
-var outline = {
-    base: "{{outline}}",
-    variant: "{{outline_variant}}"
-};
-
-// --- Background ---
-// Grouped into an object for consistency with the rest of your structure
-var background = {
-    base: "{{background}}",
-    on: "{{on_background}}"
-};
-
-// --- Effects / Misc ---
-var effects = {
-    shadow: "{{shadow}}",
-    scrim: "{{scrim}}"
+var colors = {
+    primary: {
+        base: "{{colors.primary.default.hex}}",
+        on: "{{colors.on_primary.default.hex}}",
+        container: "{{colors.primary_container.default.hex}}",
+        on_container: "{{colors.on_primary_container.default.hex}}",
+        fixed: "{{colors.primary_fixed.default.hex}}",
+        fixed_dim: "{{colors.primary_fixed_dim.default.hex}}",
+        on_fixed: "{{colors.on_primary_fixed.default.hex}}",
+        on_fixed_variant: "{{colors.on_primary_fixed_variant.default.hex}}",
+        inverse: "{{colors.inverse_primary.default.hex}}"
+    },
+    secondary: {
+        base: "{{colors.secondary.default.hex}}",
+        on: "{{colors.on_secondary.default.hex}}",
+        container: "{{colors.secondary_container.default.hex}}",
+        on_container: "{{colors.on_secondary_container.default.hex}}",
+        fixed: "{{colors.secondary_fixed.default.hex}}",
+        fixed_dim: "{{colors.secondary_fixed_dim.default.hex}}",
+        on_fixed: "{{colors.on_secondary_fixed.default.hex}}",
+        on_fixed_variant: "{{colors.on_secondary_fixed_variant.default.hex}}"
+    },
+    tertiary: {
+        base: "{{colors.tertiary.default.hex}}",
+        on: "{{colors.on_tertiary.default.hex}}",
+        container: "{{colors.tertiary_container.default.hex}}",
+        on_container: "{{colors.on_tertiary_container.default.hex}}",
+        fixed: "{{colors.tertiary_fixed.default.hex}}",
+        fixed_dim: "{{colors.tertiary_fixed_dim.default.hex}}",
+        on_fixed: "{{colors.on_tertiary_fixed.default.hex}}",
+        on_fixed_variant: "{{colors.on_tertiary_fixed_variant.default.hex}}"
+    },
+    error: {
+        base: "{{colors.error.default.hex}}",
+        on: "{{colors.on_error.default.hex}}",
+        container: "{{colors.error_container.default.hex}}",
+        on_container: "{{colors.on_error_container.default.hex}}"
+    },
+    surface: {
+        base: "{{colors.surface.default.hex}}",
+        on: "{{colors.on_surface.default.hex}}",
+        variant: "{{colors.surface_variant.default.hex}}",
+        on_variant: "{{colors.on_surface_variant.default.hex}}",
+        dim: "{{colors.surface_dim.default.hex}}",
+        bright: "{{colors.surface_bright.default.hex}}",
+        container_lowest: "{{colors.surface_container_lowest.default.hex}}",
+        container_low: "{{colors.surface_container_low.default.hex}}",
+        container: "{{colors.surface_container.default.hex}}",
+        container_high: "{{colors.surface_container_high.default.hex}}",
+        container_highest: "{{colors.surface_container_highest.default.hex}}",
+        inverse: "{{colors.inverse_surface.default.hex}}",
+        inverse_on: "{{colors.inverse_on_surface.default.hex}}",
+        tint: "{{colors.surface_tint.default.hex}}"
+    },
+    outline: {
+        base: "{{colors.outline.default.hex}}",
+        variant: "{{colors.outline_variant.default.hex}}"
+    },
+    background: {
+        base: "{{colors.background.default.hex}}",
+        on: "{{colors.on_background.default.hex}}"
+    },
+    shadow: "{{colors.shadow.default.hex}}",
+    scrim: "{{colors.scrim.default.hex}}"
 };
