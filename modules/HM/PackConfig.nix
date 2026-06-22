@@ -60,5 +60,6 @@
   programs = {
     home-manager.enable = true;
     zen-browser.enable = true;
+    starship.enable = true;
   };
 }
