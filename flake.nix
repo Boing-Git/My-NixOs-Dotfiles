@@ -38,6 +38,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Add this exactly right here:
+    matugen.url = "github:InioX/matugen";
+
   };
 
   outputs = inputs @ { nixpkgs, home-manager, nix-vscode-extensions,hexecute, ... }: {
