@@ -94,6 +94,7 @@ in
     loupe
     upscayl
     grim
+    playerctl
 
     (python3.withPackages (ps: with ps; [
       tkinter
