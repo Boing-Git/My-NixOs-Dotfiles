@@ -50,7 +50,7 @@
       ];
 
       userSettings = {
-        "workbench.colorCustomizations": {
+        "workbench.colorCustomizations" = {
           "import": "${config.xdg.configHome}/vscodium/colors.json"
         }
         "workbench.statusBar.visible" = false;
