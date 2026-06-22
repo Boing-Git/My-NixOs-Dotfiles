@@ -61,7 +61,6 @@
     vscodium
     google-cursor
     dejavu_fonts
-    matugen
     prismlauncher
     hyprpicker
     pipes
