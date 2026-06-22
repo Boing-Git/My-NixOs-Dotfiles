@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }: {
   imports = [
-    inputs.matugen.nixosModules.default # Or homeManagerModules.default depending on your setup
+    inputs.matugen.nixosModules.default 
   ];
 
   programs.matugen = {
@@ -8,27 +8,34 @@
     variant = "dark";
     jsonFormat = "hex";
 
-    # The module generates these templates into a read-only store directory
     templates = {
-      ags = {
-        input_path = "./templates/ags.scss";
-        output_path = ".config/ags/scss/colors.scss";
-      };
-      kitty = {
-        input_path = "./templates/kitty.conf";
-        output_path = ".config/kitty/colors.conf";
+      foot = {
+        input_path = "./Templates/footTheme.ini";
+        output_path = ".config/foot/theme.ini";
       };
       gtk = {
-        input_path = "./templates/gtk.css";
-        output_path = ".config/gtk-4.0/gtk.css";
+        input_path = "./Templates/gtkColors.css";
+        output_path = ".config/gtk-colors/gtkColors.css";
       };
       hypr = {
-        input_path = "./templates/hypr.conf";
+        input_path = "./Templates/hypr-colors.lua";
         output_path = ".config/hypr/colors.conf";
       };
-      yazi = {
-        input_path = "./templates/yazi.toml";
-        output_path = ".config/yazi/theme.toml";
+      qt = {
+        input_path = "./Templates/qtColors.conf";
+        output_path = ".config/qt5ct/colors/matugen.conf";
+      };
+      quickshell = {
+        input_path = "./Templates/quickshellColors.js";
+        output_path = ".config/quickshell/Variables/colors.js";
+      };
+      starship = {
+        input_path = "./Templates/starship.toml";
+        output_path = ".config/starship/starship.toml";
+      };
+      vscodium = {
+        input_path = "./Templates/vscodium.json";
+        output_path = ".config/vscodium/theme-colors.json";
       };
     };
   };
