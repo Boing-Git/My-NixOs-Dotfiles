@@ -1,12 +1,12 @@
+# Save as: ./modules/HM/matugen.nix
 { config, pkgs, inputs, ... }: {
   imports = [
-    inputs.matugen.nixosModules.default 
+    # Use the home manager module variant to correctly resolve user xdg paths
+    inputs.matugen.homeManagerModules.default 
   ];
 
   programs.matugen = {
     enable = true;
-    variant = "dark";
-    jsonFormat = "hex";
 
     templates = {
       foot = {

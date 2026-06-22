@@ -1,12 +1,12 @@
+# Save as: ./flake.nix
 {
   description = "My Original NixOS Configuration";
 
   inputs = {
-    # Add Hexecute here
-    hexecute.url = "github:ThatOtherAndrew/Hexecute";
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     
+    hexecute.url = "github:ThatOtherAndrew/Hexecute";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,7 +22,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Add this missing input right here:
     caelestia-cli = {
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,36 +37,36 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Add this exactly right here:
     matugen.url = "github:InioX/matugen";
-    # 1. Add the HyprWave repository as an input
+    
     hyprwave.url = "github:shantanubaddar/hyprwave";
-
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, nix-vscode-extensions,hexecute, ... }: {
-    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+  outputs = inputs: {
+    nixosConfigurations."nixos" = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-
+      
+      # Passes inputs to system-level configuration.nix
       specialArgs = { inherit inputs; };
 
       modules = [
         ./configuration.nix
-        home-manager.nixosModules.home-manager
+        inputs.home-manager.nixosModules.home-manager
         {
-          # 2. Apply the overlay so pkgs.vscode-marketplace becomes available
           nixpkgs.overlays = [
-            nix-vscode-extensions.overlays.default
+            inputs.nix-vscode-extensions.overlays.default
           ];
 
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          # Passes inputs into home.nix and submodules like matugen.nix
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.backupFileExtension = "backup";
           
           home-manager.users.boing = {
             imports = [
               ./modules/HM/home.nix
+              ./modules/HM/matugen.nix # Make sure to import your new file here!
             ];
           };
         }
