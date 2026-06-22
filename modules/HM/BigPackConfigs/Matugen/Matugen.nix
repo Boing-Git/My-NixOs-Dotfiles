@@ -23,9 +23,13 @@
     input_path = "${config.xdg.configHome}/matugen/templates/hypr-colors.lua"
     output_path = "${config.xdg.configHome}/hypr/scheme/material-you.conf"
 
-    [templates.qt]
+    [templates.qt5]
     input_path = "${config.xdg.configHome}/matugen/templates/qtColors.conf"
     output_path = "${config.xdg.configHome}/qt5ct/colors/matugen.conf"
+
+    [templates.qt6]
+    input_path = "${config.xdg.configHome}/matugen/templates/qtColors.conf"
+    output_path = "${config.xdg.configHome}/qt6ct/colors/matugen.conf"
 
     [templates.quickshell]
     input_path = "${config.xdg.configHome}/matugen/templates/quickshellColors.js"
