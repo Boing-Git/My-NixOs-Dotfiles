@@ -33,14 +33,4 @@
       };
     };
   };
-
-  # Now, link the generated files from the matugen store path to your actual config directories
-  # as shown in image_aa5b45.png
-  home.configFile = {
-    "ags/scss/colors.scss".source = "${config.programs.matugen.theme.files}/.config/ags/scss/colors.scss";
-    "kitty/colors.conf".source = "${config.programs.matugen.theme.files}/.config/kitty/colors.conf";
-    "gtk-4.0/gtk.css".source = "${config.programs.matugen.theme.files}/.config/gtk-4.0/gtk.css";
-    "hypr/colors.conf".source = "${config.programs.matugen.theme.files}/.config/hypr/colors.conf";
-    "yazi/theme.toml".source = "${config.programs.matugen.theme.files}/.config/yazi/theme.toml";
-  };
 }
