@@ -1,11 +1,12 @@
 { config, pkgs, lib, ... }:
 
-{
-  let
-    customPapirusIcons = pkgs.papirus-icon-theme.override {
-      color = "Brown"; 
-    };
-  in
+
+let
+  customPapirusIcons = pkgs.papirus-icon-theme.override {
+    color = "Brown"; 
+  };
+in
+
   {
     # ── GTK Theme Base ───────────────────────────────────────────────────────────
     gtk = {
