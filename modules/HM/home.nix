@@ -1,34 +1,3 @@
-# Providing things to do stuff with
-{ config, pkgs, lib, inputs, ... }:
-{
-  # Who I am and what home manager needs to know about me
-  home.username = "boing";
-  home.homeDirectory = "/home/boing";
-  
-  # 1. Update this to match your system generation release!
-  home.stateVersion = "26.11"; 
-
-  # Force home-manager to scrub conflicting icons injected by external shell modules
-  home.extraBuilderCommands = ''
-    rm -rf $out/share/icons/Papirus-Light
-  '';
-
-  # Importing external modules and my own config files
-  imports = [
-    inputs.zen-browser.homeModules.beta
-    inputs.caelestia-shell.homeManagerModules.default
-    inputs.spicetify-nix.homeManagerModules.default
-    ./PackConfig.nix
-  ];
-
-  wayland.windowManager.hyprland = {
-    enable = true;
-    extraConfig = ''
-      # Launches the core Caelestia compositor shell daemon natively
-      exec-once = caelestia shell -d
-    '';
-  };
-
   # Symlinking caelestia dotfiles to make it feel like Arch
   xdg.configFile = {
     # Force Home Manager to drop its built-in files so they don't break your symlink boundary
