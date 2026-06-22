@@ -35,7 +35,7 @@
 
       [templates.starship]
       input_path = "${config.xdg.configHome}/matugen/templates/starship.toml"
-      output_path = "${config.xdg.configHome}/starship/starship.toml"
+      output_path = "${config.xdg.configHome}/starship.toml"
 
       [templates.vscodium]
       input_path = "${config.xdg.configHome}/matugen/templates/vscodium.json"
