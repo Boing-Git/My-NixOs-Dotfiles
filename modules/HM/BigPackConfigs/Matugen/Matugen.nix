@@ -45,6 +45,10 @@ in
       starship = {
         input_path = ./Templates/starship.toml;
         output_path = "${config.xdg.configHome}/starship/starship.toml"
+      };
+      vscodium = {
+        input_path = ./Templates/vscodium.json;
+        output_path = "${config.xdg.configHome}/vscodium/vscodium.json"
       }
     };
   };
