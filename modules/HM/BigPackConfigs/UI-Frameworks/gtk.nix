@@ -43,5 +43,5 @@ in
       "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
       "papirus-folders -c teal" 
     ];
-  }
+  };
 }
