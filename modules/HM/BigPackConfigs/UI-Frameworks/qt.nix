@@ -31,13 +31,6 @@
     QT_AUTO_SCREEN_SCALE_FACTOR = "1"; # Optional: Keeps scaling neat across monitors
   };
 
-  # 4. Install the backend packages required for styling to render properly
-  home.packages = with pkgs; [
-    qt5ct
-    qt6ct
-    libsForQt5.qtstyleplugins # Provides extended rendering styles if needed
-  ];
-
   # 5. Declaratively manage the main application configuration files
   xdg.configFile = {
     # Configure Qt5 Configuration Tool settings
