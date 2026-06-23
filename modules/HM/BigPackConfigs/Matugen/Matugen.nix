@@ -19,7 +19,7 @@
 
       [templates.hypr]
       input_path = "${config.xdg.configHome}/matugen/templates/hypr-colors.lua"
-      output_path = "${config.xdg.configHome}/hypr/scheme/material-you.conf"
+      output_path = "${config.xdg.configHome}/hypr/scheme/material-you.lua"
 
       [templates.qt5]
       input_path = "${config.xdg.configHome}/matugen/templates/qtColors.conf"
