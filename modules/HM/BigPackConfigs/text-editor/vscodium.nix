@@ -96,9 +96,5 @@
         };
       };
     };
-  # Place global variables outside of the 'programs.vscode' definition scope
-  home.sessionVariables = {
-    QML_IMPORT_PATH = "/nix/store/h0agc7jqz21v9ci1yzd74390p58vfvh2-quickshell-0.3.0/lib/qt-6/qml:/nix/store/0x7jcnb8rls5v0jrl17ji5zj3w99wbp2-qtdeclarative-6.11.0/lib/qt-6/qml";
-  };
   };
 }
