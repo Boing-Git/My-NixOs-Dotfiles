@@ -95,6 +95,7 @@ in
     upscayl
     grim
     playerctl
+    shatty
 
     (python3.withPackages (ps: with ps; [
       tkinter
