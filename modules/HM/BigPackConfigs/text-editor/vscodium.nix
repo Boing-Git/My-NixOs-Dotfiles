@@ -76,8 +76,8 @@
           "**/LICENSE" = true;
         };
 
-      "qml.qmlls.args": ["-E"],
-      "qml.qmlls.useQmlImportPathEnvVar": true,
+      "qml.qmlls.args" = ["-E"],
+      "qml.qmlls.useQmlImportPathEnvVar" = true,
 
         # Use Rubik as the primary font
         "editor.fontFamily" = "'Rubik', 'monospace', monospace";
