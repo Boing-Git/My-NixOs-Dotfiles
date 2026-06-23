@@ -96,6 +96,7 @@ in
     grim
     playerctl
     satty
+    github-desktop
 
     (python3.withPackages (ps: with ps; [
       tkinter
