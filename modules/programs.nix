@@ -97,6 +97,7 @@ in
     playerctl
     satty
     github-desktop
+    blanket
 
     (python3.withPackages (ps: with ps; [
       tkinter
