@@ -76,12 +76,8 @@
           "**/LICENSE" = true;
         };
 
-        # 3. Add QML Language Server specific settings
-        "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
-        "qt-qml.qmlls.extraQmllsArguments" = [
-          "--import-path"
-          "/run/current-system/sw/lib/qt-6/qml"
-        ];
+      "qml.qmlls.args": ["-E"],
+      "qml.qmlls.useQmlImportPathEnvVar": true,
 
         # Use Rubik as the primary font
         "editor.fontFamily" = "'Rubik', 'monospace', monospace";
