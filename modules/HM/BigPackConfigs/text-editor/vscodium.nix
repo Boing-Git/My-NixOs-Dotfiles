@@ -170,6 +170,9 @@
         "files.associations" = {
           "*.qml" = "qml";
         };
+      "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1;
+        };
       };
     };
   };
