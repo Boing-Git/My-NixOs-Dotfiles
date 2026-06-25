@@ -9,6 +9,11 @@
       variant = "dark"
       json_format = "hex"
 
+      [templates.hypr]
+      input_path = "${config.xdg.configHome}/matugen/templates/hypr-colors.lua"
+      output_path = "${config.xdg.configHome}/hypr/scheme/material-you.lua"
+
+
       [templates.foot]
       input_path = "${config.xdg.configHome}/matugen/templates/footTheme.ini"
       output_path = "${config.xdg.configHome}/foot/theme.ini"
