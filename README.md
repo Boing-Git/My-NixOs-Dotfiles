@@ -46,7 +46,7 @@ This configuration features a **fully integrated real-time theming pipeline**. S
 Wallpaper Image
      │
      ▼
-Matugen v4  ──→  Extracts colors  ──→  Generates Material 3 hex palette
+Matugen v4  ──>  Extracts colors  ──>  Generates Material 3 hex palette
      │
      ▼
 Home Manager Templates
@@ -114,7 +114,7 @@ That single command triggers color extraction, template injection, and UI refres
 **1. Clone the repository**
 
 ```bash
-git clone <your-repo-url> ~/Nixos
+git clone https://github.com/Boing-Git/My-NixOs-Dotfiles ~/Nixos
 cd ~/Nixos
 ```
 
@@ -123,7 +123,7 @@ cd ~/Nixos
 Using Home Manager directly:
 
 ```bash
-nix run nixpkgs#home-manager -- switch --flake .#<your-hostname>
+nix run nixpkgs#home-manager -- switch --flake .#nixos (Change this if your username is different)
 ```
 
 Or rebuild your NixOS system (if Home Manager is managed in your flake):
