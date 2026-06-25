@@ -8,13 +8,8 @@
       package = pkgs.qemu_kvm;
       runAsRoot = true;
       swtpm.enable = true; # Needed for Windows 11 TPM requirements
-      ovmf = {
-        enable = true;
-        packages = [(pkgs.OVMF.override {
-          secureBoot = true;
-          tpmSupport = true;
-        }).fd];
-      };
+      
+      # REMOVED the ovmf = { ... } block from here!
     };
   };
 
