@@ -8,14 +8,14 @@
     enable = true;
     profiles.default = {
       # Forces Home Manager to target your exact active profile directory
-      path = "107y8mu2.Default Profile"; 
-      
+      path = "107y8mu2.Default Profile";
+
       settings = {
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       };
 
       # Reads the file from your local flake directory safely
-      # userChrome = builtins.readFile ./userChrome.css; 
+      # userChrome = builtins.readFile ./userChrome.css;
     };
   };
 
@@ -42,7 +42,7 @@
   #     --text: #{{ onBackground.hex }};
   #     --subtext1: #{{ onSurfaceVariant.hex }};
   #     --subtext0: #{{ outline.hex }};
-      
+
   #     /* Overlays & Intermediary Layering */
   #     --overlay2: #{{ surfaceVariant.hex }};
   #     --overlay1: #{{ surfaceContainerHighest.hex }};
@@ -95,7 +95,7 @@
   # home.file.".mozilla/native-messaging-hosts/caelestiafox.json".text = builtins.toJSON {
   #   name = "caelestiafox";
   #   description = "Caelestia native messaging host for browser theme syncing";
-  #   path = "${./app.fish}"; 
+  #   path = "${./app.fish}";
   #   type = "stdio";
   #   allowed_extensions = [ "caelestiafox@caelestia.org" ];
   # };

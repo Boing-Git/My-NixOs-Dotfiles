@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   hyprcorners = pkgs.rustPlatform.buildRustPackage rec {
@@ -24,37 +29,36 @@ in
   programs.fish = {
     enable = true;
     shellInit = ''
-    set -gx LANG en_US.UTF-8
-    set -gx LC_ALL en_US.UTF-8
-    nitch
-    set -g fish_greeting " "
+      set -gx LANG en_US.UTF-8
+      set -gx LC_ALL en_US.UTF-8
+      nitch
+      set -g fish_greeting " "
     '';
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake .";
       nrt = "sudo nixos-rebuild test --flake .";
     };
   };
-  
+
   # Config hyprland
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
-  
+
   programs.steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer = {
-        openFirewall = true;
-      };
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer = {
+      openFirewall = true;
+    };
     # Correct packages for Nvidia hardware acceleration inside Steam FHS
     extraPackages = with pkgs; [
       nvidia-vaapi-driver
-      vkd3d-proton         # Correct package r DX12 to Vulkan translation
-      proton-ge-bin        # (Optional but recommended) includes built-in NVAPI fixes
+      vkd3d-proton # Correct package r DX12 to Vulkan translation
+      proton-ge-bin # (Optional but recommended) includes built-in NVAPI fixes
     ];
   };
-
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -100,15 +104,17 @@ in
     blanket
     virt-manager
     github-cli
-    nixfmt  # Official standard formatter
-    nixd              # Highly recommended Language Server (LSP)
+    nixfmt # Official standard formatter
+    nixd # Highly recommended Language Server (LSP)
 
-    (python3.withPackages (ps: with ps; [
-      tkinter
-      pygobject3
-      pywebview
-      flask
-    ]))
+    (python3.withPackages (
+      ps: with ps; [
+        tkinter
+        pygobject3
+        pywebview
+        flask
+      ]
+    ))
 
     # Core Build & Framework Tools
     ninja
@@ -141,7 +147,7 @@ in
     material-symbols
     rubik
     nerd-fonts.caskaydia-cove
-    (google-fonts.override { fonts = [ "SpaceMono" ]; }) 
+    (google-fonts.override { fonts = [ "SpaceMono" ]; })
 
     inputs.hexecute.packages.${pkgs.system}.default
     inputs.matugen.packages.${pkgs.system}.default

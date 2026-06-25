@@ -5,7 +5,7 @@
     enable = true;
 
     iconTheme = {
-      name    = "Papirus-Dark";
+      name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme; # FIXED: Added the actual package for icons
     };
 
@@ -14,7 +14,7 @@
     gtk3.extraCss = ''
       @import url("file://${config.xdg.configHome}/gtk-colors/gtkColors.css");
     '';
-    
+
     gtk4.extraCss = ''
       @import url("file://${config.xdg.configHome}/gtk-colors/gtkColors.css");
     '';

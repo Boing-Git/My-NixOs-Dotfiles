@@ -4,7 +4,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    
+
     hexecute.url = "github:ThatOtherAndrew/Hexecute";
 
     home-manager = {
@@ -28,13 +28,13 @@
     };
 
     matugen.url = "github:InioX/matugen";
-    
+
   };
 
   outputs = inputs: {
     nixosConfigurations."nixos" = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      
+
       # Passes inputs to system-level configuration.nix
       specialArgs = { inherit inputs; };
 
@@ -51,7 +51,7 @@
           # Passes inputs into home.nix and submodules like matugen.nix
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.backupFileExtension = "backup";
-          
+
           home-manager.users.boing = {
             imports = [
               ./modules/HM/home.nix

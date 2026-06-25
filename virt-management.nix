@@ -1,14 +1,19 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-# Virtualization backend for virt-manager
+  # Virtualization backend for virt-manager
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
       package = pkgs.qemu_kvm;
       runAsRoot = true;
       swtpm.enable = true; # Needed for Windows 11 TPM requirements
-      
+
       # REMOVED the ovmf = { ... } block from here!
     };
   };

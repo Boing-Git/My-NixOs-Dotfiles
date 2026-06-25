@@ -7,8 +7,8 @@
 
     # Pre-load required ecosystem extensions
     extensions = [
-      "nix"              # Nix language server integration
-      "qml"              # Qt Modeling Language support for shell components
+      "nix" # Nix language server integration
+      "qml" # Qt Modeling Language support for shell components
     ];
 
     # Core settings.json translation
@@ -27,7 +27,10 @@
       # Per-language definitions
       languages = {
         Nix = {
-          language_servers = [ "nixd" "!nil" ];
+          language_servers = [
+            "nixd"
+            "!nil"
+          ];
         };
         QML = {
           formatter = {
@@ -69,8 +72,14 @@
         bindings = {
           "ctrl-shift-up" = "editor::MoveLineUp";
           "ctrl-shift-down" = "editor::MoveLineDown";
-          "alt-down" = [ "editor::SelectNext" { replace_newest = false; } ];
-          "alt-up" = [ "editor::SelectPrevious" { replace_newest = false; } ];
+          "alt-down" = [
+            "editor::SelectNext"
+            { replace_newest = false; }
+          ];
+          "alt-up" = [
+            "editor::SelectPrevious"
+            { replace_newest = false; }
+          ];
         };
       }
     ];

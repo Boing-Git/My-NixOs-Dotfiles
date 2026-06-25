@@ -27,7 +27,7 @@
       Fixed="Monospace,10,-1,5,50,0,0,0,0,0"
     '';
 
-    # Configure Qt6 Configuration Tool settings 
+    # Configure Qt6 Configuration Tool settings
     "qt6ct/qt6ct.conf".text = ''
       [Appearance]
       color_scheme_path=${config.xdg.configHome}/qt6ct/colors/matugen.conf

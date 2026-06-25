@@ -20,7 +20,6 @@ in
     ./BigPackConfigs/text-editor/vscodium.nix
     ./BigPackConfigs/text-editor/zed.nix
   ];
-
   programs.neovim = {
     enable = true;
     withRuby = false;

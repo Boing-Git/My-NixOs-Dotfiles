@@ -1,12 +1,18 @@
 # Providing things to do stuff with
-{ config, pkgs, lib, inputs, ... }:
 {
-    # Who I am and what home manager needs to know about me
-    home.username = "boing";
-    home.homeDirectory = "/home/boing";
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
+  # Who I am and what home manager needs to know about me
+  home.username = "boing";
+  home.homeDirectory = "/home/boing";
 
-    # Safe default for state version (adjust to match your system setup)
-    home.stateVersion = "24.11"; 
+  # Safe default for state version (adjust to match your system setup)
+  home.stateVersion = "24.11";
 
   # Force home-manager to scrub conflicting icons injected by external shell modules
   home.extraBuilderCommands = ''
@@ -39,7 +45,7 @@
     };
   };
 
-  home.activation.clearStaleBackups = lib.hm.dag.entryBefore ["checkLinkTargets"] ''
+  home.activation.clearStaleBackups = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
     $DRY_RUN_CMD rm -f $HOME/.config/gtk-3.0/gtk.css.hm-backup
     $DRY_RUN_CMD rm -f $HOME/.config/gtk-4.0/gtk.css.hm-backup
   '';
@@ -65,7 +71,7 @@
     pipes
     inotify-tools
     ncdu
-    gsettings-desktop-schemas   
+    gsettings-desktop-schemas
   ];
 
   # User level environment variables
