@@ -1,9 +1,10 @@
 #!/bin/bash
 
-git clone https://github.com/Boing-Git/My-NixOs-Dotfiles ~/Nixos
+git clone https://github.com/Boing-Git/NixOs-Dotfiles ~/Nixos
 cd ~/Nixos
 
-cp -r ~/Nixos/quickshell ~/.config/quickshell
+mkdir -p ~/.config/quickshell
+git clone https://github.com/Boing-Git/Quickshell-Dotfiles ~/.config/quickshell
 
 cp /etc/nixos/hardware-configuration.nix ./
 
