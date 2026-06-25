@@ -98,6 +98,7 @@ in
     satty
     github-desktop
     blanket
+    virt-manager
 
     (python3.withPackages (ps: with ps; [
       tkinter

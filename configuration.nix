@@ -33,6 +33,7 @@ in
   imports = [
     ./hardware-configuration.nix
     ./modules/programs.nix
+    ./virt-management.nix
   ];
 
   # ── Bootloader ────────────────────────────────────────────────────────
@@ -119,7 +120,7 @@ in
     shell        = pkgs.fish;
     isNormalUser = true;
     description  = "Boing";
-    extraGroups  = [ "networkmanager" "wheel" "video" "dialout" "plugdev" "input" ];
+    extraGroups  = [ "networkmanager" "wheel" "video" "dialout" "plugdev" "input" "libvirtd" "kvm" ];
   };
 
   # ── Fonts ─────────────────────────────────────────────────────────────
