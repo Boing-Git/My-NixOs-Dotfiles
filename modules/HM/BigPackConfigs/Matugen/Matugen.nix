@@ -9,7 +9,7 @@
       variant = "dark"
       json_format = "hex"
 
-      [templates.hypr]
+      [[templates.hypr]]
       input_path = "${config.xdg.configHome}/matugen/templates/hypr-colors.lua"
       output_path = "${config.xdg.configHome}/hypr/scheme/material-you.lua"
 
