@@ -117,6 +117,7 @@ in
     ))
 
     # Core Build & Framework Tools
+    cmake
     ninja
     pkg-config
     qt6.qtbase
@@ -134,6 +135,7 @@ in
     fish
     bash
     app2unit
+    swappy
     wl-clipboard
     libqalculate
 
