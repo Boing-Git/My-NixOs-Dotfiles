@@ -16,11 +16,13 @@
     profiles.default = {
       extensions = with pkgs.vscode-marketplace; [
         jnoortheen.nix-ide
+        johnnymorganz.stylua
         eamodio.gitlens
-        vscodevim.vim
+        asvetliakov.vscode-neovim
         mvllow.rose-pine
         ravenothere.rose-pine-symbols
         theqtcompany.qt-qml # This handles QML language features
+        delgan.qml-format
         sumneko.lua
         naumovs.color-highlight
         # Add the embedded browser

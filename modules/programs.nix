@@ -100,6 +100,8 @@ in
     blanket
     virt-manager
     github-cli
+    nixfmt-rfc-style  # Official standard formatter
+    nixd              # Highly recommended Language Server (LSP)
 
     (python3.withPackages (ps: with ps; [
       tkinter
