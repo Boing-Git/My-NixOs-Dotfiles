@@ -157,6 +157,14 @@ Copy the bundled Quickshell components to your config directory:
 cp -r ~/Nixos/quickshell ~/.config/quickshell/
 ```
 
+### Step 4 — Copy the Your Hardware Config
+
+> Adjust the destination path if your hardware-configuration.nix lives somewhere other than `/etc/nixos/hardware-configuration.nix`
+
+```bash
+cp /etc/nixos/hardware-configuration.nix ~/Nixos/
+```
+
 ### Step 4 — Set a Wallpaper and Generate the Theme
 
 ```bash
