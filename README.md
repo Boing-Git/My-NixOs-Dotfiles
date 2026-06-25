@@ -65,7 +65,7 @@ To change the wallpaper and regenerate the system palette on the fly:
 matugen image /path/to/your/wallpaper.jpg
 ```
 
-That single command triggers color extraction, template injection, and UI refresh across all themed components.
+> **Supported formats:** `jpg`, `jpeg`, `png`, `webp`, `gif`
 
 ---
 
@@ -77,7 +77,7 @@ That single command triggers color extraction, template injection, and UI refres
 ├── app.fish
 ├── configuration.nix
 ├── flake.nix
-├── hardware-configuration.nix
+├── flake.lock
 ├── LICENSE
 ├── modules
 │   ├── HM
@@ -111,28 +111,43 @@ That single command triggers color extraction, template injection, and UI refres
 
 > **Prerequisites:** Nix with Flakes enabled. See the [NixOS wiki on Flakes](https://nixos.wiki/wiki/Flakes) if needed.
 
-**1. Clone the repository**
+### Step 1 — Clone the Repository
 
 ```bash
 git clone https://github.com/Boing-Git/My-NixOs-Dotfiles ~/Nixos
 cd ~/Nixos
 ```
 
-**2. Apply the configuration**
+### Step 2 — Apply the Configuration
 
-Using Home Manager directly:
+Choose one of the following methods:
 
-```bash
-nix run nixpkgs#home-manager -- switch --flake .#nixos (Change this if your username is different)
-```
-
-Or rebuild your NixOS system (if Home Manager is managed in your flake):
+**Option A: Automatic** — runs the install script
 
 ```bash
-sudo nixos-rebuild switch
+chmod +x install.sh
+./install.sh
 ```
 
-**3. Set an initial wallpaper and generate the theme**
+**Option B: Manual**
+
+If your Home Manager is managed by your flake, rebuild the NixOS system:
+
+> Replace `nixos` with your hostname if it differs.
+
+```bash
+sudo nixos rebuild switch --flake .#nixos
+```
+
+Or apply Home Manager directly:
+
+> Replace `nixos` with your hostname if it differs.
+
+```bash
+nix run nixpkgs#home-manager -- switch --flake .#nixos
+```
+
+### Step 3 — Set a Wallpaper and Generate the Theme
 
 ```bash
 matugen image /path/to/your/wallpaper.jpg
@@ -179,4 +194,4 @@ All color tokens live in `Variables/colors.js` as `Colors.*` constants. Layout a
 
 ---
 
-> *This README was significantly improved with AI assistance. The underlying configuration is entirely hand-crafted.*
+> *This README was improved with AI assistance. The underlying configuration is entirely hand-crafted.*
