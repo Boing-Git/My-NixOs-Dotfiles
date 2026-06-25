@@ -12,7 +12,7 @@
   home.homeDirectory = "/home/boing";
 
   # Safe default for state version (adjust to match your system setup)
-  home.stateVersion = "24.11";
+  home.stateVersion = "26.05";
 
   # Force home-manager to scrub conflicting icons injected by external shell modules
   home.extraBuilderCommands = ''
