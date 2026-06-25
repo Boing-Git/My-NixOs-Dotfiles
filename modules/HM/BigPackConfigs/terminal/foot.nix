@@ -5,7 +5,7 @@
   programs.foot = {
     enable = true;
     settings = {
-      include=${config.xdg.configHome}/foot/theme.ini
+      include=~/.config/foot/theme.ini
       main = {
         shell = "fish";
         title = "foot";
