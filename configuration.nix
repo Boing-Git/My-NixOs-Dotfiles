@@ -1,34 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  caelestia-sddm-locklike = pkgs.stdenv.mkDerivation {
-    pname   = "caelestia-sddm-locklike";
-    version = "unstable-2024";
-
-    src = pkgs.fetchFromGitHub {
-      owner  = "ItsABigIgloo";
-      repo   = "caelestia-sddm";
-      rev    = "main";
-      # If hash mismatches run:
-      #   nix-prefetch-github ItsABigIgloo caelestia-sddm --rev main
-      # and paste the output here.
-      sha256 = "sha256-/fUG5xt6Drz8o1cwDbYCMkac5X6hDmieQ02GFSzjNuU=";
-    };
-
-    dontBuild = true;
-    dontFixup = true;
-
-    installPhase = ''
-      runHook preInstall
-
-      mkdir -p $out/share/sddm/themes/Locklike
-      cp -aR themes/locklike/. $out/share/sddm/themes/Locklike/
-
-      runHook postInstall
-    '';
-  };
-
-in
 {
   imports = [
     ./hardware-configuration.nix
@@ -54,21 +25,8 @@ in
 
     sddm = {
       enable         = true;
-      package        = pkgs.kdePackages.sddm;
       wayland.enable = true;
-      theme          = "Locklike";
-
-      extraPackages = [
-        caelestia-sddm-locklike
-        pkgs.kdePackages.qt5compat
-        pkgs.kdePackages.qtsvg
-        pkgs.kdePackages.qtdeclarative
-        pkgs.kdePackages.qtwayland
-        pkgs.kdePackages.qqc2-desktop-style
-        pkgs.kdePackages.breeze-icons
-        pkgs.kdePackages.qtmultimedia
-      ];
-    };
+   };
   };
 
   # ── Networking ────────────────────────────────────────────────────────
@@ -134,7 +92,6 @@ in
 
   # ── Misc ──────────────────────────────────────────────────────────────
   nixpkgs.config.allowUnfree = true;
-  services.printing.enable   = true;
 
   services.pipewire = {
     enable       = true;
