@@ -2,7 +2,7 @@
   home.packages = [ inputs.matugen.packages.${pkgs.system}.default ];
 
   # Force the creation of the config file without managing the entire directory
-  home.file.".config/matugen/config.toml" = {
+  home.file."${config.xdg.configHome}.config/matugen/config.toml" = {
     force = true; 
     text = ''
       [config]
