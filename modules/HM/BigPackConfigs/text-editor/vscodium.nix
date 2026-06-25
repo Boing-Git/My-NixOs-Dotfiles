@@ -170,8 +170,8 @@
         "files.associations" = {
           "*.qml" = "qml";
         };
-      "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1;
+      "extensions.experimental.affinity"= {
+        "asvetliakov.vscode-neovim"= 1;
         };
       };
     };
