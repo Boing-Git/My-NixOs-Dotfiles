@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   # 1. Add qtdeclarative to your user packages to provide the 'qmlls' binary
@@ -31,24 +36,93 @@
       ];
 
       keybindings = [
-        { key = "ctrl+shift+alt+r"; command = "workbench.action.reloadWindow"; }
-        { key = "ctrl+pageup"; command = "workbench.action.previousEditor"; }
-        { key = "ctrl+pagedown"; command = "workbench.action.nextEditor"; }
-        { key = "ctrl+shift+up"; command = "editor.action.moveLinesUpAction"; when = "editorTextFocus && !editorReadonly"; }
-        { key = "ctrl+shift+down"; command = "editor.action.moveLinesDownAction"; when = "editorTextFocus && !editorReadonly"; }
-        { key = "shift+alt+up"; command = "editor.action.insertCursorAbove"; when = "editorTextFocus"; }
-        { key = "shift+alt+down"; command = "editor.action.insertCursorBelow"; when = "editorTextFocus"; }
-        { key = "shift+h"; command = "workbench.action.previousEditor"; when = "editorTextFocus && vim.active && vim.mode == 'Normal'"; }
-        { key = "shift+l"; command = "workbench.action.nextEditor"; when = "editorTextFocus && vim.active && vim.mode == 'Normal'"; }
-        { key = "j"; command = "list.focusDown"; when = "filesToExplore && focusedView == 'workbench.explorer.fileView'"; }
-        { key = "k"; command = "list.focusUp"; when = "filesToExplore && focusedView == 'workbench.explorer.fileView'"; }
-        { key = "h"; command = "list.collapse"; when = "filesToExplore && focusedView == 'workbench.explorer.fileView'"; }
-        { key = "l"; command = "list.select"; when = "filesToExplore && focusedView == 'workbench.explorer.fileView'"; }
-        { key = "a"; command = "explorer.newFile"; when = "filesToExplore && focusedView == 'workbench.explorer.fileView' && !inputFocus"; }
-        { key = "shift+a"; command = "explorer.newFolder"; when = "filesToExplore && focusedView == 'workbench.explorer.fileView' && !inputFocus"; }
-        { key = "a"; command = "explorer.newFile"; when = "explorerViewletFocus && !inputFocus"; }
-        { key = "shift+a"; command = "explorer.newFolder"; when = "explorerViewletFocus && !inputFocus"; }
-        { key = "ctrl+shift+q"; command = "workbench.action.closeActiveEditor"; when = "editorTextFocus"; }
+        {
+          key = "ctrl+shift+alt+r";
+          command = "workbench.action.reloadWindow";
+        }
+        {
+          key = "ctrl+pageup";
+          command = "workbench.action.previousEditor";
+        }
+        {
+          key = "ctrl+pagedown";
+          command = "workbench.action.nextEditor";
+        }
+        {
+          key = "ctrl+shift+up";
+          command = "editor.action.moveLinesUpAction";
+          when = "editorTextFocus && !editorReadonly";
+        }
+        {
+          key = "ctrl+shift+down";
+          command = "editor.action.moveLinesDownAction";
+          when = "editorTextFocus && !editorReadonly";
+        }
+        {
+          key = "shift+alt+up";
+          command = "editor.action.insertCursorAbove";
+          when = "editorTextFocus";
+        }
+        {
+          key = "shift+alt+down";
+          command = "editor.action.insertCursorBelow";
+          when = "editorTextFocus";
+        }
+        {
+          key = "shift+h";
+          command = "workbench.action.previousEditor";
+          when = "editorTextFocus && vim.active && vim.mode == 'Normal'";
+        }
+        {
+          key = "shift+l";
+          command = "workbench.action.nextEditor";
+          when = "editorTextFocus && vim.active && vim.mode == 'Normal'";
+        }
+        {
+          key = "j";
+          command = "list.focusDown";
+          when = "filesToExplore && focusedView == 'workbench.explorer.fileView'";
+        }
+        {
+          key = "k";
+          command = "list.focusUp";
+          when = "filesToExplore && focusedView == 'workbench.explorer.fileView'";
+        }
+        {
+          key = "h";
+          command = "list.collapse";
+          when = "filesToExplore && focusedView == 'workbench.explorer.fileView'";
+        }
+        {
+          key = "l";
+          command = "list.select";
+          when = "filesToExplore && focusedView == 'workbench.explorer.fileView'";
+        }
+        {
+          key = "a";
+          command = "explorer.newFile";
+          when = "filesToExplore && focusedView == 'workbench.explorer.fileView' && !inputFocus";
+        }
+        {
+          key = "shift+a";
+          command = "explorer.newFolder";
+          when = "filesToExplore && focusedView == 'workbench.explorer.fileView' && !inputFocus";
+        }
+        {
+          key = "a";
+          command = "explorer.newFile";
+          when = "explorerViewletFocus && !inputFocus";
+        }
+        {
+          key = "shift+a";
+          command = "explorer.newFolder";
+          when = "explorerViewletFocus && !inputFocus";
+        }
+        {
+          key = "ctrl+shift+q";
+          command = "workbench.action.closeActiveEditor";
+          when = "editorTextFocus";
+        }
       ];
 
       userSettings = {
@@ -78,14 +152,14 @@
           "**/LICENSE" = true;
         };
 
-      "qml.qmlls.args" = ["-E"];
-      "qml.qmlls.useQmlImportPathEnvVar" = true;
+        "qml.qmlls.args" = [ "-E" ];
+        "qml.qmlls.useQmlImportPathEnvVar" = true;
 
         # Use Rubik as the primary font
         "editor.fontFamily" = "'Rubik', 'monospace', monospace";
-        
+
         "editor.fontSize" = 16;
-        
+
         # Disabled since standard Rubik does not feature programming ligatures
         "editor.fontLigatures" = false;
 
