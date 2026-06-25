@@ -5,7 +5,9 @@
   programs.foot = {
     enable = true;
     settings = {
-      include=~/.config/foot/theme.ini;
+      "" = {
+        include = "/home/boing/.config/foot/theme.ini";
+      };
       main = {
         shell = "fish";
         title = "foot";
