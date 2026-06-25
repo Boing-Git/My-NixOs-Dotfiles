@@ -16,7 +16,6 @@
   # Importing external modules and my own config files
   imports = [
     inputs.zen-browser.homeModules.beta
-    inputs.caelestia-shell.homeManagerModules.default
     inputs.spicetify-nix.homeManagerModules.default
     ./PackConfig.nix
   ];
