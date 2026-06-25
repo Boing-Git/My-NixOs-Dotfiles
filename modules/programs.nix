@@ -99,6 +99,7 @@ in
     github-desktop
     blanket
     virt-manager
+    github-cli
 
     (python3.withPackages (ps: with ps; [
       tkinter
