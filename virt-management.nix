@@ -1,3 +1,6 @@
+{ config, pkgs, inputs, ... }:
+
+{
 # Virtualization backend for virt-manager
   virtualisation.libvirtd = {
     enable = true;
@@ -20,3 +23,4 @@
 
   # Allows you to pass physical USB devices from your host to the VM
   virtualisation.spiceUSBRedirection.enable = true;
+}
