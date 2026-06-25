@@ -147,7 +147,17 @@ Or apply Home Manager directly:
 nix run nixpkgs#home-manager -- switch --flake .#nixos
 ```
 
-### Step 3 — Set a Wallpaper and Generate the Theme
+### Step 3 — Copy the Quickshell Config
+
+Copy the bundled Quickshell components to your config directory:
+
+> Adjust the destination path if your Quickshell config lives somewhere other than `~/.config/quickshell/`.
+
+```bash
+cp -r ~/Nixos/quickshell ~/.config/quickshell/
+```
+
+### Step 4 — Set a Wallpaper and Generate the Theme
 
 ```bash
 matugen image /path/to/your/wallpaper.jpg
