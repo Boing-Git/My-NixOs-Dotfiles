@@ -70,7 +70,6 @@
   # ── System Packages ───────────────────────────────────────────────────
   environment.systemPackages = [
     pkgs.git
-    caelestia-sddm-locklike
   ];
 
   # ── Users ─────────────────────────────────────────────────────────────
