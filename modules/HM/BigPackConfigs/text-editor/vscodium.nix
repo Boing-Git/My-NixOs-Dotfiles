@@ -173,6 +173,9 @@
         "extensions.experimental.affinity" = {
           "asvetliakov.vscode-neovim" = 1;
         };
+        "[lua]" = {
+          "editor.defaultFormatter" = "JohnnyMorganz.stylua";
+        };
       };
     };
   };
