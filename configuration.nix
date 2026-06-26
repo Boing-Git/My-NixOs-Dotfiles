@@ -35,6 +35,15 @@
     "nix-command"
     "flakes"
   ];
+
+  nix.settings = {
+    # Increase the number of concurrent HTTP connections (default is 25)
+    http-connections = 50;
+
+    # Ensure it uses all available CPU cores for unpacking/building
+    cores = 0;
+    max-jobs = "auto";
+  };
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
 
