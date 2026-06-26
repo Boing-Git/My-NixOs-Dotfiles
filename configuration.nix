@@ -52,7 +52,7 @@ nix.settings = {
   # Hardlinks identical files during the build process.
   # Significantly reduces disk write overhead on your NVMe drive.
   auto-optimise-store = true;
-};;
+};
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
 
