@@ -36,23 +36,23 @@
     "flakes"
   ];
 
-nix.settings = {
-  # Let heavy derivations (like custom kernels or C++ libraries) 
-  # access all 24 threads of your Ryzen 9 simultaneously.
-  cores = 0; 
-  
-  # Let Nix automatically scale parallel builds. 
-  # With 64GB of RAM, your system will not choke when building multiple packages at once.
-  max-jobs = "auto";
-  
-  # The Sweet Spot: Saturates high-speed internet without crashing 
-  # your router's state table or triggering the Nix cache's 429 DDoS limits.
-  http-connections = 50;
-  
-  # Hardlinks identical files during the build process.
-  # Significantly reduces disk write overhead on your NVMe drive.
-  auto-optimise-store = true;
-};
+  nix.settings = {
+    # Let heavy derivations (like custom kernels or C++ libraries)
+    # access all 24 threads of your Ryzen 9 simultaneously.
+    cores = 0;
+
+    # Let Nix automatically scale parallel builds.
+    # With 64GB of RAM, your system will not choke when building multiple packages at once.
+    max-jobs = "auto";
+
+    # The Sweet Spot: Saturates high-speed internet without crashing
+    # your router's state table or triggering the Nix cache's 429 DDoS limits.
+    http-connections = 50;
+
+    # Hardlinks identical files during the build process.
+    # Significantly reduces disk write overhead on your NVMe drive.
+    auto-optimise-store = true;
+  };
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
 
@@ -111,13 +111,42 @@ nix.settings = {
   };
 
   # ── Fonts ─────────────────────────────────────────────────────────────
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.caskaydia-cove
-    material-symbols
-    rubik
-    roboto
-  ];
+  fonts = {
+    # Install the actual fonts to the system profile
+    packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.caskaydia-cove
+      material-symbols
+      rubik
+      roboto
+    ];
+
+    fontconfig = {
+      enable = true;
+
+      # Text rendering configurations
+      antialias = true;
+      hinting = {
+        enable = true;
+        style = "slight"; # Options: none, slight, medium, full
+      };
+
+      subpixel = {
+        rgba = "rgb"; # Options: rgb, bgr, vrgb, vbgr, none
+        lcdfilter = "default"; # Options: none, default, light, legacy
+      };
+
+      # System-wide font aliasing fallbacks
+      defaultFonts = {
+        sansSerif = [
+          "Inter"
+          "Rubik"
+        ];
+        monospace = [ "JetBrainsMono Nerd Font" ];
+        serif = [ "Noto Serif" ];
+      };
+    };
+  };
 
   # ── Misc ──────────────────────────────────────────────────────────────
   nixpkgs.config.allowUnfree = true;
