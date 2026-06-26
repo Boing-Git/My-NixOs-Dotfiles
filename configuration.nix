@@ -36,14 +36,23 @@
     "flakes"
   ];
 
-  nix.settings = {
-    # Increase the number of concurrent HTTP connections (default is 25)
-    http-connections = 50;
-
-    # Ensure it uses all available CPU cores for unpacking/building
-    cores = 0;
-    max-jobs = "auto";
-  };
+nix.settings = {
+  # Let heavy derivations (like custom kernels or C++ libraries) 
+  # access all 24 threads of your Ryzen 9 simultaneously.
+  cores = 0; 
+  
+  # Let Nix automatically scale parallel builds. 
+  # With 64GB of RAM, your system will not choke when building multiple packages at once.
+  max-jobs = "auto";
+  
+  # The Sweet Spot: Saturates high-speed internet without crashing 
+  # your router's state table or triggering the Nix cache's 429 DDoS limits.
+  http-connections = 50;
+  
+  # Hardlinks identical files during the build process.
+  # Significantly reduces disk write overhead on your NVMe drive.
+  auto-optimise-store = true;
+};;
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
 
