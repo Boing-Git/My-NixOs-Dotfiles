@@ -106,6 +106,7 @@ in
     github-cli
     nixfmt # Official standard formatter
     nixd # Highly recommended Language Server (LSP)
+   antigravity 
 
     (python3.withPackages (
       ps: with ps; [
