@@ -110,9 +110,9 @@
   };
 
   # Separate user account for your dad
-  users.users."dad" = {
+  users.users."surinder" = {
     isNormalUser = true;
-    description = "Dad";
+    description = "surinder singh";
     extraGroups = [
       "networkmanager"
       "video"
