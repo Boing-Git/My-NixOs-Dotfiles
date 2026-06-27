@@ -83,6 +83,14 @@ in
     };
   };
 
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      # Add the missing context menu plugin
+      thunar-archive-plugin
+    ];
+  };
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     quickshell
@@ -93,6 +101,7 @@ in
     papirus-folders
     papirus-icon-theme
     nautilus
+    file-roller # Add the archive manager backend
     spotify
     jq
     btop

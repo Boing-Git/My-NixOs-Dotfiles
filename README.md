@@ -31,6 +31,7 @@
 | **Desktop Shell** | Quickshell (QtQuick / QML + JS) |
 | **Theming Engine** | Matugen v4 (Material 3 colors) |
 | **Terminal** | Foot |
+| **File Manager** | Thunar |
 
 ---
 
