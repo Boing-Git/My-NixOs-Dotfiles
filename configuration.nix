@@ -75,7 +75,7 @@
     enable = true;
     openFirewall = true;
     # Tell XRDP to launch the lightweight XFCE desktop instead of GNOME
-    defaultWindowManager = "${pkgs.xfce.xfce4-session}/bin/xfce4-session";
+    defaultWindowManager = "startxfce4";
   };
 
   # ── Session Variables ─────────────────────────────────────────────────
