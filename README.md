@@ -111,61 +111,61 @@ matugen image /path/to/your/wallpaper.jpg
 
 > **Prerequisites:** Nix with Flakes enabled. See the [NixOS wiki on Flakes](https://nixos.wiki/wiki/Flakes) if needed.
 
-### Step 1 — Clone the Repository
+Choose one of the following methods to install the configuration:
 
-```bash
-git clone https://github.com/Boing-Git/My-NixOs-Dotfiles ~/Nixos
-cd ~/Nixos
-```
+### Option A: Automatic
 
-### Step 2 — Apply the Configuration
-
-Choose one of the following methods:
-
-**Option A: Automatic** — runs the install script
+If you have already cloned the repository or downloaded the script, you can run it directly:
 
 ```bash
 chmod +x install.sh
 ./install.sh
 ```
 
-**Option B: Manual**
+### Option B: Manual
 
-If your Home Manager is managed by your flake, rebuild the NixOS system:
+If you prefer to run the steps manually, follow these instructions (which mirror the installation script):
 
-> Replace `nixos` with your hostname if it differs.
-
-```bash
-sudo nixos rebuild switch --flake .#nixos
-```
-
-Or apply Home Manager directly:
-
-> Replace `nixos` with your hostname if it differs.
+#### Step 1 — Clone the Main Repository
 
 ```bash
-nix run nixpkgs#home-manager -- switch --flake .#nixos
+git clone https://github.com/Boing-Git/NixOs-Dotfiles ~/Nixos
+cd ~/Nixos
 ```
 
-### Step 3 — Copy the Quickshell Config
-
-Copy the bundled Quickshell components to your config directory:
-
-> Adjust the destination path if your Quickshell config lives somewhere other than `~/.config/quickshell/`.
+#### Step 2 — Clone Quickshell Dotfiles
 
 ```bash
-cp -r ~/Nixos/quickshell ~/.config/quickshell/
+mkdir -p ~/.config/quickshell
+git clone https://github.com/Boing-Git/Quickshell-Dotfiles ~/.config/quickshell
 ```
 
-### Step 4 — Copy the Your Hardware Config
-
-> Adjust the destination path if your hardware-configuration.nix lives somewhere other than `/etc/nixos/hardware-configuration.nix`
+#### Step 3 — Clone Hyprland Dotfiles
 
 ```bash
-cp /etc/nixos/hardware-configuration.nix ~/Nixos/
+mkdir -p ~/.config/hypr
+git clone https://github.com/Boing-Git/Hyprland-Dotfiles ~/.config/hypr
 ```
 
-### Step 4 — Set a Wallpaper and Generate the Theme
+#### Step 4 — Copy Your Hardware Config
+
+Copy your system's generated hardware configuration into the flake directory:
+
+```bash
+cp /etc/nixos/hardware-configuration.nix ./
+```
+
+#### Step 5 — Apply the Configuration
+
+Rebuild your NixOS system using the flake:
+
+> Replace `nixos` with your hostname in the flake path if it differs.
+
+```bash
+sudo nixos-rebuild switch --flake .#nixos
+```
+
+#### Step 6 — Set a Wallpaper and Generate the Theme
 
 ```bash
 matugen image /path/to/your/wallpaper.jpg

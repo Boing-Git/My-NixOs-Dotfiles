@@ -53,7 +53,7 @@
   
 # ── Desktop Environments ──────────────────────────────────────────────
   # Enable XFCE for the remote desktop connection
-  services.xserver.desktopManager.xfce.enable = true;;
+  services.xserver.desktopManager.xfce.enable = true;
 
   hardware.graphics = {
     enable = true;
@@ -70,12 +70,12 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  # ── Headless Remote Desktop (For Dad) ─────────────────────────────────
+# ── Headless Remote Desktop (For Dad) ─────────────────────────────────
   services.xrdp = {
     enable = true;
-    # Tells XRDP to automatically launch a full, independent GNOME session
-    defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
-    openFirewall = true; # Automatically opens port 3389
+    openFirewall = true;
+    # Tell XRDP to launch the lightweight XFCE desktop instead of GNOME
+    defaultWindowManager = "xfce4-session";
   };
 
   # ── Session Variables ─────────────────────────────────────────────────
