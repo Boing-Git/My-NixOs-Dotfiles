@@ -91,6 +91,19 @@ in
     ];
   };
 
+  environment.variables = {
+    QT_SCALE_FACTOR = "2";
+    GDK_SCALE = "2";
+  };
+
+  fonts.fontconfig = {
+    enable = true;
+    antialias = true;
+    hinting.enable = true;
+    hinting.style = "slight";
+    subpixel.rgba = "rgb"; # Matches standard LCD/Retina pixel layouts
+  };
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     quickshell
