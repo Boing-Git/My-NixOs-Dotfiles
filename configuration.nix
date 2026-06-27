@@ -70,7 +70,6 @@
   services.xserver.videoDrivers = [ "nvidia" ];
 
   # ── Headless Remote Desktop (For Dad) ─────────────────────────────────
-  services.gnome.gnome-remote-desktop.enable = true;
   services.xrdp = {
     enable = true;
     # Tells XRDP to automatically launch a full, independent GNOME session
