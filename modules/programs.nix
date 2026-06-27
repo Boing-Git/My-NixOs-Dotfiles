@@ -149,6 +149,7 @@ in
     nixfmt # Official standard formatter
     nixd # Highly recommended Language Server (LSP)
    antigravity 
+    hypridle
 
     (python3.withPackages (
       ps: with ps; [
