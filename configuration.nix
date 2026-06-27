@@ -51,8 +51,9 @@
   # ── Graphics / Nvidia / Desktop Managers ──────────────────────────────
   services.xserver.enable = true;
   
-  # Enable the GNOME desktop environment so its sessions are available system-wide
-  services.xserver.desktopManager.gnome.enable = true;
+# ── Desktop Environments ──────────────────────────────────────────────
+  # Enable XFCE for the remote desktop connection
+  services.xserver.desktopManager.xfce.enable = true;;
 
   hardware.graphics = {
     enable = true;
