@@ -60,8 +60,28 @@ in
     ];
   };
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal = {
+    enable = true;
+    # Ensure both backends are available on the system
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk 
+    ];
+    
+    # Map the portals to the specific desktop environments
+    config = {
+      hyprland = {
+        default = [ "hyprland" "gtk" ];
+      };
+      xfce = {
+        default = [ "gtk" ];
+      };
+      # A safe fallback for any session that isn't explicitly named
+      common = {
+        default = [ "gtk" ];
+      };
+    };
+  };
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
