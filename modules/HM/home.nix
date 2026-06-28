@@ -34,6 +34,25 @@
     '';
   };
 
+  xdg.desktopEntries =
+    let
+      isRemote = builtins.getEnv "XRDP_SESSION" != "";
+    in
+    if isRemote then
+      {
+        antigravity-scaled = {
+          name = "Google Antigravity (Scaled)";
+          exec = "antigravity --force-device-scale-factor=1 %U";
+          icon = "antigravity";
+          categories = [
+            "Development"
+            "IDE"
+          ];
+        };
+      }
+    else
+      { };
+
   # Symlinking caelestia dotfiles to make it feel like Arch
   xdg.configFile = {
     # Force Home Manager to drop its built-in files so they don't break your symlink boundary
