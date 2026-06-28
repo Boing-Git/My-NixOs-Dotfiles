@@ -156,7 +156,7 @@ in
       mkdir -p $out/share/applications
       cp ${pkgs.antigravity}/share/applications/antigravity.desktop $out/share/applications/antigravity-scaled.desktop
       sed -i 's/^Name=Antigravity/Name=Antigravity (Scaled)/' $out/share/applications/antigravity-scaled.desktop
-      sed -i 's|^Exec=antigravity|Exec=antigravity --force-scale-factor=2|g' $out/share/applications/antigravity-scaled.desktop
+      sed -i 's|^Exec=antigravity|Exec=antigravity --force-device-scale-factor=2|g' $out/share/applications/antigravity-scaled.desktop
     '')
     hypridle
 
