@@ -71,12 +71,28 @@
   services.xserver.videoDrivers = [ "nvidia" ];
 
   # ── Headless Remote Desktop (For Dad) ─────────────────────────────────
+# ── Headless Remote Desktop (For Dad) ─────────────────────────────────
   services.xrdp = {
     enable = true;
     openFirewall = true;
-    # Tell XRDP to launch the lightweight XFCE desktop instead of GNOME
-    defaultWindowManager = "xfce4-session";
-  };
+    
+    defaultWindowManager = ''
+      unset DBUS_SESSION_BUS_ADDRESS
+      unset XDG_RUNTIME_DIR
+      
+      # Tell X11 apps and fonts to scale natively for a 2x Retina screen
+      echo "Xft.dpi: 192" | ${pkgs.xorg.xrdb}/bin/xrdb -merge
+
+      # Set explicit environment variables to scale GTK interface elements by 2
+      export GDK_SCALE=2
+      export GDK_DPI_SCALE=0.5
+      export QT_SCALE_FACTOR=2
+
+      # Fire up the window manager and session
+      ${pkgs.xfce.xfwm4}/bin/xfwm4 --replace &
+      exec ${pkgs.xfce.xfce4-session}/bin/xfce4-session
+    '';
+  };;
 
 # Clean, modern OpenSSH service configuration
 services.openssh = {
