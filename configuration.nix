@@ -80,6 +80,7 @@
       # Clear any local host session variables that break headless displays
       unset DBUS_SESSION_BUS_ADDRESS
       unset XDG_RUNTIME_DIR
+      unset SESSION_MANAGER
       
       # Clean out old XFCE configuration locks if any exist
       rm -rf ~/.cache/sessions/*
@@ -95,14 +96,8 @@
       export GDK_DPI_SCALE=0.5
       export QT_SCALE_FACTOR=2
 
-      # Explicitly launch the XFCE Window Manager via top-level packages
-      ${pkgs.xfwm4}/bin/xfwm4 --replace &
-
-      # Launch the core XFCE panel components
-      ${pkgs.xfce4-panel}/bin/xfce4-panel &
-
-      # Pass control over to the top-level main session manager
-      exec ${pkgs.xfce4-session}/bin/xfce4-session
+      # Pass control over to the top-level main session manager via dbus-run-session
+      exec dbus-run-session ${pkgs.xfce4-session}/bin/xfce4-session
     '';
   };
 
