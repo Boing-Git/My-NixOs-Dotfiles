@@ -71,7 +71,6 @@
   services.xserver.videoDrivers = [ "nvidia" ];
 
   # ── Headless Remote Desktop (For Dad) ─────────────────────────────────
-# ── Headless Remote Desktop (For Dad) ─────────────────────────────────
   services.xrdp = {
     enable = true;
     openFirewall = true;
@@ -96,8 +95,8 @@
       export GDK_DPI_SCALE=0.5
       export QT_SCALE_FACTOR=2
 
-      # Pass control over to the standard XFCE initialization script which handles WM and panel setup
-      exec ${pkgs.xfce4-session}/bin/startxfce4
+      # Wrap the final execution of the top-level xfce4-session binary cleanly within a dedicated, isolated dbus-run-session container
+      exec ${pkgs.dbus}/bin/dbus-run-session ${pkgs.xfce4-session}/bin/xfce4-session
     '';
   };
 
