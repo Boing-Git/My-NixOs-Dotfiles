@@ -87,8 +87,8 @@ services.openssh = {
   };
 };
 
-# Explicitly open the ports using the standard firewall list
-networking.firewall.allowedTCPPorts = [ 22 3389 ];;
+# Explicitly open the ports using the standard firewall list 
+networking.firewall.allowedTCPPorts = [ 22 3389 ];
 
   # ── Session Variables ─────────────────────────────────────────────────
   environment.sessionVariables = {
