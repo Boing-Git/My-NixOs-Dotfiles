@@ -17,9 +17,8 @@
   services.displayManager = {
     defaultSession = "hyprland";
 
-    # Forces SDDM to always launch Hyprland for boing without showing
-    # the session picker.
-    autoLogin.enable = true;
+    # Temporarily disabled to allow testing XFCE for surinder
+    autoLogin.enable = false;
     autoLogin.user = "boing";
 
     sddm = {
