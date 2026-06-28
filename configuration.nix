@@ -77,20 +77,32 @@
     openFirewall = true;
     
     defaultWindowManager = ''
+      # Clear any local host session variables that break headless displays
       unset DBUS_SESSION_BUS_ADDRESS
       unset XDG_RUNTIME_DIR
       
-      # Tell X11 apps and fonts to scale natively for a 2x Retina screen
-      echo "Xft.dpi: 192" | ${pkgs.xorg.xrdb}/bin/xrdb -merge
+      # Clean out old XFCE configuration locks if any exist
+      rm -rf ~/.cache/sessions/*
 
-      # Set explicit environment variables to scale GTK interface elements by 2
+      # Force standard system profile path inclusion for the current shell context
+      export PATH=$PATH:/run/current-system/sw/bin
+
+      # Inject native HiDPI font scaling metrics using the top-level xrdb package
+      echo "Xft.dpi: 192" | ${pkgs.xrdb}/bin/xrdb -merge
+
+      # Set explicit environment scaling properties for layout structures
       export GDK_SCALE=2
       export GDK_DPI_SCALE=0.5
       export QT_SCALE_FACTOR=2
 
-      # Fire up the window manager and session
-      ${pkgs.xfce.xfwm4}/bin/xfwm4 --replace &
-      exec ${pkgs.xfce.xfce4-session}/bin/xfce4-session
+      # Explicitly launch the XFCE Window Manager via top-level packages
+      ${pkgs.xfwm4}/bin/xfwm4 --replace &
+
+      # Launch the core XFCE panel components
+      ${pkgs.xfce4-panel}/bin/xfce4-panel &
+
+      # Pass control over to the top-level main session manager
+      exec ${pkgs.xfce4-session}/bin/xfce4-session
     '';
   };
 
