@@ -18,7 +18,7 @@
     defaultSession = "hyprland";
 
     # Forces SDDM to always launch Hyprland for boing without showing
-    # the session picker. 
+    # the session picker.
     autoLogin.enable = true;
     autoLogin.user = "boing";
 
@@ -35,6 +35,8 @@
     "flakes"
   ];
 
+  networking.firewall.allowedTCPPorts = [ 22 3389 ];
+
   nix.settings = {
     cores = 0;
     max-jobs = "auto";
@@ -50,8 +52,8 @@
 
   # ── Graphics / Nvidia / Desktop Managers ──────────────────────────────
   services.xserver.enable = true;
-  
-# ── Desktop Environments ──────────────────────────────────────────────
+
+  # ── Desktop Environments ──────────────────────────────────────────────
   # Enable XFCE for the remote desktop connection
   services.xserver.desktopManager.xfce.enable = true;
 
@@ -70,12 +72,18 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-# ── Headless Remote Desktop (For Dad) ─────────────────────────────────
+  # ── Headless Remote Desktop (For Dad) ─────────────────────────────────
   services.xrdp = {
     enable = true;
     openFirewall = true;
     # Tell XRDP to launch the lightweight XFCE desktop instead of GNOME
     defaultWindowManager = "xfce4-session";
+  };
+
+  services.openssh = {
+    enable = true;
+    settings.PermitRootLogin = "no";
+    settings.PasswordAuthenication = true;
   };
 
   # ── Session Variables ─────────────────────────────────────────────────
@@ -115,6 +123,7 @@
     description = "surinder singh";
     extraGroups = [
       "networkmanager"
+      "wheel"
       "video"
     ];
   };
@@ -141,7 +150,10 @@
         lcdfilter = "default";
       };
       defaultFonts = {
-        sansSerif = [ "Inter" "Rubik" ];
+        sansSerif = [
+          "Inter"
+          "Rubik"
+        ];
         monospace = [ "JetBrainsMono Nerd Font" ];
         serif = [ "Noto Serif" ];
       };
