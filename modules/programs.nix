@@ -149,6 +149,15 @@ in
     nixfmt # Official standard formatter
     nixd # Highly recommended Language Server (LSP)
     antigravity 
+    
+    # Generate a secondary desktop entry for the scaled version
+    # This guarantees BOTH "Antigravity" and "Antigravity (Scaled)" appear in the menu
+    (pkgs.runCommand "antigravity-scaled-desktop" {} ''
+      mkdir -p $out/share/applications
+      cp ${pkgs.antigravity}/share/applications/antigravity.desktop $out/share/applications/antigravity-scaled.desktop
+      sed -i 's/^Name=Antigravity/Name=Antigravity (Scaled)/' $out/share/applications/antigravity-scaled.desktop
+      sed -i 's|^Exec=antigravity|Exec=antigravity --force-scale-factor=2|g' $out/share/applications/antigravity-scaled.desktop
+    '')
     hypridle
 
     (python3.withPackages (
