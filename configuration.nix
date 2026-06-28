@@ -76,8 +76,13 @@
     openFirewall = true;
     
     defaultWindowManager = ''
-      # Source the system profile to properly populate XDG_DATA_DIRS and XDG_CONFIG_DIRS for XFCE
-      . /etc/profile
+      # Safely source the system profile to populate XDG_DATA_DIRS and XDG_CONFIG_DIRS
+      source /etc/profile || true
+
+      # Export explicit XDG variables so XFCE components know they are in an XFCE session
+      export XDG_CURRENT_DESKTOP=XFCE
+      export XDG_SESSION_DESKTOP=xfce
+      export XDG_SESSION_TYPE=x11
 
       # Clear any local host session variables that break headless displays
       unset DBUS_SESSION_BUS_ADDRESS
@@ -98,8 +103,8 @@
       export GDK_DPI_SCALE=0.5
       export QT_SCALE_FACTOR=2
 
-      # Wrap the final execution of the top-level xfce4-session binary cleanly within a dedicated, isolated dbus-run-session container
-      exec ${pkgs.dbus}/bin/dbus-run-session ${pkgs.xfce4-session}/bin/xfce4-session
+      # Wrap the final execution cleanly within a dedicated, isolated dbus-run-session container
+      exec ${pkgs.dbus}/bin/dbus-run-session ${pkgs.xfce4-session}/bin/startxfce4
     '';
   };
 
