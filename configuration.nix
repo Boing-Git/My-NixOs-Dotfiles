@@ -106,8 +106,14 @@
       export GDK_DPI_SCALE=0.5
       export QT_SCALE_FACTOR=2
 
-      # Wrap the final execution cleanly within a dedicated, isolated dbus-run-session container
-      exec ${pkgs.dbus}/bin/dbus-run-session ${pkgs.xfce4-session}/bin/startxfce4
+      # Wrap the final execution cleanly within a dedicated, isolated dbus-run-session container.
+      # Explicitly launch the window manager and panel in the background to bypass xfce4-session's 
+      # reliance on systemd user bus auto-starting, which fails in this isolated headless session.
+      exec ${pkgs.dbus}/bin/dbus-run-session sh -c "
+        ${pkgs.xfwm4}/bin/xfwm4 --compositor=off &
+        ${pkgs.xfce4-panel}/bin/xfce4-panel &
+        exec ${pkgs.xfce4-session}/bin/startxfce4
+      "
     '';
   };
 
