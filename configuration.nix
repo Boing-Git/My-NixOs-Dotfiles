@@ -96,8 +96,8 @@
       export GDK_DPI_SCALE=0.5
       export QT_SCALE_FACTOR=2
 
-      # Pass control over to the top-level main session manager via dbus-run-session
-      exec dbus-run-session ${pkgs.xfce4-session}/bin/xfce4-session
+      # Pass control over to the standard XFCE initialization script which handles WM and panel setup
+      exec ${pkgs.xfce4-session}/bin/startxfce4
     '';
   };
 
