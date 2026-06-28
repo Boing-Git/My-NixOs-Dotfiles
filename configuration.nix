@@ -76,6 +76,9 @@
     openFirewall = true;
     
     defaultWindowManager = ''
+      # Source the system profile to properly populate XDG_DATA_DIRS and XDG_CONFIG_DIRS for XFCE
+      . /etc/profile
+
       # Clear any local host session variables that break headless displays
       unset DBUS_SESSION_BUS_ADDRESS
       unset XDG_RUNTIME_DIR
