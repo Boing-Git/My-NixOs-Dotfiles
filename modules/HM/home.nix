@@ -35,14 +35,10 @@
   };
 
   xdg.desktopEntries =
-    let
-      isRemote = builtins.getEnv "XRDP_SESSION" != "";
-    in
-    if isRemote then
       {
         antigravity-scaled = {
           name = "Google Antigravity (Scaled)";
-          exec = "antigravity --force-device-scale-factor=1 %U";
+          exec = "antigravity --force-device-scale-factor=2 %U";
           icon = "antigravity";
           categories = [
             "Development"
@@ -50,8 +46,6 @@
           ];
         };
       }
-    else
-      { };
 
   # Symlinking caelestia dotfiles to make it feel like Arch
   xdg.configFile = {
