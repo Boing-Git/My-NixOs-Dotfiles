@@ -35,8 +35,6 @@
     "flakes"
   ];
 
-  networking.firewall.allowedTCPPorts = [ 22 3389 ];
-
   nix.settings = {
     cores = 0;
     max-jobs = "auto";
@@ -80,11 +78,17 @@
     defaultWindowManager = "xfce4-session";
   };
 
-  services.openssh = {
-    enable = true;
-    settings.PermitRootLogin = "no";
-    settings.PasswordAuthenication = true;
+# Clean, modern OpenSSH service configuration
+services.openssh = {
+  enable = true;
+  settings = {
+    PermitRootLogin = "no";
+    PasswordAuthentication = true;
   };
+};
+
+# Explicitly open the ports using the standard firewall list
+networking.firewall.allowedTCPPorts = [ 22 3389 ];;
 
   # ── Session Variables ─────────────────────────────────────────────────
   environment.sessionVariables = {
