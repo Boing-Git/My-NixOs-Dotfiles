@@ -83,6 +83,10 @@
       export XDG_SESSION_DESKTOP=xfce
       export XDG_SESSION_TYPE=x11
 
+      # Force software rendering for OpenGL. XRDP's headless X server doesn't support the host's 
+      # Nvidia GLX driver, causing xfwm4 (compositor) and xfce4-panel to crash on startup.
+      export LIBGL_ALWAYS_SOFTWARE=1
+
       # Clear any local host session variables that break headless displays
       unset DBUS_SESSION_BUS_ADDRESS
       unset XDG_RUNTIME_DIR
