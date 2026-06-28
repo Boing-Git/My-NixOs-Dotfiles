@@ -92,7 +92,7 @@
       ${pkgs.xfce.xfwm4}/bin/xfwm4 --replace &
       exec ${pkgs.xfce.xfce4-session}/bin/xfce4-session
     '';
-  };;
+  };
 
 # Clean, modern OpenSSH service configuration
 services.openssh = {
