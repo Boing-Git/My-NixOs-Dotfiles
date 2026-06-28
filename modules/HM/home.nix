@@ -35,7 +35,6 @@
   };
 
   xdg.desktopEntries =
-      {
         antigravity-scaled = {
           name = "Google Antigravity (Scaled)";
           exec = "antigravity --force-device-scale-factor=2 %U";
@@ -45,7 +44,6 @@
             "IDE"
           ];
         };
-      }
 
   # Symlinking caelestia dotfiles to make it feel like Arch
   xdg.configFile = {
