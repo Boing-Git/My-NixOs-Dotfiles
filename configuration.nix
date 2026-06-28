@@ -156,8 +156,8 @@ networking.firewall.allowedTCPPorts = [ 22 3389 ];
     # This ensures it appears in the XFCE menu for the remote 'surinder' user, 
     # not just the native 'boing' user, and applies the custom scaling flag.
     (pkgs.makeDesktopItem {
-      name = "antigravity";
-      desktopName = "Antigravity";
+      name = "antigravity-scaled";
+      desktopName = "Antigravity-scaled";
       exec = "antigravity --force-scale-factor=2";
       icon = "applications-development";
       terminal = false;
