@@ -147,6 +147,7 @@ networking.firewall.allowedTCPPorts = [ 22 3389 ];
   # ── System Packages ───────────────────────────────────────────────────
   environment.systemPackages = [
     pkgs.git
+    pkgs.antigravity-desktop
   ];
 
   # ── Users ─────────────────────────────────────────────────────────────

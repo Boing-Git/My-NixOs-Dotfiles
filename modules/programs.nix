@@ -148,7 +148,7 @@ in
     github-cli
     nixfmt # Official standard formatter
     nixd # Highly recommended Language Server (LSP)
-   antigravity 
+    antigravity 
     hypridle
 
     (python3.withPackages (
