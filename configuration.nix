@@ -151,6 +151,18 @@ networking.firewall.allowedTCPPorts = [ 22 3389 ];
   # ── System Packages ───────────────────────────────────────────────────
   environment.systemPackages = [
     pkgs.git
+    
+    # Create a system-wide application menu entry for Antigravity
+    # This ensures it appears in the XFCE menu for the remote 'surinder' user, 
+    # not just the native 'boing' user, and applies the custom scaling flag.
+    (pkgs.makeDesktopItem {
+      name = "antigravity";
+      desktopName = "Antigravity";
+      exec = "antigravity --force-scale-factor=2";
+      icon = "applications-development";
+      terminal = false;
+      categories = [ "Development" ];
+    })
   ];
 
   # ── Users ─────────────────────────────────────────────────────────────
