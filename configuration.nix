@@ -108,9 +108,9 @@
 
       # Force X11 backend for GTK/QT applications. Globally exported Wayland variables from 
       # the host system (like Hyprland) will crash xfce4-panel and xfwm4 in this X11 XRDP session.
-      export GDK_BACKEND=x11
-      export QT_QPA_PLATFORM=xcb
-      unset WAYLAND_DISPLAY
+      #export GDK_BACKEND=x11
+      #export QT_QPA_PLATFORM=xcb
+      #unset WAYLAND_DISPLAY
 
       # Wrap the final execution cleanly within a dedicated, isolated dbus-run-session container.
       # Explicitly launch the window manager and panel in the background to bypass xfce4-session's 
