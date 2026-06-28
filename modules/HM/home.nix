@@ -34,8 +34,8 @@
     '';
   };
 
-  xdg.desktopEntries =
-        antigravity-scaled = {
+  xdg.desktopEntries
+        .antigravity-scaled = {
           name = "Google Antigravity (Scaled)";
           exec = "antigravity --force-device-scale-factor=2 %U";
           icon = "antigravity";
