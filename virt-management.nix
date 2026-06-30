@@ -1,26 +1,35 @@
 {
   config,
+  lib,
   pkgs,
-  inputs,
   ...
 }:
 
-{
-  # Virtualization backend for virt-manager
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu = {
-      package = pkgs.qemu_kvm;
-      runAsRoot = true;
-      swtpm.enable = true; # Needed for Windows 11 TPM requirements
-
-      # REMOVED the ovmf = { ... } block from here!
-    };
+let
+  cfg = config.programs.virt-management;
+in {
+  options.progs.virt-maramnagement = {
+    enable = lib.mkEnableOption "virt-management module";
   };
 
-  # Required for virt-manager to remember its settings and window states
-  programs.dconf.enable = true;
+  config = lib.mkIf cfg.enable {
+    # Virtualization backend for virt-manager
+    virtualisation.libvirtd = {
+      enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
+        swtpm.enable = true; # Needed for Windows 11 TPM requirements
+      };
+    };
 
-  # Allows you to pass physical USB devices from your host to the VM
-  virtualisation.spiceUSBRedirection.enable = true;
+    # Required for virt-manager to remember its settings and window states
+    programs.dconf.enable = true;
+
+    # Allows you to pass physical USB devices from your host to the VM
+    virtualisation.spiceUSBRedirection.enable = true;
+    
+    # We ensure the virt-manager application itself is also available when enabled
+    environment.systemPackages = [ pkgs.virt-manager ];
+  };
 }

@@ -22,6 +22,11 @@ let
 in
 
 {
+  programs.virt-management = {
+    enable = true;
+  };
+  services.surinder-setup.enable = true;
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -65,13 +70,16 @@ in
     # Ensure both backends are available on the system
     extraPortals = with pkgs; [
       xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk 
+      xdg-desktop-portal-gtk
     ];
-    
+
     # Map the portals to the specific desktop environments
     config = {
       hyprland = {
-        default = [ "hyprland" "gtk" ];
+        default = [
+          "hyprland"
+          "gtk"
+        ];
       };
       xfce = {
         default = [ "gtk" ];
@@ -144,15 +152,14 @@ in
     satty
     github-desktop
     blanket
-    virt-manager
     github-cli
     nixfmt # Official standard formatter
     nixd # Highly recommended Language Server (LSP)
-    antigravity 
-    
+    antigravity
+
     # Generate a secondary desktop entry for the scaled version
     # This guarantees BOTH "Antigravity" and "Antigravity (Scaled)" appear in the menu
-    (pkgs.runCommand "antigravity-scaled-desktop" {} ''
+    (pkgs.runCommand "antigravity-scaled-desktop" { } ''
       mkdir -p $out/share/applications
       cp ${pkgs.antigravity}/share/applications/antigravity.desktop $out/share/applications/antigravity-scaled.desktop
       sed -i 's/^Name=Antigravity/Name=Antigravity (Scaled)/' $out/share/applications/antigravity-scaled.desktop
