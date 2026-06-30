@@ -120,6 +120,7 @@ in
     git
     vscodium
     wezterm
+    nerd-fonts.space-mono
     papirus-folders
     papirus-icon-theme
     nautilus
@@ -129,7 +130,6 @@ in
     btop
     eza
     zoxide
-    nerd-fonts.jetbrains-mono
     wl-clipboard
     cliphist
     xdg-utils
