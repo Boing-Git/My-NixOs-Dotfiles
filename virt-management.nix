@@ -8,7 +8,7 @@
 let
   cfg = config.programs.virt-management;
 in {
-  options.progs.virt-maramnagement = {
+  options.programs.virt-management = {
     enable = lib.mkEnableOption "virt-management module";
   };
 
