@@ -119,7 +119,7 @@ in
     hyperhdr
     git
     vscodium
-    foot
+    wezterm
     papirus-folders
     papirus-icon-theme
     nautilus
