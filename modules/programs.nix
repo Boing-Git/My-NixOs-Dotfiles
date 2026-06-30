@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }:
 
@@ -25,7 +26,7 @@ in
   programs.virt-management = {
     enable = true;
   };
-  services.surinder-setup.enable = false;
+  services.surinder-setup.enable = lib.mkDefault false;
 
   # Install firefox.
   programs.firefox.enable = true;

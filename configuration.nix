@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -68,7 +68,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  services.surinder-setup.enable = true;
+  services.surinder-setup.enable = lib.mkForce true;
 
   # ── Session Variables ─────────────────────────────────────────────────
   environment.sessionVariables = {
