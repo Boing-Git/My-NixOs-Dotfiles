@@ -24,7 +24,7 @@ in
 
 {
   programs.virt-management = {
-    enable = true;
+    enable = false;
   };
   services.surinder-setup.enable = lib.mkDefault false;
 
