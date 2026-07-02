@@ -15,7 +15,7 @@ in {
   config = lib.mkIf cfg.enable {
     # ── Desktop Environments ──────────────────────────────────────────────
     # Enable XFCE for the remote desktop connection
-    services.xserver.desktopManager.xfce.enable = true;
+    services.xserver.desktopManager.xfce.enable = false;
 
     # ── Headless Remote Desktop (For Dad) ─────────────────────────────────
     services.xrdp = {
