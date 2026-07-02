@@ -125,7 +125,18 @@ in
     papirus-icon-theme
     nautilus
     file-roller # Add the archive manager backend
-    spotify
+    (pkgs.spotify.override {
+      extraDesktopItems = [
+        (pkgs.makeDesktopItem {
+          name = "spotify";
+          exec = "spotify --force-device-scale-factor=1.0 %U";
+          icon = "spotify-client";
+          desktopName = "Spotify";
+          genericName = "Music Player";
+          categories = [ "Audio" "Music" "Player" "AudioVideo" ];
+        })
+      ];
+    })
     jq
     btop
     eza
