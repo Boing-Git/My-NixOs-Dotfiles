@@ -101,8 +101,8 @@ in
   };
 
   environment.variables = {
-    QT_SCALE_FACTOR = "2";
-    GDK_SCALE = "2";
+    QT_SCALE_FACTOR = "1";
+    GDK_SCALE = "1";
   };
 
   fonts.fontconfig = {
@@ -126,16 +126,7 @@ in
     nautilus
     file-roller # Add the archive manager backend
     (pkgs.spotify.override {
-      extraDesktopItems = [
-        (pkgs.makeDesktopItem {
-          name = "spotify";
-          exec = "spotify --force-device-scale-factor=1.0 %U";
-          icon = "spotify-client";
-          desktopName = "Spotify";
-          genericName = "Music Player";
-          categories = [ "Audio" "Music" "Player" "AudioVideo" ];
-        })
-      ];
+      deviceScaleFactor = 1.0;
     })
     jq
     btop

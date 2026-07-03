@@ -6,7 +6,7 @@
 
     font = {
     name = "Rubik";
-    size = 11; # Or 12, depending on scaling preference
+    size = 11.7; # Or 12, depending on scaling preference
   };
 
   # This forces Home Manager to generate the correct keys inside settings.ini
@@ -33,10 +33,18 @@
     # FIXED: Changed gtk-colors.css to gtkColors.css to match your Matugen output
     gtk3.extraCss = ''
       @import url("file://${config.xdg.configHome}/gtk-colors/gtkColors.css");
+
+      * {
+        font-weight: 500;
+      }
     '';
 
     gtk4.extraCss = ''
       @import url("file://${config.xdg.configHome}/gtk-colors/gtkColors.css");
+
+      * {
+        font-weight: 500;
+      }
     '';
   };
 }

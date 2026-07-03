@@ -1,0 +1,1096 @@
+WEBVTT
+Kind: captions
+Language: en
+ 
+There's a specific font size where
+ 
+There's a specific font size where
+everything suddenly looks right. Not
+ 
+everything suddenly looks right. Not
+just readable, but right, professional,
+ 
+just readable, but right, professional,
+like someone actually thought about it.
+ 
+like someone actually thought about it.
+Most people, they pick a font, they set
+ 
+Most people, they pick a font, they set
+it to 12, and then they move on. But
+ 
+it to 12, and then they move on. But
+they're missing something. Let me show
+ 
+they're missing something. Let me show
+you what I mean. Now, look at this. Let
+ 
+you what I mean. Now, look at this. Let
+me open NWG look and just take a look at
+ 
+me open NWG look and just take a look at
+what you're saying right over here.
+ 
+what you're saying right over here.
+Okay. SF Protext at size 11.5. Now, let
+ 
+Okay. SF Protext at size 11.5. Now, let
+me change it to something like 11 so
+ 
+me change it to something like 11 so
+that you can see what I'm talking about.
+ 
+that you can see what I'm talking about.
+Okay. Okay. It's fine. At size 11, it's
+ 
+Okay. Okay. It's fine. At size 11, it's
+fine. It looks readable. It doesn't
+ 
+fine. It looks readable. It doesn't
+really look all that different. There's
+ 
+really look all that different. There's
+nothing wrong with it. Now watch what
+ 
+nothing wrong with it. Now watch what
+happens as I slowly increase the size
+ 
+happens as I slowly increase the size
+from 11 to 11.5. So right now it's 11.
+ 
+from 11 to 11.5. So right now it's 11.
+Now it's 12. Just just look take a look
+ 
+Now it's 12. Just just look take a look
+at this preview here. Okay. 11.1. Okay.
+ 
+at this preview here. Okay. 11.1. Okay.
+I hit enter. Can't see can't really see
+ 
+I hit enter. Can't see can't really see
+a difference. 11.2. Okay. Got just a
+ 
+a difference. 11.2. Okay. Got just a
+little bit bigger. 34 and.5. So
+ 
+little bit bigger. 34 and.5. So
+immediately but you might not see that
+ 
+immediately but you might not see that
+much of a difference between 4 and.5.
+ 
+much of a difference between 4 and.5.
+But okay. Once you've been using it for
+ 
+But okay. Once you've been using it for
+quite some time. Yeah. As you can see
+ 
+quite some time. Yeah. As you can see
+over here, this is what I'm talking
+ 
+over here, this is what I'm talking
+about. As you change between different
+ 
+about. As you change between different
+sizes, different point sizes, when it
+ 
+sizes, different point sizes, when it
+comes to decimals, you will notice that
+ 
+comes to decimals, you will notice that
+the font quickly takes on a different
+ 
+the font quickly takes on a different
+appearance. It's like the letter spacing
+ 
+appearance. It's like the letter spacing
+increases. The letter spacing increases.
+ 
+increases. The letter spacing increases.
+And not just that, within the letters,
+ 
+And not just that, within the letters,
+the actual characters that you're
+ 
+the actual characters that you're
+seeing, they seem aligned to the pixel
+ 
+seeing, they seem aligned to the pixel
+grid much better. So, this is SF Protext
+ 
+grid much better. So, this is SF Protext
+at 11.7. It just looks a little bit
+ 
+at 11.7. It just looks a little bit
+bigger. But if you have been working in
+ 
+bigger. But if you have been working in
+in UI and UX and basically just design
+ 
+in UI and UX and basically just design
+stuff for quite a while, you will know
+ 
+stuff for quite a while, you will know
+that it actually looks a little bit
+ 
+that it actually looks a little bit
+different. And even if you don't, once
+ 
+different. And even if you don't, once
+you start paying more attention to the
+ 
+you start paying more attention to the
+stuff, it just sort of it becomes a
+ 
+stuff, it just sort of it becomes a
+habit. It just becomes something that
+ 
+habit. It just becomes something that
+you start noticing because you're
+ 
+you start noticing because you're
+actually paying attention to it. Now,
+ 
+actually paying attention to it. Now,
+this is what I'm talking about when I
+ 
+this is what I'm talking about when I
+say the click. So, as soon as I picked a
+ 
+say the click. So, as soon as I picked a
+certain decimal point, which was 11.7 in
+ 
+certain decimal point, which was 11.7 in
+this case, 11.5, 11.7. Okay, as you can
+ 
+this case, 11.5, 11.7. Okay, as you can
+see, it got certainly the rendering
+ 
+see, it got certainly the rendering
+feels like it got a little bit better
+ 
+feels like it got a little bit better
+even without touching any of the font
+ 
+even without touching any of the font
+config font rendering settings. And that
+ 
+config font rendering settings. And that
+is what I'm talking about when I say the
+ 
+is what I'm talking about when I say the
+click. Certain fonts at certain sizes
+ 
+click. Certain fonts at certain sizes
+just work. The rendering aligns with the
+ 
+just work. The rendering aligns with the
+pixel grid. The weight feels right. The
+ 
+pixel grid. The weight feels right. The
+spacing balances out and it stops
+ 
+spacing balances out and it stops
+looking like default text and actually
+ 
+looking like default text and actually
+starts looking intentional. Now, here's
+ 
+starts looking intentional. Now, here's
+what's going on technically. Okay, fonts
+ 
+what's going on technically. Okay, fonts
+are designed at specific optical sizes.
+ 
+are designed at specific optical sizes.
+So, when you scale them arbitrarily, the
+ 
+So, when you scale them arbitrarily, the
+rendering engine has to interpolate. So,
+ 
+rendering engine has to interpolate. So,
+guess where pixels should go. Sometimes
+ 
+guess where pixels should go. Sometimes
+it guesses well, sometimes it doesn't.
+ 
+it guesses well, sometimes it doesn't.
+At certain sizes, the math works out
+ 
+At certain sizes, the math works out
+cleaner. Like something like 11.5 or
+ 
+cleaner. Like something like 11.5 or
+ 
+boundaries and the spacing between
+ 
+boundaries and the spacing between
+letters feels more even. So, let me show
+ 
+letters feels more even. So, let me show
+you between 11.3 and 11.7. Like
+ 
+you between 11.3 and 11.7. Like
+immediately you can notice a difference.
+ 
+immediately you can notice a difference.
+Like the text, the actual characters,
+ 
+Like the text, the actual characters,
+they seem more intentional in a way.
+ 
+they seem more intentional in a way.
+Okay? If you know what I'm talking
+ 
+Okay? If you know what I'm talking
+about. That is exactly what I mean when
+ 
+about. That is exactly what I mean when
+you really have to pick out the right
+ 
+you really have to pick out the right
+size for a font if you want it to look
+ 
+size for a font if you want it to look
+better than it usually does. The whole
+ 
+better than it usually does. The whole
+thing just ends up rendering better when
+ 
+thing just ends up rendering better when
+you pick this sort of size. And this is
+ 
+you pick this sort of size. And this is
+why the same font can look crisp at 11.5
+ 
+why the same font can look crisp at 11.5
+or 11.7 and slightly muddy at 11 or even
+ 
+or 11.7 and slightly muddy at 11 or even
+ 
+worse. Take a look at this when I say
+ 
+worse. Take a look at this when I say
+muddy. Okay, 10. Yeah, it there's
+ 
+muddy. Okay, 10. Yeah, it there's
+there's a lot of fringing as you can see
+ 
+there's a lot of fringing as you can see
+over here. Fringing is basically like
+ 
+over here. Fringing is basically like
+the purpley things that you see at the
+ 
+the purpley things that you see at the
+edges of characters and that doesn't
+ 
+edges of characters and that doesn't
+look very pretty. So the best size to
+ 
+look very pretty. So the best size to
+pick especially for a font like SF Pro
+ 
+pick especially for a font like SF Pro
+text is going to be 11.7. And not just
+ 
+text is going to be 11.7. And not just
+that but even in browsers like the
+ 
+that but even in browsers like the
+browser URL bar as you can see over here
+ 
+browser URL bar as you can see over here
+let's say I type a website something
+ 
+let's say I type a website something
+like youtube.com even this like the
+ 
+like youtube.com even this like the
+rendering over here is supposed to be
+ 
+rendering over here is supposed to be
+pretty wacky because it's just not being
+ 
+pretty wacky because it's just not being
+shown properly like it's at small sizes.
+ 
+shown properly like it's at small sizes.
+But when you choose a proper setting,
+ 
+But when you choose a proper setting,
+when you choose a proper size for the
+ 
+when you choose a proper size for the
+font, that too improves immediately.
+ 
+font, that too improves immediately.
+This is why basically you would be much
+ 
+This is why basically you would be much
+better off not choosing any random size,
+ 
+better off not choosing any random size,
+but actually figuring out what size your
+ 
+but actually figuring out what size your
+font is perfect at. Now you might be
+ 
+font is perfect at. Now you might be
+thinking it's half a point. Like who
+ 
+thinking it's half a point. Like who
+cares? Here's who cares your
+ 
+cares? Here's who cares your
+subconscious. You look at a setup and
+ 
+subconscious. You look at a setup and
+something feels off. You cannot explain
+ 
+something feels off. You cannot explain
+it. The colors are fine. The layout is
+ 
+it. The colors are fine. The layout is
+fine, but it doesn't look professional.
+ 
+fine, but it doesn't look professional.
+If you it look it just looks like a
+ 
+If you it look it just looks like a
+default like someone just installed
+ 
+default like someone just installed
+stuff and didn't even think about it.
+ 
+stuff and didn't even think about it.
+Nine times out of 10 is the fonts. Wrong
+ 
+Nine times out of 10 is the fonts. Wrong
+size, wrong weight, wrong rendering. In
+ 
+size, wrong weight, wrong rendering. In
+fact, this is actually much better than
+ 
+fact, this is actually much better than
+what it would be like by default. Cuz if
+ 
+what it would be like by default. Cuz if
+I show you my GTK config, GTK 3.0 inside
+ 
+I show you my GTK config, GTK 3.0 inside
+of GTK.css, you will find that I'm
+ 
+of GTK.css, you will find that I'm
+manually increasing the font weight
+ 
+manually increasing the font weight
+right over here. If I were to get rid of
+ 
+right over here. If I were to get rid of
+this, okay, you will find that the font
+ 
+this, okay, you will find that the font
+looks a lot frailer. By frail, I mean it
+ 
+looks a lot frailer. By frail, I mean it
+just looks weak and fragile. As you can
+ 
+just looks weak and fragile. As you can
+see, there's that more there's more of
+ 
+see, there's that more there's more of
+that fringing that I'm talking about.
+ 
+that fringing that I'm talking about.
+And it is it just doesn't look pretty. I
+ 
+And it is it just doesn't look pretty. I
+can even change the font to something
+ 
+can even change the font to something
+like Google Sands Flex, but that doesn't
+ 
+like Google Sands Flex, but that doesn't
+actually improve it. If anything, it
+ 
+actually improve it. If anything, it
+might even make it a little bit worse.
+ 
+might even make it a little bit worse.
+Okay, it does improve it a little bit,
+ 
+Okay, it does improve it a little bit,
+but not quite enough for it to make a
+ 
+but not quite enough for it to make a
+solid difference. That's why you have to
+ 
+solid difference. That's why you have to
+figure out stuff like sizes and colors
+ 
+figure out stuff like sizes and colors
+if you want to take your setup to the
+ 
+if you want to take your setup to the
+next level. And this is what separate
+ 
+next level. And this is what separate
+ricees risers who treat it as a craft
+ 
+ricees risers who treat it as a craft
+from risers who just configure things.
+ 
+from risers who just configure things.
+The craft people, they pay attention to
+ 
+The craft people, they pay attention to
+details like this. They find the click
+ 
+details like this. They find the click
+and their setups look better. Not
+ 
+and their setups look better. Not
+because of fancy themes, but because
+ 
+because of fancy themes, but because
+yeah, by fancy themes, I actually meant
+ 
+yeah, by fancy themes, I actually meant
+something like this. Okay, tada. By
+ 
+something like this. Okay, tada. By
+theme switches and whatnot like this,
+ 
+theme switches and whatnot like this,
+but by actually making stuff feel
+ 
+but by actually making stuff feel
+intentional and considered. And this
+ 
+intentional and considered. And this
+sort of attention to detail along with
+ 
+sort of attention to detail along with
+learning how to make stuff like custom
+ 
+learning how to make stuff like custom
+theme switches and more is what I teach
+ 
+theme switches and more is what I teach
+you inside of Hyper Accelerator. It's a
+ 
+you inside of Hyper Accelerator. It's a
+program where I have basically combined
+ 
+program where I have basically combined
+all my four to five years of pricing
+ 
+all my four to five years of pricing
+knowledge of racising hyperland and
+ 
+knowledge of racising hyperland and
+other tiling window managers into one
+ 
+other tiling window managers into one
+program so that you can just follow a
+ 
+program so that you can just follow a
+step-by-step process and not have to
+ 
+step-by-step process and not have to
+take a look at the hundreds if not
+ 
+take a look at the hundreds if not
+thousands of different tutorials out
+ 
+thousands of different tutorials out
+there. So, if you want to learn how to
+ 
+there. So, if you want to learn how to
+make setups like these on your own
+ 
+make setups like these on your own
+without having to copy anybody else's
+ 
+without having to copy anybody else's
+dot files because trust me, you and I,
+ 
+dot files because trust me, you and I,
+we've both been there. We've both copied
+ 
+we've both been there. We've both copied
+stuff and it's always ended up breaking.
+ 
+stuff and it's always ended up breaking.
+Even if it didn't break in a day,
+ 
+Even if it didn't break in a day,
+probably would it broke in what a month
+ 
+probably would it broke in what a month
+or two or maybe even a week. So if you
+ 
+or two or maybe even a week. So if you
+want to avoid all that, be able to
+ 
+want to avoid all that, be able to
+proudly say that you have made your own
+ 
+proudly say that you have made your own
+setup as well as avoid all the dot file
+ 
+setup as well as avoid all the dot file
+hell that you have to go through
+ 
+hell that you have to go through
+normally. You can click the first link
+ 
+normally. You can click the first link
+in the description and check out Hyper
+ 
+in the description and check out Hyper
+Accelerator. As I just said, it's a
+ 
+Accelerator. As I just said, it's a
+program that walks you through step by
+ 
+program that walks you through step by
+step of how to actually make stuff like
+ 
+step of how to actually make stuff like
+this yourself. So this is the code part.
+ 
+this yourself. So this is the code part.
+So this this keybind config line, let me
+ 
+So this this keybind config line, let me
+show you high code modules binds conf.
+ 
+show you high code modules binds conf.
+Okay, this is the key bind line and you
+ 
+Okay, this is the key bind line and you
+also have different bind flags like bind
+ 
+also have different bind flags like bind
+eel. These are actually bind flags and
+ 
+eel. These are actually bind flags and
+this is what they do, how you're
+ 
+this is what they do, how you're
+supposed to use them, why actually they
+ 
+supposed to use them, why actually they
+exist, so on and so forth. So you also
+ 
+exist, so on and so forth. So you also
+learn the principles instead of just
+ 
+learn the principles instead of just
+learning how to copy and paste. So if
+ 
+learning how to copy and paste. So if
+you want that you can click the first
+ 
+you want that you can click the first
+link in the description and check out
+ 
+link in the description and check out
+the program. Now how do you actually go
+ 
+the program. Now how do you actually go
+about finding the click? Well, I've
+ 
+about finding the click? Well, I've
+showed you already but let me show it to
+ 
+showed you already but let me show it to
+you again in case I didn't show it
+ 
+you again in case I didn't show it
+properly. Now for GTK apps, your file
+ 
+properly. Now for GTK apps, your file
+manager, your settings or any basically
+ 
+manager, your settings or any basically
+UI, you have to open NWG look. Okay, go
+ 
+UI, you have to open NWG look. Okay, go
+to the font tab. Uh, actually, it's in
+ 
+to the font tab. Uh, actually, it's in
+the widgets section over here. Here, you
+ 
+the widgets section over here. Here, you
+want to pick a font. Pick a font. If you
+ 
+want to pick a font. Pick a font. If you
+want me to suggest a font, just go with
+ 
+want me to suggest a font, just go with
+something like SF Protext. This,
+ 
+something like SF Protext. This,
+honestly, I've tried out so many
+ 
+honestly, I've tried out so many
+different fonts. I even have a font
+ 
+different fonts. I even have a font
+switcher right over here. Yeah, I'm a
+ 
+switcher right over here. Yeah, I'm a
+font nerd. And because of which, I've
+ 
+font nerd. And because of which, I've
+tried like at least 20 to 30 different
+ 
+tried like at least 20 to 30 different
+fonts for UI. And out of all of those,
+ 
+fonts for UI. And out of all of those,
+SF Protext is the one that looks the
+ 
+SF Protext is the one that looks the
+best, especially when you set the font
+ 
+best, especially when you set the font
+weight to medium, which is 500. When you
+ 
+weight to medium, which is 500. When you
+do that, my god, this ends up looking
+ 
+do that, my god, this ends up looking
+very very good. Among that, you also
+ 
+very very good. Among that, you also
+have other fonts like Rubik. Rubic is
+ 
+have other fonts like Rubik. Rubic is
+also a font that looks fantastic,
+ 
+also a font that looks fantastic,
+especially when it comes to rendering
+ 
+especially when it comes to rendering
+here. Rubik looks very good. SF Protext
+ 
+here. Rubik looks very good. SF Protext
+looks very good. Robboto, if honestly,
+ 
+looks very good. Robboto, if honestly,
+Robboto has no personality. So, if you
+ 
+Robboto has no personality. So, if you
+want your setup to have no personality,
+ 
+want your setup to have no personality,
+you can pick that. I guess no pass no
+ 
+you can pick that. I guess no pass no
+personality is a personality of its own.
+ 
+personality is a personality of its own.
+So, do with that what you will. Now,
+ 
+So, do with that what you will. Now,
+another good font would be Google Sands
+ 
+another good font would be Google Sands
+or Google Sands Flex. Out of these two,
+ 
+or Google Sands Flex. Out of these two,
+depending on whether you like
+ 
+depending on whether you like
+playfulness more or less, you would pick
+ 
+playfulness more or less, you would pick
+Google Sands. If you like playfulness a
+ 
+Google Sands. If you like playfulness a
+little bit less, and you want something
+ 
+little bit less, and you want something
+more professional and geometric,
+ 
+more professional and geometric,
+whatever font names, you know, terms are
+ 
+whatever font names, you know, terms are
+out there. If you want something that's
+ 
+out there. If you want something that's
+more modern, Android 16 that you would
+ 
+more modern, Android 16 that you would
+find in Pixels, then just go with Google
+ 
+find in Pixels, then just go with Google
+Sands Flex. Now, once you've actually
+ 
+Sands Flex. Now, once you've actually
+picked a font, make sure to choose a
+ 
+picked a font, make sure to choose a
+base size. Put a base size for UI fonts.
+ 
+base size. Put a base size for UI fonts.
+It's most likely going to be 10, 11, or
+ 
+It's most likely going to be 10, 11, or
+ 
+or too small. Let's say you start at 11.
+ 
+or too small. Let's say you start at 11.
+Okay, it looks okay, but then not great.
+ 
+Okay, it looks okay, but then not great.
+Now you add 0.1. So you just add 0.1.
+ 
+Now you add 0.1. So you just add 0.1.
+Now it doesn't look that much different.
+ 
+Now it doesn't look that much different.
+Check the preview. It just doesn't
+ 
+Check the preview. It just doesn't
+doesn't look any better. So you keep
+ 
+doesn't look any better. So you keep
+adding 2. Okay, something's changing. 3
+ 
+adding 2. Okay, something's changing. 3
+ 
+Four and five. There was absolutely no
+ 
+Four and five. There was absolutely no
+difference. Literally barely anything.
+ 
+difference. Literally barely anything.
+Six. Okay, something else changed.
+ 
+Six. Okay, something else changed.
+Seven. Seven is where the letter
+ 
+Seven. Seven is where the letter
+separation really is dialed in and it
+ 
+separation really is dialed in and it
+ends up looking much better. You can
+ 
+ends up looking much better. You can
+even try eight. 8. Okay. Eight also
+ 
+even try eight. 8. Okay. Eight also
+looks very good. As you can see, it is
+ 
+looks very good. As you can see, it is
+it is especially visible in this ly part
+ 
+it is especially visible in this ly part
+for quickly. And 9. Let's see for nine.
+ 
+for quickly. And 9. Let's see for nine.
+Nine. I guess that works as well. But
+ 
+Nine. I guess that works as well. But
+more something more like 11.7 would be
+ 
+more something more like 11.7 would be
+better. So you can just select that. And
+ 
+better. So you can just select that. And
+as you can see, it does make a
+ 
+as you can see, it does make a
+difference as you saw with this S thing
+ 
+difference as you saw with this S thing
+jumping over. That's it. In my
+ 
+jumping over. That's it. In my
+experience, fonts usually click at the
+ 
+experience, fonts usually click at the
+halfway point. So 11.5, 10.5 or 12, or
+ 
+halfway point. So 11.5, 10.5 or 12, or
+at specific values like 11.3 or 11.7. It
+ 
+at specific values like 11.3 or 11.7. It
+depends on the font that you're using.
+ 
+depends on the font that you're using.
+You're just going to have to test out
+ 
+You're just going to have to test out
+and see which one feels like clicks the
+ 
+and see which one feels like clicks the
+best. For terminal fonts, same
+ 
+best. For terminal fonts, same
+principle, but you use a different tool.
+ 
+principle, but you use a different tool.
+So open your terminal config, Kitty,
+ 
+So open your terminal config, Kitty,
+elacrity, whatever you're using.
+ 
+elacrity, whatever you're using.
+Honestly, Kitty is much much better for
+ 
+Honestly, Kitty is much much better for
+font rendering simply because of the way
+ 
+font rendering simply because of the way
+that it renders fonts. It's GPU
+ 
+that it renders fonts. It's GPU
+accelerated because of which its font
+ 
+accelerated because of which its font
+rendering just looks a little bit
+ 
+rendering just looks a little bit
+better. Now, if I just show you this
+ 
+better. Now, if I just show you this
+comparison, okay, sideby-side
+ 
+comparison, okay, sideby-side
+comparison, I'll just type the exact
+ 
+comparison, I'll just type the exact
+same thing. And this is the foot
+ 
+same thing. And this is the foot
+terminal, by the way. So, config kitty
+ 
+terminal, by the way. So, config kitty
+kitty.com. Yeah. So, as you can tell,
+ 
+kitty.com. Yeah. So, as you can tell,
+probably. Okay. The terminal on the
+ 
+probably. Okay. The terminal on the
+right, this one's foot. The font
+ 
+right, this one's foot. The font
+rendering looks a little bit I wouldn't
+ 
+rendering looks a little bit I wouldn't
+say worse, but it does look worse
+ 
+say worse, but it does look worse
+depending on your tastes. Unless you
+ 
+depending on your tastes. Unless you
+actually like frail, weak, and fragile
+ 
+actually like frail, weak, and fragile
+fonts, in which case this actually looks
+ 
+fonts, in which case this actually looks
+better. But to each their own, right?
+ 
+better. But to each their own, right?
+This one looks a bit fuller and just
+ 
+This one looks a bit fuller and just
+looks like it's healthy and it's
+ 
+looks like it's healthy and it's
+actually being fed if you will. But
+ 
+actually being fed if you will. But
+anyway, yeah, that's the difference. So,
+ 
+anyway, yeah, that's the difference. So,
+let's open RT config. And this is what I
+ 
+let's open RT config. And this is what I
+have so far for Jet Brains Mono Nerd
+ 
+have so far for Jet Brains Mono Nerd
+Font Mono. This mono variant is
+ 
+Font Mono. This mono variant is
+something that I've covered in a
+ 
+something that I've covered in a
+different video. But anyway, here for
+ 
+different video. But anyway, here for
+this font, the perfect size would be 13.
+ 
+this font, the perfect size would be 13.
+You can pick 14. And once you reload,
+ 
+You can pick 14. And once you reload,
+yeah, it works, but 13 is honestly
+ 
+yeah, it works, but 13 is honestly
+perfect. Now here you can try with
+ 
+perfect. Now here you can try with
+different sizes. Something like 12.5.
+ 
+different sizes. Something like 12.5.
+But that just Yeah, this is what I'm
+ 
+But that just Yeah, this is what I'm
+talking about when I say the click. Take
+ 
+talking about when I say the click. Take
+a look at this. Okay, now we'll just put
+ 
+a look at this. Okay, now we'll just put
+that back. This is 12.5. Sometimes it
+ 
+that back. This is 12.5. Sometimes it
+doesn't click at the halfway point and
+ 
+doesn't click at the halfway point and
+instead clicks on a whole number. So I
+ 
+instead clicks on a whole number. So I
+can let's say I just get rid of this.5.
+ 
+can let's say I just get rid of this.5.
+Change it to 13 and watch as the line
+ 
+Change it to 13 and watch as the line
+height as well as letter spacing change.
+ 
+height as well as letter spacing change.
+Okay, I'll just hit enter, reload, and
+ 
+Okay, I'll just hit enter, reload, and
+there you go. The line height increased
+ 
+there you go. The line height increased
+a little bit. the actual length of the
+ 
+a little bit. the actual length of the
+characters that increase a little bit
+ 
+characters that increase a little bit
+and as well as the letter spacing, the
+ 
+and as well as the letter spacing, the
+actual spaces between the different
+ 
+actual spaces between the different
+letters, they shrunk a little bit as
+ 
+letters, they shrunk a little bit as
+well. So that is what happens. That's
+ 
+well. So that is what happens. That's
+it. So for monospace fonts, you're
+ 
+it. So for monospace fonts, you're
+basically going to have to figure out
+ 
+basically going to have to figure out
+the same thing. Figure out where it
+ 
+the same thing. Figure out where it
+clicks for your particular font. For Jet
+ 
+clicks for your particular font. For Jet
+Brains Moner font, that's going to be
+ 
+Brains Moner font, that's going to be
+exactly at 13. Even for the regular
+ 
+exactly at 13. Even for the regular
+font, even if not a nerd font with a
+ 
+font, even if not a nerd font with a
+click for your way bar, you just have to
+ 
+click for your way bar, you just have to
+do the same thing as well. Start at a
+ 
+do the same thing as well. Start at a
+reasonable size. Something a 14 or 12
+ 
+reasonable size. Something a 14 or 12
+would be way too small. So I've picked
+ 
+would be way too small. So I've picked
+ 
+one. Reload and you check. The bar is
+ 
+one. Reload and you check. The bar is
+actually where the click matters the
+ 
+actually where the click matters the
+most visually because it's literally
+ 
+most visually because it's literally
+always on screen. If the font renders
+ 
+always on screen. If the font renders
+poorly there, you see it constantly and
+ 
+poorly there, you see it constantly and
+just get bugged about it once you start
+ 
+just get bugged about it once you start
+noticing stuff.
+ 
+noticing stuff.
+And that should be it. Details like this
+ 
+And that should be it. Details like this
+are what make a setup feel professional.
+ 
+are what make a setup feel professional.
+And as I've already mentioned, Hyper
+ 
+And as I've already mentioned, Hyper
+Accelerator covers all of them along
+ 
+Accelerator covers all of them along
+with making something as slick and
+ 
+with making something as slick and
+beautiful as this for yourself. It's a
+ 
+beautiful as this for yourself. It's a
+stuff that separates okay rices from
+ 
+stuff that separates okay rices from
+great ones. And if you want to build
+ 
+great ones. And if you want to build
+great rises as well, you can click the
+ 
+great rises as well, you can click the
+first link in the description and check
+ 
+first link in the description and check
+out the program to enlist some help with
+ 
+out the program to enlist some help with
+that. That's it. If you like the video,
+ 
+that. That's it. If you like the video,
+hit like. If you loved it and want to
+ 
+hit like. If you loved it and want to
+see more like this in your feed, hit
+ 
+see more like this in your feed, hit
+subscribe and I will see you next time.
+ 
+subscribe and I will see you next time.
+Stay rising.
