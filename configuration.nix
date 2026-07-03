@@ -108,6 +108,8 @@
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
       nerd-fonts.caskaydia-cove
+      nerd-fonts.space-mono
+      space-mono
       material-symbols
       rubik
       roboto
