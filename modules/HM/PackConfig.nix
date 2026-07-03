@@ -14,7 +14,7 @@ in
 {
   imports = [
     # ./BigPackConfigs/terminal/foot.nix
-    #./BigPackConfigs/UI-Frameworks/gtk.nix
+    ./BigPackConfigs/UI-Frameworks/gtk.nix
     ./BigPackConfigs/UI-Frameworks/qt.nix
     # ./BigPackConfigs/terminal/fastfetch.nix
     ./BigPackConfigs/text-editor/vscodium.nix
