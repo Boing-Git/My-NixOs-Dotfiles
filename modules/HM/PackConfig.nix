@@ -51,6 +51,7 @@ in
       fullAppDisplay # Ambient fullscreen mode
       beautifulLyrics # Glowing ambient lyrics
       popupLyrics # Floating lyrics window
+      spicyLyrics # Spicy lyrics
     ];
     theme = spkgs.themes.text;
     colorScheme = "Nord";
