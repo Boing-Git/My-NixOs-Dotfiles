@@ -14,18 +14,37 @@
   boot.kernelParams = [ "usbcore.autosuspend=-1" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # ── Display Manager ───────────────────────────────────────────────────
-  services.displayManager = {
-    defaultSession = "hyprland";
+  # ── Greeter (greetd + quickshell) ──────────────────────────────────────
+  # Deploy greeter QML files to /etc so the greeter user can read them
+  # (the greeter user cannot access /home/boing due to 700 permissions)
+  environment.etc."quickshell-greeter/shell.qml".source =
+    /home/boing/.config/quickshell/greeter/shell.qml;
+  environment.etc."quickshell-greeter/LoginCard.qml".source =
+    /home/boing/.config/quickshell/greeter/LoginCard.qml;
+  environment.etc."quickshell-greeter/Variables/Theme.qml".source =
+    /home/boing/.config/quickshell/greeter/Variables/Theme.qml;
+  environment.etc."quickshell-greeter/Variables/variables.js".source =
+    /home/boing/.config/quickshell/greeter/Variables/variables.js;
 
-    # Temporarily disabled to allow testing XFCE for surinder
-    autoLogin.enable = false;
-    autoLogin.user = "boing";
-
-    sddm = {
-      enable = true;
-      wayland.enable = true;
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.quickshell}/bin/quickshell -c /etc/quickshell-greeter";
+        user = "greeter";
+      };
     };
+  };
+
+  # Suppress greetd's TTY text so only the graphical greeter shows
+  systemd.services.greetd.serviceConfig = {
+    Type = "idle";
+    StandardInput = "tty";
+    StandardOutput = "tty";
+    StandardError = "journal";
+    TTYReset = true;
+    TTYVHangup = true;
+    TTYVTDisallocate = true;
   };
 
   # ── Networking ────────────────────────────────────────────────────────
@@ -50,6 +69,7 @@
 
   # ── Graphics / Nvidia / Desktop Managers ──────────────────────────────
   services.xserver.enable = true;
+  services.displayManager.sddm.enable = false;
 
   # ── Desktop Environments ──────────────────────────────────────────────
 
