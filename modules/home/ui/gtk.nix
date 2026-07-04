@@ -32,7 +32,7 @@
     # Import the Matugen generated file seamlessly via CSS syntax
     # FIXED: Changed gtk-colors.css to gtkColors.css to match your Matugen output
     gtk3.extraCss = ''
-      @import url("file://${config.xdg.configHome}/gtk-colors/gtkColors.css");
+      @import url("file://${config.xdg.configHome}/color-schemes/currect/gtkColors.css");
 
       * {
         font-weight: 500;
@@ -40,7 +40,7 @@
     '';
 
     gtk4.extraCss = ''
-      @import url("file://${config.xdg.configHome}/gtk-colors/gtkColors.css");
+      @import url("file://${config.xdg.configHome}/color-schemes/currect/gtkColors.css");
 
       * {
         font-weight: 500;

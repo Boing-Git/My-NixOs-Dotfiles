@@ -17,7 +17,7 @@
     # Configure Qt5 Configuration Tool settings
     "qt5ct/qt5ct.conf".text = ''
       [Appearance]
-      color_scheme_path=${config.xdg.configHome}/qt5ct/colors/matugen.conf
+      color_scheme_path=${config.xdg.configHome}/color-schemes/currect/qtColors.conf
       custom_palette=true
       style=Fusion
       icon_theme=Adwaita
@@ -30,7 +30,7 @@
     # Configure Qt6 Configuration Tool settings
     "qt6ct/qt6ct.conf".text = ''
       [Appearance]
-      color_scheme_path=${config.xdg.configHome}/qt6ct/colors/matugen.conf
+      color_scheme_path=${config.xdg.configHome}/color-schemes/currect/qtColors.conf
       custom_palette=true
       style=Fusion
       icon_theme=Adwaita
