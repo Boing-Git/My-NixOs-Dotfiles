@@ -11,11 +11,24 @@
   environment.etc."quickshell-greeter/Variables/variables.js".source =
     /home/boing/.config/quickshell/greeter/Variables/variables.js;
 
+  environment.etc."quickshell-greeter/hyprland.conf".text = ''
+    exec-once = ${pkgs.quickshell}/bin/quickshell -c /etc/quickshell-greeter
+    
+    animations {
+        enabled = false
+    }
+    misc {
+        disable_hyprland_logo = true
+        disable_splash_rendering = true
+        disable_autoreload = true
+    }
+  '';
+
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.quickshell}/bin/quickshell -c /etc/quickshell-greeter";
+        command = "${pkgs.hyprland}/bin/Hyprland --config /etc/quickshell-greeter/hyprland.conf";
         user = "greeter";
       };
     };

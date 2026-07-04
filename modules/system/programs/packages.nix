@@ -76,6 +76,7 @@ in
         pygobject3
         pywebview
         flask
+        emoji
       ]
     ))
 
