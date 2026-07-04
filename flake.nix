@@ -39,7 +39,7 @@
       specialArgs = { inherit inputs; };
 
       modules = [
-        ./configuration.nix
+        ./hosts/nixos/default.nix
         inputs.home-manager.nixosModules.home-manager
         {
           nixpkgs.overlays = [
@@ -54,7 +54,7 @@
 
           home-manager.users.boing = {
             imports = [
-              ./modules/HM/home.nix
+              ./modules/home/default.nix
             ];
           };
         }

@@ -1,0 +1,8 @@
+{ config, pkgs, lib, ... }:
+
+{
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelParams = [ "usbcore.autosuspend=-1" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+}
