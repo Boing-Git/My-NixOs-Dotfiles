@@ -60,6 +60,9 @@
     http-connections = 50;
     auto-optimise-store = true;
   };
+
+  hardware.enableRedistributableFirmware = true;
+
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
 
