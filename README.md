@@ -75,33 +75,46 @@ matugen image /path/to/your/wallpaper.jpg
 ## 📂 Repository Structure
 
 ```
-├── app.fish
-├── configuration.nix
-├── flake.nix
+.
 ├── flake.lock
+├── flake.nix
+├── hosts
+│   └── nixos
+│       ├── default.nix
+│       └── hardware-configuration.nix
 ├── LICENSE
 ├── modules
-│   ├── HM
-│   │   ├── BigPackConfigs
-│   │   │   ├── Matugen
-│   │   │   │   └── Matugen.nix
-│   │   │   ├── terminal
-│   │   │   │   ├── foot.nix
-│   │   │   │   └── starship.nix
-│   │   │   ├── text-editor
-│   │   │   │   ├── vscodium.nix
-│   │   │   │   └── zed.nix
-│   │   │   ├── UI-Frameworks
-│   │   │   │   ├── gtk.nix
-│   │   │   │   └── qt.nix
-│   │   │   └── zen
-│   │   │       ├── app.fish
-│   │   │       ├── userChrome.css
-│   │   │       └── zen.nix
-│   │   ├── home.nix
-│   │   └── PackConfig.nix
-│   └── programs.nix
-└── README.md
+│   ├── home
+│   │   ├── default.nix
+│   │   ├── programs
+│   │   │   ├── git.nix
+│   │   │   ├── neovim.nix
+│   │   │   ├── spicetify.nix
+│   │   │   ├── vscodium.nix
+│   │   │   └── zed.nix
+│   │   └── ui
+│   │       ├── gtk.nix
+│   │       └── qt.nix
+│   └── system
+│       ├── core
+│       │   ├── boot.nix
+│       │   ├── environment.nix
+│       │   ├── networking.nix
+│       │   └── users.nix
+│       ├── desktop
+│       │   ├── fonts.nix
+│       │   ├── graphics.nix
+│       │   └── greetd.nix
+│       ├── programs
+│       │   ├── default.nix
+│       │   └── packages.nix
+│       └── services
+│           ├── services.nix
+│           ├── surinder-setup.nix
+│           └── virt-management.nix
+├── README.md
+└── scripts
+    └── install.sh
 ```
 
 ---
