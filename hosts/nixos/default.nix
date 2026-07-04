@@ -7,6 +7,7 @@
     ../../modules/system/core/networking.nix
     ../../modules/system/core/users.nix
     ../../modules/system/core/environment.nix
+    ../../modules/system/core/security.nix
     ../../modules/system/desktop/fonts.nix
     ../../modules/system/desktop/greetd.nix
     ../../modules/system/desktop/graphics.nix
