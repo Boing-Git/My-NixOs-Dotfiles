@@ -24,7 +24,7 @@ in
     wezterm
     nerd-fonts.space-mono
     papirus-folders
-    papirus-icon-theme
+    (papirus-icon-theme.override { color = "brown"; })
     nautilus
     file-roller
     (pkgs.spotify.override {

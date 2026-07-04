@@ -29,6 +29,11 @@
       package = pkgs.papirus-icon-theme; # FIXED: Added the actual package for icons
     };
 
+    theme = {
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
+    };
+
     # Import the Matugen generated file seamlessly via CSS syntax
     # FIXED: Changed gtk-colors.css to gtkColors.css to match your Matugen output
     gtk3.extraCss = ''
