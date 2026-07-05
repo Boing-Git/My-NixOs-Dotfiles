@@ -10,6 +10,10 @@
     /home/boing/.config/quickshell/greeter/Variables/Theme.qml;
   environment.etc."quickshell-greeter/Variables/variables.js".source =
     /home/boing/.config/quickshell/greeter/Variables/variables.js;
+  environment.etc."quickshell-greeter/qmldir".text = ''
+    module QuickshellGreeter
+    singleton Theme 1.0 Variables/Theme.qml
+  '';
 
   environment.etc."quickshell-greeter/hyprland.conf".text = ''
     exec-once = ${pkgs.quickshell}/bin/quickshell -c /etc/quickshell-greeter
