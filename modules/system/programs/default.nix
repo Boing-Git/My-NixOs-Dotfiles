@@ -8,8 +8,11 @@
     shellInit = ''
       set -gx LANG en_US.UTF-8
       set -gx LC_ALL en_US.UTF-8
-      fastfetch
-      set -g fish_greeting " "
+    '';
+    interactiveShellInit = ''
+      function fish_greeting
+        fastfetch
+      end
     '';
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake .";
