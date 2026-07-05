@@ -82,4 +82,13 @@
   programs.home-manager.enable = true;
   programs.zen-browser.enable = true;
   programs.starship.enable = true;
+
+  xdg.configFile."fish/conf.d/99-fastfetch.fish".text = ''
+    function __run_fastfetch_once --on-event fish_prompt
+      if not set -q __fastfetch_ran
+        set -g __fastfetch_ran 1
+        fastfetch
+      end
+    end
+  '';
 }

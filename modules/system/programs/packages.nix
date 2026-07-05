@@ -61,6 +61,7 @@ in
     nixfmt
     nixd
     antigravity
+    vlc
 
     (pkgs.runCommand "antigravity-scaled-desktop" { } ''
       mkdir -p $out/share/applications

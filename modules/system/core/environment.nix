@@ -25,6 +25,9 @@
     GBM_BACKEND = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     LIBVA_DRIVER_NAME = "nvidia";
+    PROTON_ENABLE_NVAPI = "1";
+    DXVK_NVAPI_ALLOW_OTHER_PROG = "1";
+    VKD3D_CONFIG = "dxr11,dxr";
   };
   
   services.udev.extraRules = ''
