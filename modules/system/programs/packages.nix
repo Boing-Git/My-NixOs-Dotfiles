@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, lib, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 let
   hyprcorners = pkgs.rustPlatform.buildRustPackage rec {
@@ -16,6 +22,9 @@ let
   };
 in
 {
+
+  programs.gamemode.enable = true;
+
   environment.systemPackages = with pkgs; [
     quickshell
     hyperhdr
