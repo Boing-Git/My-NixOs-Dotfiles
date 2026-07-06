@@ -97,7 +97,7 @@
 
   xdg.configFile."fish/conf.d/starship.fish".text = ''
     # Point Starship directly to your Matugen output file
-    set -gx STARSHIP_CONFIG "$HOME/.config/color-schemes/material-you/starship.toml"
+    set -gx STARSHIP_CONFIG "$HOME/.config/color-schemes/current/starship.toml"
 
     # Initialize Starship
     starship init fish | source
