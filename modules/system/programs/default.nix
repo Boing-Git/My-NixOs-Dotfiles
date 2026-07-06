@@ -70,5 +70,6 @@
   environment.variables = {
     QT_SCALE_FACTOR = "1";
     GDK_SCALE = "1";
+    CLICOLOR_FORCE = "1";
   };
 }
