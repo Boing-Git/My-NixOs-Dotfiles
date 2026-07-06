@@ -9,7 +9,6 @@
       set -gx LANG en_US.UTF-8
       set -gx LC_ALL en_US.UTF-8
       set -g fish_greeting " "
-      fastfetch
     '';
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake .";

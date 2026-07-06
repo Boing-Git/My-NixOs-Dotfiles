@@ -17,6 +17,9 @@
 
   environment.etc."quickshell-greeter/hyprland.conf".text = ''
     exec-once = ${pkgs.quickshell}/bin/quickshell -c /etc/quickshell-greeter
+    env = XCURSOR_THEME,GoogleDot-Black
+    env = XCURSOR_SIZE,24
+    exec-once = ${pkgs.hyprland}/bin/hyprctl setcursor GoogleDot-Black 24
     
     animations {
         enabled = false
@@ -25,7 +28,11 @@
         disable_hyprland_logo = true
         disable_splash_rendering = true
         disable_autoreload = true
+        disable_watchdog_warning = true
     }
+    
+    # Dismiss any config error banners just in case
+    exec-once = ${pkgs.hyprland}/bin/hyprctl seterror disable
   '';
 
   services.greetd = {
