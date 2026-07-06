@@ -18,6 +18,6 @@
     ../../modules/system/programs/default.nix
   ];
 
-  services.surinder-setup.enable = lib.mkForce true;
-  programs.virt-management.enable = false;
+  services.surinder-setup.enable = lib.mkForce false;
+  programs.virt-management.enable = true;
 }
