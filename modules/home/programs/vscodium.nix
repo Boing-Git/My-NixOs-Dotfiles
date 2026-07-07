@@ -11,9 +11,7 @@
     qt6.qtdeclarative
   ];
 
-  # 2. Declaratively create the empty marker file the LSP needs to scan the directory
-  home.file.".config/quickshell/Pill/.qmlls.ini".text = "";
-
+  
   programs.vscodium = {
     enable = true;
     package = pkgs.vscodium;
