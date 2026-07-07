@@ -42,10 +42,6 @@
   xdg.configFile = {
     "hypr/.luarc.json".enable = false;
     "hypr/hyprland.lua".enable = false;
-    "btop" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/share/caelestia/btop";
-      force = true;
-    };
   };
 
   home.activation.clearStaleBackups = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
