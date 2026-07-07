@@ -15,6 +15,7 @@
 - [Stack](#stack)
 - [Dynamic Theming](#dynamic-theming)
 - [Repository Structure](#repository-structure)
+- [Dotfile Symlinking](#dotfile-symlinking)
 - [Installation](#installation)
 - [Quickshell Architecture](#quickshell-architecture)
 
@@ -92,6 +93,7 @@ matugen image /path/to/your/wallpaper.jpg
 │   │   │   ├── spicetify.nix
 │   │   │   ├── vscodium.nix
 │   │   │   └── zed.nix
+│   │   ├── symlinks.nix
 │   │   └── ui
 │   │       ├── gtk.nix
 │   │       └── qt.nix
@@ -116,6 +118,23 @@ matugen image /path/to/your/wallpaper.jpg
 └── scripts
     └── install.sh
 ```
+
+---
+
+<a id="dotfile-symlinking"></a>
+
+## 🔗 Out-of-Store Dotfile Symlinking
+
+To allow for rapid iteration and live editing without needing to rebuild the NixOS system for every small tweak, this configuration uses **out-of-store symlinking** via Home Manager.
+
+### How It Works
+
+Defined in `modules/home/symlinks.nix`, Home Manager's `mkOutOfStoreSymlink` is used to map standard configuration folders (like `hypr`, `quickshell`, `nvim`, `foot`, etc.) from a local `~/dotfiles/` directory directly into your `~/.config/` directory.
+
+- **Standard NixOS behavior:** Files managed by Nix are placed into the read-only `/nix/store/` and symlinked to your home directory, making them immutable. You must run `nixos-rebuild` to apply any changes.
+- **Out-of-Store approach:** By symlinking them to `~/dotfiles/`, the files exposed in `~/.config/` remain mutable. You can edit your Hyprland configuration or Quickshell QML files live and see the changes instantly, bypassing the Nix store completely.
+
+> **Note:** Ensure your standalone dotfiles are placed in the `~/dotfiles/` directory for these symlinks to resolve correctly!
 
 ---
 
