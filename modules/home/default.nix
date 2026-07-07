@@ -18,6 +18,7 @@
     ./programs/git.nix
     ./programs/spicetify.nix
     ./programs/neovim.nix
+    ./symlinks.nix
   ];
 
   wayland.windowManager.hyprland = {
