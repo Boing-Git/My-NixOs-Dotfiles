@@ -83,25 +83,5 @@
     enableFishIntegration = false;
   };
 
-  xdg.configFile."fish/conf.d/99-fastfetch.fish".text = ''
-    function __run_fastfetch_once --on-event fish_prompt
-      if not set -q __fastfetch_ran
-        set -g __fastfetch_ran 1
-        fastfetch
-      end
-    end
-  '';
-
-  xdg.configFile."fish/conf.d/starship.fish".text = ''
-    # Point Starship directly to your Matugen output file
-    set -gx STARSHIP_CONFIG "$HOME/.config/color-schemes/current/starship.toml"
-
-    # Initialize Starship
-    starship init fish | source
-
-    # Function to instantly repaint the prompt across all open terminals
-    function _reload_starship_prompt --on-signal USR2
-        commandline -f repaint
-    end
-  '';
+  
 }
