@@ -18,6 +18,7 @@
     ".config/zed".source        = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/zed";
     ".config/color-schemes".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/color-schemes"; 
     ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/hypr"; 
+    ".config/spicetify".source  = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/spicetify";
   };
 
 }
