@@ -36,7 +36,6 @@
     categories = [
       "Development"
       "IDE"
-    ];
   };
 
   xdg.configFile = {
@@ -61,8 +60,6 @@
     fastfetch
     pavucontrol
     vscodium
-    spotify
-    spicetify-cli
     google-cursor
     dejavu_fonts
     prismlauncher
