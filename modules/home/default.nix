@@ -61,6 +61,7 @@
     fastfetch
     pavucontrol
     vscodium
+    spicetify-cli
     google-cursor
     dejavu_fonts
     prismlauncher

@@ -134,7 +134,7 @@ Defined in `modules/home/symlinks.nix`, Home Manager's `mkOutOfStoreSymlink` is 
 - **Standard NixOS behavior:** Files managed by Nix are placed into the read-only `/nix/store/` and symlinked to your home directory, making them immutable. You must run `nixos-rebuild` to apply any changes.
 - **Out-of-Store approach:** By symlinking them to `~/dotfiles/`, the files exposed in `~/.config/` remain mutable. You can edit your Hyprland configuration or Quickshell QML files live and see the changes instantly, bypassing the Nix store completely.
 
-> **Note:** Ensure your standalone dotfiles are placed in the `~/dotfiles/` directory for these symlinks to resolve correctly!
+> **Note:** Ensure your standalone dotfiles are placed in the `~/dotfiles/` dior these symlinks rectory fto resolve correctly!
 
 ---
 
