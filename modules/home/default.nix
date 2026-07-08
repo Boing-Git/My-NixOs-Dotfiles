@@ -39,6 +39,13 @@
     ];
   };
 
+  xdg.desktopEntries.spotify = {
+    name = "Spotify";
+    exec = "/home/boing/.local/bin/spotify %U";
+    icon = "spotify-client";
+    categories = [ "Audio" "Music" ];
+  };
+
   xdg.configFile = {
     "hypr/.luarc.json".enable = false;
     "hypr/hyprland.lua".enable = false;
@@ -61,6 +68,8 @@
     fastfetch
     pavucontrol
     vscodium
+    spotify
+    spicetify-cli
     google-cursor
     dejavu_fonts
     prismlauncher

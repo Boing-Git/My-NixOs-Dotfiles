@@ -23,7 +23,7 @@ let
 in
 {
   programs.spicetify = {
-    enable = true;
+    enable = false;
     enabledCustomApps = with spkgs.apps; [
       lyricsPlus
     ];
