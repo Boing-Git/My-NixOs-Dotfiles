@@ -36,6 +36,7 @@
     categories = [
       "Development"
       "IDE"
+    ];
   };
 
   xdg.configFile = {
