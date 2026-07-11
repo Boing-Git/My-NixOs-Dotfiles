@@ -10,4 +10,5 @@
     "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
   ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelModules = [ "ntsync" ];
 }
