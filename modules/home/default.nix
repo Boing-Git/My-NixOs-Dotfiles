@@ -46,6 +46,15 @@
     categories = [ "Audio" "Music" ];
   };
 
+  xdg.desktopEntries.steam = {
+    name = "Steam";
+    exec = "steam %U";
+    icon = "steam";
+    categories = [ "Network" "FileTransfer" "Game" ];
+    terminal = false;
+    type = "Application";
+  };
+
   xdg.configFile = {
     "hypr/.luarc.json".enable = false;
     "hypr/hyprland.lua".enable = false;

@@ -29,6 +29,8 @@
 
     matugen.url = "github:InioX/matugen";
 
+    pixie-sddm.url = "github:xCaptaiN09/pixie-sddm";
+
   };
 
   outputs = inputs: {
