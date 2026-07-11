@@ -38,6 +38,7 @@
   systemd.services.display-manager.environment = {
     XCURSOR_THEME = "GoogleDot-Black";
     XCURSOR_SIZE = "24";
+    XCURSOR_PATH = "/run/current-system/sw/share/icons";
   };
 
   # Pixie SDDM theme package + cursor for the login screen
