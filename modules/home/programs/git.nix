@@ -10,5 +10,8 @@
       };
       init.defaultBranch = "main";
     };
+    extraConfig = {
+      credential.helper = "!gh auth git-credential";
+    };
   };
 }
