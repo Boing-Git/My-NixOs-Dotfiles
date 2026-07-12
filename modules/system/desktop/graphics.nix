@@ -45,12 +45,15 @@
   environment.systemPackages = [
     inputs.pixie-sddm.packages.${pkgs.stdenv.hostPlatform.system}.pixie-sddm
     pkgs.google-cursor
+    pkgs.ddcutil
   ];
 
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
+
+  hardware.i2c.enable = true;
 
   hardware.nvidia = {
     modesetting.enable = true;

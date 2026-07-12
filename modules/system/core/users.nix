@@ -14,6 +14,7 @@
       "input"
       "libvirtd"
       "kvm"
+      "i2c"
     ];
   };
 }
