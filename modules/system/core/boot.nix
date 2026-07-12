@@ -11,4 +11,7 @@
   ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "ntsync" ];
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 2147483642;
+  };
 }
