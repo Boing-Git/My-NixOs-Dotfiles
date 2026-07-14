@@ -7,6 +7,7 @@
     enable = true;
     theme = "pixie";
     wayland.enable = true;
+    wayland.compositor = "kwin";
 
     # Crucial for Qt6: Use the KDE/Qt6 build of SDDM to fix missing
     # cursors and module errors.
