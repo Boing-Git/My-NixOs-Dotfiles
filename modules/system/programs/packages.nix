@@ -32,7 +32,7 @@ in
     vscodium
     wezterm
     nerd-fonts.space-mono
-    (papirus-icon-theme.override { color = "yaru"; })
+    (papirus-icon-theme.override { color = "brown"; })
     nautilus
     file-roller
     (pkgs.spotify.override {
