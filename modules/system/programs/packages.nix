@@ -71,6 +71,7 @@ in
     nixd
     antigravity
     vlc
+    obs-studio
 
     (pkgs.runCommand "antigravity-scaled-desktop" { } ''
       mkdir -p $out/share/applications
