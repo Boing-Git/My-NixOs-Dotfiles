@@ -54,10 +54,8 @@ in
     gobject-introspection
     cbonsai
     nitch
-    mpvpaper
     lua
     ffmpeg
-    fuzzel
     awww
     loupe
     upscayl
