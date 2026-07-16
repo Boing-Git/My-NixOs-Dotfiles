@@ -12,9 +12,6 @@
       inter
       noto-fonts 
       
-      # Adjusted naming convention to match the terminal font
-      googlesans-flex 
-      
       # Added Google Sans Code for your terminal
       googlesans-code
     ];
