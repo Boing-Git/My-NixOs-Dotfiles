@@ -9,6 +9,13 @@
       material-symbols
       rubik
       roboto
+      
+      # FIX: Added these two so your defaultFonts actually work
+      inter
+      noto-fonts 
+      
+      # OPTIONAL: Drop in the open-source Google font here
+      google-sans-flex 
     ];
 
     fontconfig = {
@@ -24,7 +31,8 @@
       };
       defaultFonts = {
         sansSerif = [
-          "Inter"
+          "Google Sans Flex" # Put this at the top to take priority
+          "Inter"            # Will act as a fallback if a character is missing
           "Rubik"
         ];
         monospace = [ "JetBrainsMono Nerd Font" ];
