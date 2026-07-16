@@ -1,5 +1,22 @@
 { config, pkgs, lib, ... }:
 
+let
+  # The local custom derivation for Google Sans Flex
+  google-sans-flex = pkgs.stdenvNoCC.mkDerivation {
+    pname = "google-sans-flex";
+    version = "1.0";
+
+    # Points directly to the file sitting next to this config
+    src = ./GoogleSansFlex.ttf; 
+
+    dontUnpack = true;
+
+    installPhase = ''
+      mkdir -p $out/share/fonts/truetype
+      cp $src $out/share/fonts/truetype/GoogleSansFlex.ttf
+    '';
+  };
+in
 {
   fonts = {
     packages = with pkgs; [
@@ -11,9 +28,8 @@
       roboto
       inter
       noto-fonts 
-      
-      # Added Google Sans Code for your terminal
-      googlesans-code
+      google-sans-flex  # Your local package
+      googlesans-code   # The official terminal package
     ];
 
     fontconfig = {
@@ -34,8 +50,8 @@
           "Rubik"
         ];
         monospace = [ 
-          "Google Sans Code"         # Set as the primary terminal font
-          "JetBrainsMono Nerd Font"  # Fallback for nerd font glyphs/icons
+          "Google Sans Code"
+          "JetBrainsMono Nerd Font"
         ];
         serif = [ "Noto Serif" ];
       };
