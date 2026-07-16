@@ -69,6 +69,7 @@ in
     antigravity
     vlc
     obs-studio
+    lossless-cut
 
     (pkgs.runCommand "antigravity-scaled-desktop" { } ''
       mkdir -p $out/share/applications
