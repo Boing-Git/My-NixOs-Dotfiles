@@ -9,13 +9,14 @@
       material-symbols
       rubik
       roboto
-      
-      # FIX: Added these two so your defaultFonts actually work
       inter
       noto-fonts 
       
-      # OPTIONAL: Drop in the open-source Google font here
-      google-sans-flex 
+      # Adjusted naming convention to match the terminal font
+      googlesans-flex 
+      
+      # Added Google Sans Code for your terminal
+      googlesans-code
     ];
 
     fontconfig = {
@@ -31,11 +32,14 @@
       };
       defaultFonts = {
         sansSerif = [
-          "Google Sans Flex" # Put this at the top to take priority
-          "Inter"            # Will act as a fallback if a character is missing
+          "Google Sans Flex"
+          "Inter"
           "Rubik"
         ];
-        monospace = [ "JetBrainsMono Nerd Font" ];
+        monospace = [ 
+          "Google Sans Code"         # Set as the primary terminal font
+          "JetBrainsMono Nerd Font"  # Fallback for nerd font glyphs/icons
+        ];
         serif = [ "Noto Serif" ];
       };
     };
