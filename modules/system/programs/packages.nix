@@ -70,6 +70,7 @@ in
     vlc
     obs-studio
     losslesscut
+    handbrake
 
     (pkgs.runCommand "antigravity-scaled-desktop" { } ''
       mkdir -p $out/share/applications
