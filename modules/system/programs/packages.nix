@@ -74,6 +74,7 @@ in
     rustc
     cargo
     gcc
+    rustup
 
     (pkgs.runCommand "antigravity-scaled-desktop" { } ''
       mkdir -p $out/share/applications
