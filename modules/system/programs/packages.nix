@@ -71,6 +71,7 @@ in
     obs-studio
     losslesscut
     handbrake
+    rust
 
     (pkgs.runCommand "antigravity-scaled-desktop" { } ''
       mkdir -p $out/share/applications
