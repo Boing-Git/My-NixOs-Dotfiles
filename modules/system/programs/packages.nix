@@ -73,6 +73,7 @@ in
     handbrake
     rustc
     cargo
+    gcc
 
     (pkgs.runCommand "antigravity-scaled-desktop" { } ''
       mkdir -p $out/share/applications
