@@ -35,6 +35,8 @@ in
     (papirus-icon-theme.override { color = "brown"; })
     nautilus
     file-roller
+    libimobiledevice
+    ifuse
     (pkgs.spotify.override {
       deviceScaleFactor = 1.0;
     })

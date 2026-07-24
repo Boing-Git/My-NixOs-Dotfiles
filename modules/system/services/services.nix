@@ -2,6 +2,7 @@
 
 {
   services.gvfs.enable = true;
+  services.usbmuxd.enable = true;
   security.polkit.enable = true;
 
   services.pipewire = {
