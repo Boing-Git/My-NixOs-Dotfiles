@@ -30,5 +30,7 @@
     "net.ipv4.udp_wmem_min" = 8192;
     "net.ipv4.tcp_congestion_control" = "bbr";
     "net.core.default_qdisc" = "fq_codel";
+    "net.core.netdev_budget" = 600;
+    "net.core.netdev_budget_usecs" = 8000;
   };
 }

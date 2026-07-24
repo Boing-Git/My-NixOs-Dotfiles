@@ -7,4 +7,12 @@
   networking.networkmanager.wifi.powersave = false;
   networking.networkmanager.wifi.macAddress = "preserve";
   hardware.enableRedistributableFirmware = true;
+
+  networking.networkmanager.extraConfig = ''
+    [device]
+    wifi.scan-rand-mac-address=no
+    
+    [connection]
+    wifi.bgscan=simple:30:-80:86400
+  '';
 }
