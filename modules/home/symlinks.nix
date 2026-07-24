@@ -15,7 +15,6 @@
     ".config/quickshell".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Dotfiles/quickshell";
     ".config/starship".source   = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Dotfiles/starship";
     ".config/wezterm".source    = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Dotfiles/wezterm";
-    ".config/zed".source        = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Dotfiles/zed";
     ".config/color-schemes".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Dotfiles/color-schemes"; 
     ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Dotfiles/hypr"; 
     ".config/spicetify".source  = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Dotfiles/spicetify";
