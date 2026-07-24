@@ -11,8 +11,8 @@
     "pcie_aspm=off"
   ];
   boot.extraModprobeConfig = ''
-    options rtw88_core disable_aspm=y
-    options rtl8821ae aspm=0
+    options rtw88_core disable_aspm=y disable_lps_deep=y
+    options rtl8821ae aspm=0 swenc=1 ips=0
   '';
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "ntsync" ];
@@ -28,5 +28,7 @@
     "net.ipv4.tcp_wmem" = "4096 65536 16777216";
     "net.ipv4.udp_rmem_min" = 8192;
     "net.ipv4.udp_wmem_min" = 8192;
+    "net.ipv4.tcp_congestion_control" = "bbr";
+    "net.core.default_qdisc" = "fq_codel";
   };
 }
