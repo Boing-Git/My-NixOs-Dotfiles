@@ -5,5 +5,6 @@
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
   networking.networkmanager.wifi.powersave = false;
+  networking.networkmanager.wifi.macAddress = "preserve";
   hardware.enableRedistributableFirmware = true;
 }
