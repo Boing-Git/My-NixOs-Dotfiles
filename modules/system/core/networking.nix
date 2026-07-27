@@ -13,7 +13,9 @@
       "wifi.scan-rand-mac-address" = "no";
     };
     connection = {
-      "wifi.bgscan" = "simple:30:-80:86400";
+      # Disable background Wi-Fi scans and power saving to prevent radio channel hopping and ping spikes
+      "wifi.bgscan" = "";
+      "wifi.powersave" = 2;
     };
   };
 }

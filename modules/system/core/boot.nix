@@ -26,10 +26,10 @@
     "net.core.optmem_max" = 65536;
     "net.ipv4.tcp_rmem" = "4096 1048576 2097152";
     "net.ipv4.tcp_wmem" = "4096 65536 16777216";
-    "net.ipv4.udp_rmem_min" = 8192;
-    "net.ipv4.udp_wmem_min" = 8192;
+    "net.ipv4.udp_rmem_min" = 16384;
+    "net.ipv4.udp_wmem_min" = 16384;
     "net.ipv4.tcp_congestion_control" = "bbr";
-    "net.core.default_qdisc" = "fq_codel";
+    "net.core.default_qdisc" = "fq"; # BBR performs optimal pacing with fq rather than fq_codel
     "net.core.netdev_budget" = 600;
     "net.core.netdev_budget_usecs" = 8000;
   };
