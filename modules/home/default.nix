@@ -23,13 +23,10 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+
     plugins = [
-      inputs.hyprglass.packages.${pkgs.system}.default
+      (pkgs.callPackage ./hyprglass.nix {})
     ];
-    extraConfig = ''
-      # Launches the core Caelestia compositor shell daemon natively
-      exec-once = caelestia shell -d
-    '';
   };
 
   xdg.desktopEntries.antigravity-scaled = {
