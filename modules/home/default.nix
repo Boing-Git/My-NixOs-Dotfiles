@@ -23,6 +23,9 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    plugins = [
+      inputs.hyprglass.packages.${pkgs.system}.default
+    ];
     extraConfig = ''
       # Launches the core Caelestia compositor shell daemon natively
       exec-once = caelestia shell -d

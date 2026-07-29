@@ -31,6 +31,10 @@
 
     pixie-sddm.url = "github:xCaptaiN09/pixie-sddm";
 
+    hyprglass = {
+      url = "github:hyprnux/hyprglass";
+    };
+
   };
 
   outputs = inputs: {
