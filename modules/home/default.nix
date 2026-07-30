@@ -23,7 +23,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-
+    extraConfig = " "; # Needs to be non-empty string to bypass the home-manager check
     plugins = [
       (pkgs.callPackage ./hyprglass.nix {})
     ];
@@ -87,6 +87,7 @@
     inotify-tools
     ncdu
     gsettings-desktop-schemas
+    (pkgs.callPackage ./hyprglass.nix {})
   ];
 
   home.sessionVariables = {

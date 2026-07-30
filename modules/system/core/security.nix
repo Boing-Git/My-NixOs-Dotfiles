@@ -2,4 +2,5 @@
 
 {
   security.polkit.enable = true;
+  security.pam.services.system-auth = {};
 }

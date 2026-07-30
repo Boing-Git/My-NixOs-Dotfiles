@@ -1,7 +1,6 @@
 {
   lib,
   fetchFromGitHub,
-  cmake,
   pkg-config,
   hyprland,
   hyprlandPlugins,
@@ -14,12 +13,21 @@ hyprlandPlugins.mkHyprlandPlugin (finalAttrs: {
     owner = "hyprnux";
     repo = "hyprglass";
     rev = "v0.6.4";
-    hash = ""; # This will fail first time and give us the correct hash
+    hash = "sha256-coVoTJyRhn6eKZ8oJXus93p/G1gblgqcQNhNXBhx+G4=";
   };
 
-  nativeBuildInputs = [ cmake pkg-config ];
+  nativeBuildInputs = [ pkg-config ];
 
   buildInputs = [ ];
+
+  buildPhase = ''
+    make all
+  '';
+
+  installPhase = ''
+    mkdir -p $out/lib
+    cp hyprglass.so $out/lib/libhyprglass.so
+  '';
 
   meta = {
     homepage = "https://github.com/hyprnux/hyprglass";
