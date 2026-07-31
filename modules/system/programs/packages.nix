@@ -71,6 +71,7 @@ in
     antigravity
     vlc
     obs-studio
+    sunshine
     losslesscut
     handbrake
     rustc
