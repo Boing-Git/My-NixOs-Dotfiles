@@ -18,4 +18,11 @@
       "wifi.powersave" = 2;
     };
   };
+
+  networking.firewall = {
+    enable = true;
+    # Open ports for Sunshine / Moonlight
+    allowedTCPPorts = [ 47984 47989 47990 48010 ];
+    allowedUDPPorts = [ 47998 47999 48000 48002 48010 ];
+  };
 }
