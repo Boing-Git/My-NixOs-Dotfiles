@@ -29,6 +29,7 @@ in
     quickshell
     hyperhdr
     git
+    lazygit
     vscodium
     wezterm
     nerd-fonts.space-mono
