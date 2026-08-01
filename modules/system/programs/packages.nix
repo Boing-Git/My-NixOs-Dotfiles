@@ -39,6 +39,8 @@ in
     libheif
     libde265
     glycin-loaders
+    gst_all_1.gst-plugins-bad
+    gst_all_1.gst-libav
     libimobiledevice
     ifuse
     (pkgs.spotify.override {
