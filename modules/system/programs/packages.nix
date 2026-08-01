@@ -36,6 +36,7 @@ in
     nautilus
     file-roller
     libheif
+    libde265
     glycin-loaders
     libimobiledevice
     ifuse
