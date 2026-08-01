@@ -35,6 +35,8 @@ in
     (papirus-icon-theme.override { color = "brown"; })
     nautilus
     file-roller
+    libheif
+    glycin-loaders
     libimobiledevice
     ifuse
     (pkgs.spotify.override {
