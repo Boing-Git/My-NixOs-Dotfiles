@@ -84,7 +84,6 @@ in
     cargo
     gcc
     rustup
-    gemini-cli
 
     (pkgs.runCommand "antigravity-scaled-desktop" { } ''
       mkdir -p $out/share/applications
