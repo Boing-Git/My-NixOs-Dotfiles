@@ -84,6 +84,10 @@ in
     cargo
     gcc
     rustup
+    wget
+    qemu_full
+    libvirt
+    dnsmasq
 
     (pkgs.runCommand "antigravity-scaled-desktop" { } ''
       mkdir -p $out/share/applications
