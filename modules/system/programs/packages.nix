@@ -88,6 +88,7 @@ in
     qemu_full
     libvirt
     dnsmasq
+    tigervnc
 
     (pkgs.runCommand "antigravity-scaled-desktop" { } ''
       mkdir -p $out/share/applications
