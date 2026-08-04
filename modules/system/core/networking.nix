@@ -22,7 +22,7 @@
   networking.firewall = {
     enable = true;
     # Open ports for Sunshine / Moonlight
-    allowedTCPPorts = [ 47984 47989 47990 48010 ];
+    allowedTCPPorts = [ 47984 47989 47990 48010 4242];
     allowedUDPPorts = [ 47998 47999 48000 48002 48010 ];
     allowedUDPPortRanges = [ { from = 48100; to = 48110; } ];
   };
