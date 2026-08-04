@@ -98,9 +98,6 @@ in
         pywebview
         flask
         emoji
-        opencv-python 
-        mediapipe 
-        numpy
       ]
     ))
 
