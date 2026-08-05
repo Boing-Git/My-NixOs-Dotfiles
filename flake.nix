@@ -31,6 +31,7 @@
 
     pixie-sddm.url = "github:xCaptaiN09/pixie-sddm";
 
+    maccel.url = "github:Gnarus-G/maccel";
   };
 
   outputs = inputs: {
@@ -42,6 +43,7 @@
 
       modules = [
         ./hosts/nixos/default.nix
+        inputs.maccel.nixosModules.default
         inputs.home-manager.nixosModules.home-manager
         {
           nixpkgs.overlays = [
