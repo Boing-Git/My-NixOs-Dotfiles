@@ -19,4 +19,18 @@
 
   services.surinder-setup.enable = lib.mkForce false;
   programs.virt-management.enable = true;
+
+  hardware.maccel = {
+    enable = true;
+    enableCli = true; # Installs the CLI and TUI tools
+    
+    # Optional: Set default parameters declaratively
+    parameters = {
+      mode = "linear";
+      sensMultiplier = 1.0;
+      acceleration = 0.3;
+      offset = 2.0;
+      outputCap = 2.0;
+    };
+  };
 }
