@@ -90,6 +90,7 @@ in
     dnsmasq
     tigervnc
     hypridle
+    maccel
 
     (python3.withPackages (
       ps: with ps; [
