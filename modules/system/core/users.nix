@@ -15,6 +15,7 @@
       "libvirtd"
       "kvm"
       "i2c"
+      "maccel"
     ];
   };
 }
