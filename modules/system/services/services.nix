@@ -1,20 +1,29 @@
 { config, pkgs, lib, ... }:
 
-{
-  services.gvfs.enable = true;
-  services.usbmuxd.enable = true;
-  security.polkit.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
+let
+  cfg = config.services.custom-sunshine;
+in {
+  options.services.custom-sunshine = {
+    enable = lib.mkEnableOption "Sunshine streaming service";
   };
 
-  services.sunshine = {
-    enable = true;
-    autoStart = true;
-    capSysAdmin = true;
-    openFirewall = true;
+  config = {
+    services.gvfs.enable = true;
+    services.usbmuxd.enable = true;
+    security.polkit.enable = true;
+    programs.coolercontrol.enable = true;
+
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+    };
+
+    services.sunshine = lib.mkIf cfg.enable {
+      enable = true;
+      autoStart = true;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
   };
 }

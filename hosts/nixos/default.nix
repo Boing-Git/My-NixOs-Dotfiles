@@ -20,6 +20,6 @@
 
   services.surinder-setup.enable = lib.mkForce false;
   programs.virt-management.enable = true;
-
+  services.custom-sunshine.enable = false;
 
 }
