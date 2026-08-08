@@ -18,8 +18,10 @@ let
   };
 in
 {
+  imports = [ ./fonts-rendering.nix ];
+
   environment.variables = {
-    FREETYPE_PROPERTIES = "freetype:interpreter-version=40 truetype:reject-bdf-pcf=1 cff:no-stem-darkening=0 autofit:no-stem-darkening=0";
+    FREETYPE_PROPERTIES = "freetype:interpreter-version=40 truetype:reject-bdf-pcf=1 cff:no-stem-darkening=0 autofit:no-stem-darkening=0 autofitter:no-stem-darkening=0";
   };
 
   fonts = {
@@ -43,8 +45,8 @@ in
         enable = false;
       };
       subpixel = {
-        rgba = "rgb";
-        lcdfilter = "default";
+        rgba = "none";
+        lcdfilter = "none";
       };
       localConf = ''
         <?xml version="1.0"?>

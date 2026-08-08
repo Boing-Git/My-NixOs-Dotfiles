@@ -14,14 +14,14 @@
     gtk-xft-antialias = 1;
     gtk-xft-hinting = 1;
     gtk-xft-hintstyle = "hintslight";
-    gtk-xft-rgba = "rgb";
+    gtk-xft-rgba = "none";
   };
 
   gtk4.extraConfig = {
     gtk-xft-antialias = 1;
     gtk-xft-hinting = 1;
     gtk-xft-hintstyle = "hintslight";
-    gtk-xft-rgba = "rgb";
+    gtk-xft-rgba = "none";
   };
 
     iconTheme = {
