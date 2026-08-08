@@ -18,6 +18,10 @@ let
   };
 in
 {
+  environment.variables = {
+    FREETYPE_PROPERTIES = "freetype:interpreter-version=40 truetype:reject-bdf-pcf=1 cff:no-stem-darkening=0 autofit:no-stem-darkening=0";
+  };
+
   fonts = {
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
@@ -36,13 +40,22 @@ in
       enable = true;
       antialias = true;
       hinting = {
-        enable = true;
-        style = "slight";
+        enable = false;
       };
       subpixel = {
         rgba = "rgb";
         lcdfilter = "default";
       };
+      localConf = ''
+        <?xml version="1.0"?>
+        <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+        <fontconfig>
+          <match target="font">
+            <!-- Disable blocky embedded bitmaps inside fonts -->
+            <edit name="embeddedbitmap" mode="assign"><bool>false</bool></edit>
+          </match>
+        </fontconfig>
+      '';
       defaultFonts = {
         sansSerif = [
           "Google Sans Flex"

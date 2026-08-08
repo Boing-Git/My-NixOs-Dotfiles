@@ -16,6 +16,7 @@
   '';
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "ntsync" ];
+  boot.supportedFilesystems = [ "ntfs" ];
   boot.kernel.sysctl = {
     "vm.max_map_count" = 2147483642;
     "net.core.netdev_max_backlog" = 16384;
