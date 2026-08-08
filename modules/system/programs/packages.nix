@@ -69,7 +69,6 @@ in
     grim
     playerctl
     satty
-    github-desktop
     blanket
     github-cli
     nixfmt
