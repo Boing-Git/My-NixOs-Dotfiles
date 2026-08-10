@@ -89,6 +89,7 @@ in
     dnsmasq
     tigervnc
     hypridle
+    keyd
 
     (python3.withPackages (
       ps: with ps; [
