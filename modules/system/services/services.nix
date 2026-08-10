@@ -13,6 +13,8 @@ in {
     security.polkit.enable = true;
     programs.coolercontrol.enable = true;
 
+    services.keyd.enable = true;
+
     services.pipewire = {
       enable = true;
       alsa.enable = true;
