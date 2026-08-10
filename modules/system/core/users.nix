@@ -16,6 +16,7 @@
       "kvm"
       "i2c"
       "maccel"
+      "keyd"
     ];
   };
 }
