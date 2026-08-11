@@ -90,6 +90,8 @@ in
     tigervnc
     hypridle
     keyd
+    imagemagick
+    pandoc
 
     (python3.withPackages (
       ps: with ps; [
@@ -98,6 +100,9 @@ in
         pywebview
         flask
         emoji
+        typer
+        rich
+        python-magic
       ]
     ))
 
