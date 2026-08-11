@@ -92,6 +92,8 @@ in
     keyd
     imagemagick
     pandoc
+    openssl
+    pkg-config
 
     (python3.withPackages (
       ps: with ps; [
