@@ -30,8 +30,8 @@ in {
             
             alt_double_tap = {
               # What happens when you hit 'alt' a second time:
-              # Act as 'meta' (Super)
-              alt = "meta"; 
+              # Act as 'super' (Super)
+              alt = "super"; 
             };
           };
         };
