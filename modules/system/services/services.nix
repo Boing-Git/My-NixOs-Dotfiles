@@ -21,11 +21,11 @@ in {
         settings = {
           main = {
             alt = "overload(control, oneshot(alt_double_tap))";
-            control = "alt";  # was: layer(alt)
+            control = "alt";  # not layer(alt) — see below
           };
 
           alt_double_tap = {
-            alt = "Super";
+            alt = "oneshot(meta)";
           };
         };
       };
