@@ -20,27 +20,26 @@ in {
           ids = [ "*" ];
           settings = {
             main = {
-              # Hold 'alt' to act as 'control'.
-              # Tap 'alt' once to briefly enter the 'alt_double_tap' layer.
-              alt = "overload(control, oneshot(alt_double_tap))";
+            # Hold 'alt' for 'control'.
+            # Tap 'alt' once to enter the 'alt_double_tap' layer.
+            alt = "overload(control, oneshot(alt_double_tap))";
 
-              # Make sure the ctrl key becomes the alt key
-              control = "layer(alt)";
-            };
-            
-            alt_double_tap = {
-              # What happens when you hit 'alt' a second time:
-              # Act as 'super' (Super)
-              alt = "Super"; 
-            };
+            # Make sure the physical ctrl key acts as the alt modifier layer
+            control = "layer(alt)";
+          };
+          
+          alt_double_tap = {
+            # Tapping 'alt' a second time acts as the 'meta' (Super/Windows) key
+            alt = "meta"; 
           };
         };
       };
+    };
   };
 
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
       pulse.enable = true;
     };
 
