@@ -31,7 +31,7 @@ in {
             alt_double_tap = {
               # What happens when you hit 'alt' a second time:
               # Act as 'super' (Super)
-              alt = "super"; 
+              alt = "Super"; 
             };
           };
         };
