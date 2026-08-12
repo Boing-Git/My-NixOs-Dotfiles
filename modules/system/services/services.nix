@@ -20,17 +20,19 @@ in {
           ids = [ "*" ];
           settings = {
             main = {
-            # Hold 'alt' for 'control'.
-            # Tap 'alt' once to enter the 'alt_double_tap' layer.
-            alt = "overload(control, oneshot(alt_double_tap))";
+              # Hold 'Alt' -> Control
+              # Single-tap 'Alt' -> Alt (if no second tap within 200ms)
+              # Double-tap 'Alt' -> Super (Meta)
+              alt = "overload(control, timeout(alt, 200, oneshot(alt_tap)))";
 
-            # Make sure the physical ctrl key acts as the alt modifier layer
-            control = "layer(alt)";
-          };
-          
-          alt_double_tap = {
-            # Tapping 'alt' a second time acts as the 'meta' (Super/Windows) key
-            alt = "meta"; 
+              # Physical Ctrl key acts as Alt
+              control = "alt";
+            };
+
+            alt_tap = {
+              # Second tap of Alt emits Meta (Super)
+              alt = "meta";
+            };
           };
         };
       };
