@@ -20,15 +20,18 @@ in {
           ids = [ "*" ];
           settings = {
             main = {
-              # Hold 'alt' to act as 'meta' (Super).
+              # Hold 'alt' to act as 'control'.
               # Tap 'alt' once to briefly enter the 'alt_double_tap' layer.
-              alt = "overload(meta, oneshot(alt_double_tap))";
+              alt = "overload(control, oneshot(alt_double_tap))";
+
+              # Make sure the ctrl key becomes the alt key
+              control = "layer(alt)";
             };
             
             alt_double_tap = {
               # What happens when you hit 'alt' a second time:
-              # layer(control) means you tap once, then press and hold the second time to act as Control.
-              alt = "layer(control)"; 
+              # Act as 'meta' (Super)
+              alt = "meta"; 
             };
           };
         };
