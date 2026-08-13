@@ -20,6 +20,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.sessionVariables = {
+    NIXOS_OZONE_HLM = "1";
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_HWP = "1";
     GBM_BACKEND = "nvidia-drm";
