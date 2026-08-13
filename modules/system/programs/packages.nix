@@ -87,7 +87,6 @@ in
     qemu_full
     libvirt
     dnsmasq
-    tigervnc
     hypridle
     keyd
     imagemagick
@@ -120,7 +119,7 @@ in
     lm_sensors
     networkmanager
     pipewire
-
+  
     fish
     bash
     app2unit
