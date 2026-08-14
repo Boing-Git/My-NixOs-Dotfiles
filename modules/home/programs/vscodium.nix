@@ -67,32 +67,32 @@
           when = "editorTextFocus";
         }
         {
-          key = "shift+h";
+          key = "shift+m";
           command = "workbench.action.previousEditor";
           when = "editorTextFocus && vim.active && vim.mode == 'Normal'";
         }
         {
-          key = "shift+l";
+          key = "shift+i";
           command = "workbench.action.nextEditor";
           when = "editorTextFocus && vim.active && vim.mode == 'Normal'";
         }
         {
-          key = "j";
+          key = "n";
           command = "list.focusDown";
           when = "filesToExplore && focusedView == 'workbench.explorer.fileView'";
         }
         {
-          key = "k";
+          key = "e";
           command = "list.focusUp";
           when = "filesToExplore && focusedView == 'workbench.explorer.fileView'";
         }
         {
-          key = "h";
+          key = "m";
           command = "list.collapse";
           when = "filesToExplore && focusedView == 'workbench.explorer.fileView'";
         }
         {
-          key = "l";
+          key = "i";
           command = "list.select";
           when = "filesToExplore && focusedView == 'workbench.explorer.fileView'";
         }

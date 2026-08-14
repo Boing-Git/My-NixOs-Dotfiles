@@ -38,6 +38,8 @@ in {
       pulse.enable = true;
     };
 
+    services.auto-cpufreq.enable = true;
+
     services.sunshine = lib.mkIf cfg.enable {
       enable = true;
       autoStart = true;

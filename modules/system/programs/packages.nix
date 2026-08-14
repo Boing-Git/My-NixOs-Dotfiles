@@ -93,6 +93,7 @@ in
     pandoc
     openssl
     pkg-config
+    gwe
 
     (python3.withPackages (
       ps: with ps; [
