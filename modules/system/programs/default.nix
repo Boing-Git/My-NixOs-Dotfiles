@@ -3,6 +3,10 @@
 {
   programs.firefox.enable = true;
 
+  programs.coolercontrol = {
+    enable = true;
+  };
+
   programs.fish = {
     enable = true;
     shellInit = ''
