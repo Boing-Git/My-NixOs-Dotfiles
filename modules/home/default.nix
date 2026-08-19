@@ -85,7 +85,6 @@
     inotify-tools
     ncdu
     gsettings-desktop-schemas
-    (pkgs.callPackage ./hyprglass.nix {})
   ];
 
   home.sessionVariables = {
