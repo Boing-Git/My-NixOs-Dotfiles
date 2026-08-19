@@ -25,9 +25,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = " "; # Needs to be non-empty string to bypass the home-manager check
-    plugins = [
-      (pkgs.callPackage ./hyprglass.nix {})
-    ];
   };
 
   xdg.desktopEntries.antigravity-scaled = {
