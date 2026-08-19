@@ -13,6 +13,7 @@
     ../../modules/system/services/services.nix
     ../../modules/system/services/surinder-setup.nix
     ../../modules/system/services/virt-management.nix
+    ../../modules/system/services/sunshine.nix
     ../../modules/system/programs/packages.nix
     ../../modules/system/programs/default.nix
     ../../modules/system/programs/maccel.nix

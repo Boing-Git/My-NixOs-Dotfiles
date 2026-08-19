@@ -62,7 +62,6 @@ in
     cbonsai
     nitch
     lua
-    ffmpeg
     awww
     loupe
     upscayl
@@ -76,42 +75,15 @@ in
     antigravity
     vlc
     obs-studio
-    sunshine
     losslesscut
     handbrake
-    rustc
-    cargo
-    gcc
-    rustup
     wget
     qemu_full
     libvirt
     dnsmasq
     hypridle
     keyd
-    imagemagick
-    pandoc
     openssl
-
-    (python3.withPackages (
-      ps: with ps; [
-        tkinter
-        pygobject3
-        pywebview
-        flask
-        emoji
-        typer
-        rich
-        python-magic
-      ]
-    ))
-
-    cmake
-    ninja
-    pkg-config
-    qt6.qtbase
-    qt6.qtdeclarative
-    qt6.wrapQtAppsHook
 
     ddcutil
     brightnessctl

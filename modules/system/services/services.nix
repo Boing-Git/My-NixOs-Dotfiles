@@ -1,13 +1,6 @@
 { config, pkgs, lib, ... }:
 
-let
-  cfg = config.services.custom-sunshine;
-in {
-  options.services.custom-sunshine = {
-    enable = lib.mkEnableOption "Sunshine streaming service";
-  };
-
-  config = {
+{
     services.gvfs.enable = true;
     services.usbmuxd.enable = true;
     security.polkit.enable = true;
@@ -39,12 +32,4 @@ in {
     };
 
     services.auto-cpufreq.enable = true;
-
-    services.sunshine = lib.mkIf cfg.enable {
-      enable = true;
-      autoStart = true;
-      capSysAdmin = true;
-      openFirewall = true;
-    };
-  };
 }
