@@ -11,6 +11,7 @@
   imports = [
     inputs.zen-browser.homeModules.beta
     inputs.spicetify-nix.homeManagerModules.default
+    inputs.omniformis.homeManagerModules.default
     ./ui/gtk.nix
     ./ui/qt.nix
     ./programs/vscodium.nix
@@ -18,7 +19,6 @@
     ./programs/git.nix
     ./programs/spicetify.nix
     ./programs/neovim.nix
-    ./symlinks.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -117,4 +117,24 @@
   };
 
   programs.bash.enable = true;
+
+  programs.omniformis = {
+    enable = true;
+    quickshell.enable = true;
+    hyprland.enable = true;
+    wezterm.enable = true;
+    fish.enable = true;
+    btop.enable = true;
+    cava.enable = true;
+    nvim.enable = true;
+    nvtop.enable = true;
+    fastfetch.enable = true;
+    qt5ct.enable = true;
+    qt6ct.enable = true;
+    nwg-look.enable = true;
+    starship.enable = true;
+    color-schemes.enable = true;
+    matugen.enable = true;
+    qtengine.enable = true;
+  };
 }

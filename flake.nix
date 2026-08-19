@@ -32,6 +32,8 @@
     pixie-sddm.url = "github:xCaptaiN09/pixie-sddm";
 
     maccel.url = "github:Gnarus-G/maccel";
+  
+    omniformis.url = "path:/home/boing/Dotfiles";
   };
 
   outputs = inputs: {
