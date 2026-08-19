@@ -235,8 +235,8 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1787129259,
-        "narHash": "sha256-+J7K9E7uYF45E1KEQvxjSsrc/IxBldjVNLMLdL/XYxI=",
+        "lastModified": 1787130493,
+        "narHash": "sha256-1uNGrjHIsozXYIyWqxiNIP3Lx8ISjZK6nK4lSscM5LY=",
         "path": "/home/boing/Dotfiles",
         "type": "path"
       },
