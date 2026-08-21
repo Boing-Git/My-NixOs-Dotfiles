@@ -5,7 +5,7 @@
     enable = true;
     quickshell.enable = true;
     hyprland.enable = true;
-    wezterm.enable = false;
+    wezterm.enable = true;
     fish.enable = true;
     btop.enable = true;
     cava.enable = true;

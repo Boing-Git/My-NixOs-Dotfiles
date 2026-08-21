@@ -13,7 +13,6 @@
     inputs.spicetify-nix.homeManagerModules.default
     inputs.omniformis.homeManagerModules.default
     ./ui/gtk.nix
-    ./ui/qt.nix
     ./programs/vscodium.nix
     ./programs/zed.nix
     ./programs/git.nix
