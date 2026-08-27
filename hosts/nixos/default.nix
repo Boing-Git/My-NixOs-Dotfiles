@@ -17,6 +17,7 @@
     ../../modules/system/programs/packages.nix
     ../../modules/system/programs/default.nix
     ../../modules/system/programs/maccel.nix
+    ../../modules/system/programs/gaming.nix
   ];
 
   services.surinder-setup.enable = lib.mkForce false;
