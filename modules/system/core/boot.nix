@@ -18,7 +18,6 @@
   boot.kernelModules = [ "ntsync" ];
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernel.sysctl = {
-    "vm.max_map_count" = 2147483642;
     "net.core.netdev_max_backlog" = 16384;
     "net.core.rmem_default" = 1048576;
     "net.core.rmem_max" = 16777216;
