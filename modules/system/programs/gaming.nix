@@ -16,7 +16,6 @@
     modesetting.enable = true;
     open = false; # Keep false to use proprietary drivers for peak 3080 Ti performance
     nvidiaSettings = true;
-    powerManagement.enable = false;
   };
 
   # 3. CPU Performance Governor (Forces Ryzen 9 5950X to sustain max clocks)
