@@ -7,21 +7,6 @@
   home.extraBuilderCommands = ''
     rm -rf $out/share/icons/Papirus-Light
   '';
-  
-  
-  ####### just to support vscode extensions
-programs.nix-ld.enable = true;
-programs.nix-ld.libraries = with pkgs; [
-  stdenv.cc.cc
-  zlib
-  fuse3
-  icu
-  nss
-  openssl
-  curl
-  glibc
-  util-linux
-];
 
   imports = [
     inputs.zen-browser.homeModules.beta

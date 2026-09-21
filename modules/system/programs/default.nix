@@ -7,6 +7,20 @@
     enable = true;
   };
 
+  ####### just to support vscode extensions
+programs.nix-ld.enable = true;
+programs.nix-ld.libraries = with pkgs; [
+  stdenv.cc.cc
+  zlib
+  fuse3
+  icu
+  nss
+  openssl
+  curl
+  glibc
+  util-linux
+];
+
   programs.fish = {
     enable = true;
     shellInit = ''
