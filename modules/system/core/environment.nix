@@ -35,4 +35,13 @@
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", ATTR{idProduct}=="1910", ATTR{power/control}="on"
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="1a86", ATTR{idProduct}=="8095", ATTR{power/control}="on"
   '';
+
+
+  services.desktopManager.gnome.enable = true;
+  services.power-profiles-daemon.enable = false;
+
+  # To disable installing GNOME's suite of applications
+  # and only be left with GNOME shell.
+  services.gnome.core-developer-tools.enable = false;
+  services.gnome.games.enable = false;
 }
