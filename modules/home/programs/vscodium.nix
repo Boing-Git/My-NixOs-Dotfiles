@@ -20,7 +20,6 @@
       extensions = with pkgs.vscode-marketplace; [
         jnoortheen.nix-ide
         johnnymorganz.stylua
-        eamodio.gitlens
         asvetliakov.vscode-neovim
         mvllow.rose-pine
         ravenothere.rose-pine-symbols
@@ -28,9 +27,8 @@
         delgan.qml-format
         sumneko.lua
         naumovs.color-highlight
-        # Add the embedded browser
-        antfu.browse-lite
         haikalllp.matugen-theme
+        anthropic.claude-code
       ];
 
       keybindings = [
