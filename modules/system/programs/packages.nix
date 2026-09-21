@@ -23,6 +23,18 @@ let
 in
 {
 
+nixpkgs.overlays = [
+  (final: prev: {
+    pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
+      (pythonFinal: pythonPrev: {
+        inline-snapshot = pythonPrev.inline-snapshot.overrideAttrs (_: {
+          doCheck = false;
+        });
+      })
+    ];
+  })
+];
+
   programs.gamemode.enable = true;
 
   environment.systemPackages = with pkgs; [
