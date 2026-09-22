@@ -96,6 +96,7 @@ nixpkgs.overlays = [
     hypridle
     keyd
     openssl
+    cava
 
     ddcutil
     brightnessctl
